@@ -115,14 +115,16 @@ class SecondViewController: UIViewController {
                     calculatorDisplay.text = "error"
                     break
                 } else if (firstNumber != 0 && result != 0){
-                    result = (firstNumber + secondNumber) / result
+                    print("나누기 전의 firstNumber 값: \(firstNumber)")
+                    result = result / (firstNumber + secondNumber)
+                    print("조건식 거치고 /했을때의 result값: \(result)")
                 }
                 secondNumber = 0
                 firstNumber = 0
                 firstForMulti = 1
                 firstForSub = 1
                 firstForDiv = 1
-                print("/했을때의 result값: \(result)")
+                print("조건식 안거치고 /했을때의 result값: \(result)")
             }
             calculatorDisplay.text = String(result)
             operAdd.isEnabled = true
@@ -209,8 +211,12 @@ class SecondViewController: UIViewController {
             if firstNumber == 0 && markForDiv == 0 && firstForSub == 0 && firstForMulti == 0 && firstForDiv == 0{
                 calculatorDisplay.text = "error"
                 break
-            } else if (firstNumber != 0 && result != 0){
+            } else if (firstNumber != 0 && result != 0 && markForDiv == 0){
+                print("나누기 연산 전 값확인: \(result), 퍼스트: \(firstNumber)")
                 result = (firstNumber + secondNumber) / result
+                print("나누기 연산 후 값확인: \(result), 퍼스트: \(firstNumber)")
+            } else if (firstNumber != 0 && result != 0 && markForDiv == 1){
+                result = result / (firstNumber + secondNumber)
             }
             calculatorDisplay.text = String(result)
             print("/를 눌러서 값확인: \(result)")
