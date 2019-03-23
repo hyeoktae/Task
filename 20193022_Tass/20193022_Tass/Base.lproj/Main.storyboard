@@ -304,6 +304,10 @@
                     </view>
                     <connections>
                         <outlet property="calculatorDisplay" destination="2nR-EF-Z4x" id="wAl-N0-kO9"/>
+                        <outlet property="operAdd" destination="Y0A-ra-dNP" id="7OG-XG-tZp"/>
+                        <outlet property="operDiv" destination="e0w-lm-Kva" id="wsm-Am-2WT"/>
+                        <outlet property="operMul" destination="YMq-xV-YJf" id="aGi-yZ-nQx"/>
+                        <outlet property="operSub" destination="wz8-zX-6qM" id="Rym-5D-kft"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PQW-h6-iLd" userLabel="First Responder" sceneMemberID="firstResponder"/>
