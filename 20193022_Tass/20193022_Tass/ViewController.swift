@@ -41,9 +41,6 @@ class ViewController: UIViewController {
     }
     
     
-    
-    
-    
     @IBAction func labelSwitch(_ sender: UISwitch) {
         if toggle == true {
             display.isEnabled = false
@@ -77,14 +74,8 @@ class ViewController: UIViewController {
         }
     }
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        
     }
-    
-    
 }
 

@@ -12,14 +12,11 @@ class SecondViewController: UIViewController {
     
     @IBOutlet weak var calculatorDisplay: UILabel!
     
-    
     var number: Int = 0
     var firstNumber: Int = 0
     var secondNumber: Int = 0
     var result: Int = 0
     var resultForMulti: Int = 1
-//    var numberArray: Array<Int> = []
-//    var operatorCount: Int = 0
     var marks: Int = 0
     var markForDiv: Int = 0
     var oper: String = ""
@@ -40,7 +37,6 @@ class SecondViewController: UIViewController {
         func reduce() {
             number = sender.tag
             
-            
             if marks == 0{
                 labelText = labelText + String(sender.tag)
                 calculatorDisplay.text = String(Int(labelText)!)
@@ -48,20 +44,16 @@ class SecondViewController: UIViewController {
                 print("숫자를 눌러서 first에 저장")
                 print("first의 값: \(firstNumber)")
             } else if marks == 1{
-                
                 labelText = labelText + String(sender.tag)
-                
                 calculatorDisplay.text = labelText
-                firstNumber = Int(labelText) ?? 0 // second -> first
+                firstNumber = Int(labelText) ?? 0
                 marks = 0
                 print("marks를 0으로 만듬")
                 print("숫자를 눌러서 second에 저장")
                 print("second의 값: \(secondNumber)")
             }
             
-            
         }
-        
         switch sender.tag {
         case 0:
             reduce()
@@ -87,8 +79,6 @@ class SecondViewController: UIViewController {
             break
         }
     }
-    
-    
     
     
     @IBAction func operators(_ sender: UIButton) {
@@ -121,11 +111,11 @@ class SecondViewController: UIViewController {
                 firstForDiv = 1
                 print("*했을때의 result값: \(result)")
             } else if oper == "d"{
-                if firstNumber == 0 && marks == 0{
+                if firstNumber == 0 && markForDiv == 0 && firstForSub == 0 && firstForMulti == 0 && firstForDiv == 0{
                     calculatorDisplay.text = "error"
                     break
-                } else {
-                result = result / (firstNumber + secondNumber)
+                } else if (firstNumber != 0 && result != 0){
+                    result = (firstNumber + secondNumber) / result
                 }
                 secondNumber = 0
                 firstNumber = 0
@@ -261,24 +251,8 @@ class SecondViewController: UIViewController {
         }
     }
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .yellow
-        
-        // Do any additional setup after loading the view.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
