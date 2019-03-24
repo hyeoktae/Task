@@ -90,7 +90,7 @@ func threeSixNine(_ number: Int){
     }
 }
 
-threeSixNine(99)
+//threeSixNine(99)
 
 
 
@@ -100,7 +100,13 @@ threeSixNine(99)
  * e.g. 18의 자릿수 합은 1 + 8 = 9 이고, 18은 9로 나누어 떨어지므로 하샤드 수.
  */
 
+func hashad(_ number: Int) -> Bool{
+    
+    
+    return number % allAdd(number) == 0
+}
 
+hashad(24)
 
 
 
