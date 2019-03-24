@@ -90,7 +90,7 @@ func threeSixNine(_ number: Int){
     }
 }
 
-//threeSixNine(99)
+threeSixNine(99)
 
 
 
@@ -123,23 +123,22 @@ func twoNumbers(_ num1: Int, _ num2: Int){
     var n2 = num2
     var n3 = 0
     
-    var high = 0
-    
-    while high == 0 {
+    while n2 % n1 != 0 {
         if n2 < n1 {
             n3 = n2
             n2 = n1
             n1 = n3
         }
-        if n1%n2 == 0{
-            high = n2
+        if n2 % n1 == 0{
+            
         } else {
+            n3 = n2 % n1
             n2 = n1
-            n1 = n1%n2
+            n1 = n3
         }
         
     }
-    print(high)
+    print(num1*num2/n1, n1)
     
     
 //    while(n1 != 0){
@@ -152,5 +151,5 @@ func twoNumbers(_ num1: Int, _ num2: Int){
 //    }
 //    print(num1*num2/n2, n2)
 }
-twoNumbers(6, 9)
+twoNumbers(9, 6)
 
