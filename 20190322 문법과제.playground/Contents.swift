@@ -5,7 +5,24 @@ import UIKit
  # 정수 하나를 입력받은 후, 해당 숫자와 숫자 1사이에 있는 모든 정수의 합계 구하기
  * ex) 5 -> 1 + 2 + 3 + 4 + 5 = 15,   -2 -> -2 + -1 + 0 + 1 = -2
 */
+func oneToNow(_ number: Int) -> Int{
+    
+    var result: Int = 0
+    
+    if number >= 1{
+        for i in 1...number{
+            result = result + i
+        }
+    } else {
+        for i in number...1{
+            result = result + i
+        }
+    }
+    
+    return result
+}
 
+oneToNow(0)
 
 
 
