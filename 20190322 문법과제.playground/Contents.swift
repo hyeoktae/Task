@@ -101,8 +101,6 @@ func threeSixNine(_ number: Int){
  */
 
 func hashad(_ number: Int) -> Bool{
-    
-    
     return number % allAdd(number) == 0
 }
 
@@ -119,3 +117,40 @@ hashad(24)
  ### 최소 공배수
  *  주어진 두 수의 곱을 최대공약수로 나누면 최소공배수
  */
+
+func twoNumbers(_ num1: Int, _ num2: Int){
+    var n1 = num1
+    var n2 = num2
+    var n3 = 0
+    
+    var high = 0
+    
+    while high == 0 {
+        if n2 < n1 {
+            n3 = n2
+            n2 = n1
+            n1 = n3
+        }
+        if n1%n2 == 0{
+            high = n2
+        } else {
+            n2 = n1
+            n1 = n1%n2
+        }
+        
+    }
+    print(high)
+    
+    
+//    while(n1 != 0){
+//        if n2 > n1 {
+//            n3 = n2
+//            n2 = n1
+//            n1 = n3
+//        }
+//        n1 = n1 - n2
+//    }
+//    print(num1*num2/n2, n2)
+}
+twoNumbers(6, 9)
+
