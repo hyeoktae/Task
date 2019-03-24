@@ -32,7 +32,25 @@ oneToNow(0)
  * e.g.  123 -> 6 ,  5678 -> 26
  */
 
+func allAdd(_ number: Int) -> Int{
+    
+    var beforeResult = number
+    var numberArray: [Int] = []
+    var result: Int = 0
+    
+    repeat {
+        numberArray.append(beforeResult % 10)
+        beforeResult = beforeResult / 10
+    } while (beforeResult != 0)
+    
+    for i in numberArray{
+        result += i
+    }
+    
+    return result
+}
 
+allAdd(5678)
 
 
 
