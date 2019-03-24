@@ -50,7 +50,7 @@ func allAdd(_ number: Int) -> Int{
     return result
 }
 
-allAdd(5678)
+allAdd(4)
 
 
 
@@ -60,6 +60,37 @@ allAdd(5678)
  */
 
 
+func threeSixNine(_ number: Int){
+    
+    var numberArray: [Int] = []
+    
+    for i in 1...number{
+        
+        var divNumber: Int = i
+        
+        repeat {
+            numberArray.insert(divNumber % 10, at:0)
+            divNumber = divNumber / 10
+        } while (divNumber != 0)
+        
+        for j in numberArray{
+            for l in numberArray.reversed() {
+                
+                if j == 3 || j == 6 || j == 9 || l == 3 || l == 6 || l == 9 {
+                    print("*", terminator: " ")
+                    numberArray = []
+                    break
+                } else {
+                    print(i, terminator: " ")
+                    numberArray = []
+                    break
+                }
+            }
+        }
+    }
+}
+
+threeSixNine(99)
 
 
 
