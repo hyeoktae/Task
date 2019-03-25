@@ -29,6 +29,7 @@ class ViewController: UIViewController {
         greenView.layer.cornerRadius = 10
         redView.layer.cornerRadius = 10
         blueView.layer.cornerRadius = 10
+        
     }
 }
 
