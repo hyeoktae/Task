@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class SampleView: UIView {
 
@@ -15,6 +16,7 @@ class SampleView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        layout()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -27,7 +29,11 @@ class SampleView: UIView {
         self.addSubview(champButton)
         self.addSubview(nameLabel)
         
+        
+        
     }
+    
+    
     
     
     
@@ -36,6 +42,7 @@ class SampleView: UIView {
         
         champButton.frame = CGRect(x: 10, y: 10, width: self.frame.width - 20, height: self.frame.height - 50)
         nameLabel.frame = CGRect(x: 10, y: champButton.frame.height + 20, width: self.frame.width - 20, height: 20)
+        nameLabel.textAlignment = .center
         
     }
     
