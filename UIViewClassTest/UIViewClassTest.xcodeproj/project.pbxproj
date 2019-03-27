@@ -13,6 +13,7 @@
 		52AD9667224B84E40001B641 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52AD9666224B84E40001B641 /* Assets.xcassets */; };
 		52AD966A224B84E40001B641 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52AD9668224B84E40001B641 /* LaunchScreen.storyboard */; };
 		52AD9672224B851C0001B641 /* SampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AD9671224B851C0001B641 /* SampleView.swift */; };
+		52AD9674224BA0F00001B641 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AD9673224BA0F00001B641 /* SecondViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		52AD9669224B84E40001B641 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		52AD966B224B84E40001B641 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52AD9671224B851C0001B641 /* SampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleView.swift; sourceTree = "<group>"; };
+		52AD9673224BA0F00001B641 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			children = (
 				52AD965F224B84E30001B641 /* AppDelegate.swift */,
 				52AD9661224B84E30001B641 /* ViewController.swift */,
+				52AD9673224BA0F00001B641 /* SecondViewController.swift */,
 				52AD9671224B851C0001B641 /* SampleView.swift */,
 				52AD9663224B84E30001B641 /* Main.storyboard */,
 				52AD9666224B84E40001B641 /* Assets.xcassets */,
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52AD9674224BA0F00001B641 /* SecondViewController.swift in Sources */,
 				52AD9662224B84E30001B641 /* ViewController.swift in Sources */,
 				52AD9672224B851C0001B641 /* SampleView.swift in Sources */,
 				52AD9660224B84E30001B641 /* AppDelegate.swift in Sources */,

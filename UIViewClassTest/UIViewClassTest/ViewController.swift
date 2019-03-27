@@ -8,15 +8,24 @@
 
 import UIKit
 import SafariServices
+import WebKit
 
 class ViewController: UIViewController {
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
 
     var vayne: SampleView = SampleView()
     var urlView: UIView = UIView()
+    var second: SecondViewController = SecondViewController()
+    var webView: UIWebView! = UIWebView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         createVayne()
+        view.addSubview(webView)
         
     }
     
@@ -34,11 +43,20 @@ class ViewController: UIViewController {
     }
     
     @objc func urlConnect(_ sender: UIButton) {
+        let url = URL(string: "https://www.google.com")
+        if UIApplication.shared.canOpenURL(url!) {
+            UIApplication.shared.open(url!, options: [:], completionHandler: nil)
+            //If you want handle the completion block than
+            UIApplication.shared.open(url!, options: [:], completionHandler: { (success) in
+                print("Open url : \(success)")
+            })
+        }
         
-        let url = URL(string: "http://gameinfo.leagueoflegends.co.kr/ko/game-info/champions/vayne/")
-        let vc = SFSafariViewController(url: url!)
+        webView.frame = CGRect(x: 0, y: 300, width: view.frame.width - 20, height: view.frame.height - 20)
+        view.addSubview(webView)
         
-        present(vc, animated: true, completion: nil)
     }
+    
+    
 }
 
