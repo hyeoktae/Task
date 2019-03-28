@@ -127,4 +127,24 @@ test12()
 
 
 
+func test13(_ num: Int) {
+    var numArray: [Int] = []
+    
+    for i in 1...num {
+        numArray.append(i)
+    }
+    
+    for i in numArray {
+        if numArray.contains(3) {
+            print("*")
+        }
+        print(i)
+    }
+}
+
+test13(15)
+
+
+String(55, radix: 2)
+Int("110111", radix: 2)
 
