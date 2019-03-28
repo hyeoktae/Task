@@ -109,3 +109,18 @@ let test11: (_ num1: Int, _ num2: Int) -> Int = {Int(String($0) + String($1)) ??
 
 test10(22,46)
 test11(22,45)
+
+
+
+
+func test12() {
+    var result:[Int] = []
+    for i in 1...100{
+        if i%3==0&&i%5==0{
+            result.append(i)
+        }
+    }
+    print(result)
+}
+
+test12()
