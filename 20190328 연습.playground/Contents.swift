@@ -93,3 +93,19 @@ func test09(_ score: Any...) -> Character {
 }
 
 test09(90, "75", 70, "80")
+
+
+
+func test10(_ num1: Int, _ num2: Int) -> Int {
+    
+    var result = ""
+    
+    result = String(num1) + String(num2)
+    
+    return Int(result) ?? 0
+}
+
+let test11: (_ num1: Int, _ num2: Int) -> Int = {Int(String($0) + String($1)) ?? 0}
+
+test10(22,46)
+test11(22,45)
