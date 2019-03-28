@@ -66,3 +66,30 @@ func test08(_ scoreInt: Int) -> Character{
 }
 
 test07(99)
+
+
+
+func test09(_ score: Any...) -> Character {
+    var scoreInt: Int
+    var scoreArray: [Int] = []
+    var scoreResult: Int = 0
+    
+    for i in score {
+        if i is String {
+            scoreInt = Int(i as! String) ?? 0
+            scoreArray.append(scoreInt)
+        } else {
+            scoreInt = i as! Int
+            scoreArray.append(scoreInt)
+        }
+    }
+    
+    for a in scoreArray {
+        scoreResult += a
+    }
+    scoreResult = scoreResult/scoreArray.count
+    
+    return test08(scoreResult)
+}
+
+test09(90, "75", 70, "80")
