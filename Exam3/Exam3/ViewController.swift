@@ -61,7 +61,22 @@ class ViewController: UIViewController {
     
     
     
+    func singleAlert(_ alertForPay: Bool){
+        if alertForPay == true{
+            
+            let payForAlert = UIAlertController(title: "소지금 부족", message: "돈없으면 먹지마", preferredStyle: .alert)
+            
+            let yesAction = UIAlertAction(title: "네...", style: .default) { (_) in
+            }
+            payForAlert.addAction(yesAction)
+            present(payForAlert, animated: true)
+            
+        }
+    }
+    
     @objc func alerts(_ sender: UIButton) {
+        
+        
         
         if sender.tag == 5 {
             let alertController = UIAlertController(title: "진짜 사실?", message: "결제금액: \(totalMoney)", preferredStyle: .alert)
@@ -93,6 +108,10 @@ class ViewController: UIViewController {
             tang.text = String(tangsu)
             return
         }
+        if myFirstMoney < totalMoney {
+            singleAlert(true)
+        }
+        
     }
     
     @objc func toFirst(_ sender: UIButton) {
