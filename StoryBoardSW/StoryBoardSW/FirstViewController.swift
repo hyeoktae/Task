@@ -31,12 +31,12 @@ class FirstViewController: UIViewController {
         print("\(source.minus)")
     }
     
-    //    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-    //
-    //        return !isOver50
-    //    }
-    //
-    //    var isOver50 = false
+        override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+    
+            return !isOver50
+        }
+    
+        var isOver50 = false
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
@@ -61,8 +61,8 @@ class FirstViewController: UIViewController {
     }
     
     @IBAction func didTapPlusOneButton(_ sender: Any) {
-        // ActionSegue -> shouldPerformSegue -> Prepare
-        // ManualSegue -> Shoule(x) -> PerformSegue -> Prepare
+        // ActionSegue -> shouldPerformSegue -> PerformSegue -> Prepare
+        // ManualSegue -> ShouldPerformSegue(x) -> PerformSegue -> Prepare
         
         performSegue(withIdentifier: "PlusOne", sender: sender)
         
@@ -74,7 +74,7 @@ class FirstViewController: UIViewController {
         guard let secondVC = storyboard.instantiateViewController(withIdentifier: "SecondViewController") as? SecondViewController else {return}
         
         
-        //        storyboard.instantiateInitialViewController() -> FirstViewController
+//                storyboard.instantiateInitialViewController() //-> FirstViewController
         
         
         
