@@ -78,7 +78,7 @@ class FirstViewController: UIViewController {
         
         
         
-    }
+    } 
     
     @IBAction func didTapPlusTenButton(_ sender: Any) {
         performSegue(withIdentifier: "PlusTen", sender: sender)
