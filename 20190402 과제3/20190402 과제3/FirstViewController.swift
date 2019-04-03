@@ -9,12 +9,20 @@
 import UIKit
 
 class FirstViewController: UIViewController {
-
+    
+    @IBOutlet weak var firstLabel: UILabel!
+    
+    var firstLabelText = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
     }
-
-
+    
+    @IBAction func unwindToFirstViewController(_ unwindSegue: UIStoryboardSegue) {
+        firstLabel.text = firstLabelText
+    }
+    
+    
 }
 

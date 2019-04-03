@@ -10,17 +10,29 @@ import UIKit
 
 class SecondViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    var text = ""
+    
+    @IBOutlet weak var segueController: UISegmentedControl!
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        guard let dest = segue.destination as? FirstViewController, let labelText = segueController.titleForSegment(at: segueController.selectedSegmentIndex) else {
+            return
+        }
+        dest.firstLabelText = labelText
     }
     
-
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        print(text)
+    }
+    
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.

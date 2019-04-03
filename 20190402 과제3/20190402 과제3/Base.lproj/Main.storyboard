@@ -38,25 +38,53 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="firstLabel" destination="P7a-3O-dzd" id="yU4-R6-49q"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="114.50892857142857"/>
         </scene>
-        <!--View Controller-->
+        <!--Second View Controller-->
         <scene sceneID="L09-Ck-9qA">
             <objects>
-                <viewController id="jjj-Tr-gwh" sceneMemberID="viewController">
+                <viewController id="jjj-Tr-gwh" customClass="SecondViewController" customModule="_0190402_____3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0eR-UU-9La">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="NLh-P8-LgR">
+                                <rect key="frame" x="20" y="128" width="374" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="일"/>
+                                    <segment title="이"/>
+                                    <segment title="삼"/>
+                                    <segment title="사"/>
+                                </segments>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z9l-6H-Ehs">
+                                <rect key="frame" x="77" y="495" width="260" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <state key="normal" title="눌러봐"/>
+                                <connections>
+                                    <segue destination="agi-Q7-7ZO" kind="unwind" unwindAction="unwindToFirstViewController:" id="6DX-69-8fo"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="zty-Sl-n8D"/>
                     </view>
+                    <connections>
+                        <outlet property="segueController" destination="NLh-P8-LgR" id="qnL-PB-AZH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ptp-nF-HfL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="agi-Q7-7ZO" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="958" y="115"/>
+            <point key="canvasLocation" x="957.97101449275374" y="114.50892857142857"/>
         </scene>
     </scenes>
 </document>
