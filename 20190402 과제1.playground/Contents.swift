@@ -22,6 +22,10 @@ if let t1 = task1 as? Int, let t2 = task2 as? Int {
 
 var result = (task2 as! Int) * 2
 
+let task3: Any = addTwoValues(a: 2, b: 3)
+
+(task3 as! Int) + (task3 as! Int)
+
 func abc () {
     guard let t2 = task2 as? Int else {
         return
