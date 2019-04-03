@@ -67,4 +67,3 @@ default:
     print(i as! (String) -> Int)
 }
 }
- 
