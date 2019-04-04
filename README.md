@@ -14,3 +14,4 @@
 * 20190328 - 여태까지의 과제 재풀이
 * 20190329 - 시험
 * 20190402 - segue 기본
+* 20190404 - Delegate, UserDefaults, Singleton
