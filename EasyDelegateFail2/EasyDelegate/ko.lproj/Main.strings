@@ -1,0 +1,12 @@
+
+/* Class = "UILabel"; text = "얼마벌었냐"; ObjectID = "EPz-iS-dle"; */
+"EPz-iS-dle.text" = "얼마벌었냐";
+
+/* Class = "UITextField"; placeholder = "일해라 핫산"; ObjectID = "Z2P-7x-H0r"; */
+"Z2P-7x-H0r.placeholder" = "일해라 핫산";
+
+/* Class = "UIButton"; normalTitle = "일 다함"; ObjectID = "fKJ-H8-hjz"; */
+"fKJ-H8-hjz.normalTitle" = "일 다함";
+
+/* Class = "UIButton"; normalTitle = "뒤로"; ObjectID = "huA-Tp-GHI"; */
+"huA-Tp-GHI.normalTitle" = "뒤로";
