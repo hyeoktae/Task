@@ -28,6 +28,7 @@ class SecondViewController: UIViewController {
         useDelegate.text = delegate?.workHasan2()
         appearUserDefault()
         appearSingleton()
+        
 //        useDelegate.text = textForSecondVC
         
     }
@@ -63,10 +64,6 @@ class SecondViewController: UIViewController {
 extension SecondViewController: CustomLabelDelegate {
     func workHasan(_ text: String?) -> String? {
         print(text)
-        
         return text
     }
-    
-    
-    
 }

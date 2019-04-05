@@ -7,29 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5287F0252257180000CE5A9A /* 노동자.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5287F0242257180000CE5A9A /* 노동자.swift */; };
-		52B22C17225674CF0089774F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B22C16225674CF0089774F /* AppDelegate.swift */; };
-		52B22C19225674CF0089774F /* 일터.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B22C18225674CF0089774F /* 일터.swift */; };
-		52B22C1C225674CF0089774F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52B22C1A225674CF0089774F /* Main.storyboard */; };
-		52B22C1E225674CF0089774F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52B22C1D225674CF0089774F /* Assets.xcassets */; };
-		52B22C21225674CF0089774F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52B22C1F225674CF0089774F /* LaunchScreen.storyboard */; };
-		52B22C292256750A0089774F /* 노가다회사.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B22C282256750A0089774F /* 노가다회사.swift */; };
+		5287F00F2256FF7F00CE5A9A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5287F00E2256FF7F00CE5A9A /* AppDelegate.swift */; };
+		5287F0112256FF7F00CE5A9A /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5287F0102256FF7F00CE5A9A /* FirstViewController.swift */; };
+		5287F0142256FF7F00CE5A9A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5287F0122256FF7F00CE5A9A /* Main.storyboard */; };
+		5287F0162256FF7F00CE5A9A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5287F0152256FF7F00CE5A9A /* Assets.xcassets */; };
+		5287F0192256FF7F00CE5A9A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5287F0172256FF7F00CE5A9A /* LaunchScreen.storyboard */; };
+		5287F0212257018000CE5A9A /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5287F0202257018000CE5A9A /* SecondViewController.swift */; };
+		5287F023225706F700CE5A9A /* ThridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5287F022225706F700CE5A9A /* ThridViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5287F0242257180000CE5A9A /* 노동자.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "노동자.swift"; sourceTree = "<group>"; };
-		52B22C13225674CF0089774F /* EasyDelegate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EasyDelegate.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		52B22C16225674CF0089774F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		52B22C18225674CF0089774F /* 일터.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "일터.swift"; sourceTree = "<group>"; };
-		52B22C1B225674CF0089774F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		52B22C1D225674CF0089774F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		52B22C20225674CF0089774F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		52B22C22225674CF0089774F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		52B22C282256750A0089774F /* 노가다회사.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "노가다회사.swift"; sourceTree = "<group>"; };
+		5287F00B2256FF7F00CE5A9A /* tapBarController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tapBarController.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5287F00E2256FF7F00CE5A9A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5287F0102256FF7F00CE5A9A /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		5287F0132256FF7F00CE5A9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5287F0152256FF7F00CE5A9A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5287F0182256FF7F00CE5A9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5287F01A2256FF7F00CE5A9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5287F0202257018000CE5A9A /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		5287F022225706F700CE5A9A /* ThridViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThridViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		52B22C10225674CF0089774F /* Frameworks */ = {
+		5287F0082256FF7F00CE5A9A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -39,73 +39,73 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		52B22C0A225674CF0089774F = {
+		5287F0022256FF7F00CE5A9A = {
 			isa = PBXGroup;
 			children = (
-				52B22C15225674CF0089774F /* EasyDelegate */,
-				52B22C14225674CF0089774F /* Products */,
+				5287F00D2256FF7F00CE5A9A /* tapBarController */,
+				5287F00C2256FF7F00CE5A9A /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		52B22C14225674CF0089774F /* Products */ = {
+		5287F00C2256FF7F00CE5A9A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				52B22C13225674CF0089774F /* EasyDelegate.app */,
+				5287F00B2256FF7F00CE5A9A /* tapBarController.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		52B22C15225674CF0089774F /* EasyDelegate */ = {
+		5287F00D2256FF7F00CE5A9A /* tapBarController */ = {
 			isa = PBXGroup;
 			children = (
-				52B22C16225674CF0089774F /* AppDelegate.swift */,
-				52B22C18225674CF0089774F /* 일터.swift */,
-				5287F0242257180000CE5A9A /* 노동자.swift */,
-				52B22C282256750A0089774F /* 노가다회사.swift */,
-				52B22C1A225674CF0089774F /* Main.storyboard */,
-				52B22C1D225674CF0089774F /* Assets.xcassets */,
-				52B22C1F225674CF0089774F /* LaunchScreen.storyboard */,
-				52B22C22225674CF0089774F /* Info.plist */,
+				5287F00E2256FF7F00CE5A9A /* AppDelegate.swift */,
+				5287F0102256FF7F00CE5A9A /* FirstViewController.swift */,
+				5287F0202257018000CE5A9A /* SecondViewController.swift */,
+				5287F022225706F700CE5A9A /* ThridViewController.swift */,
+				5287F0122256FF7F00CE5A9A /* Main.storyboard */,
+				5287F0152256FF7F00CE5A9A /* Assets.xcassets */,
+				5287F0172256FF7F00CE5A9A /* LaunchScreen.storyboard */,
+				5287F01A2256FF7F00CE5A9A /* Info.plist */,
 			);
-			path = EasyDelegate;
+			path = tapBarController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		52B22C12225674CF0089774F /* EasyDelegate */ = {
+		5287F00A2256FF7F00CE5A9A /* tapBarController */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 52B22C25225674CF0089774F /* Build configuration list for PBXNativeTarget "EasyDelegate" */;
+			buildConfigurationList = 5287F01D2256FF7F00CE5A9A /* Build configuration list for PBXNativeTarget "tapBarController" */;
 			buildPhases = (
-				52B22C0F225674CF0089774F /* Sources */,
-				52B22C10225674CF0089774F /* Frameworks */,
-				52B22C11225674CF0089774F /* Resources */,
+				5287F0072256FF7F00CE5A9A /* Sources */,
+				5287F0082256FF7F00CE5A9A /* Frameworks */,
+				5287F0092256FF7F00CE5A9A /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = EasyDelegate;
-			productName = EasyDelegate;
-			productReference = 52B22C13225674CF0089774F /* EasyDelegate.app */;
+			name = tapBarController;
+			productName = tapBarController;
+			productReference = 5287F00B2256FF7F00CE5A9A /* tapBarController.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		52B22C0B225674CF0089774F /* Project object */ = {
+		5287F0032256FF7F00CE5A9A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1020;
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "hyeoktae kwon";
 				TargetAttributes = {
-					52B22C12225674CF0089774F = {
+					5287F00A2256FF7F00CE5A9A = {
 						CreatedOnToolsVersion = 10.2;
 					};
 				};
 			};
-			buildConfigurationList = 52B22C0E225674CF0089774F /* Build configuration list for PBXProject "EasyDelegate" */;
+			buildConfigurationList = 5287F0062256FF7F00CE5A9A /* Build configuration list for PBXProject "tapBarController" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -113,56 +113,56 @@
 				en,
 				Base,
 			);
-			mainGroup = 52B22C0A225674CF0089774F;
-			productRefGroup = 52B22C14225674CF0089774F /* Products */;
+			mainGroup = 5287F0022256FF7F00CE5A9A;
+			productRefGroup = 5287F00C2256FF7F00CE5A9A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				52B22C12225674CF0089774F /* EasyDelegate */,
+				5287F00A2256FF7F00CE5A9A /* tapBarController */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		52B22C11225674CF0089774F /* Resources */ = {
+		5287F0092256FF7F00CE5A9A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52B22C21225674CF0089774F /* LaunchScreen.storyboard in Resources */,
-				52B22C1E225674CF0089774F /* Assets.xcassets in Resources */,
-				52B22C1C225674CF0089774F /* Main.storyboard in Resources */,
+				5287F0192256FF7F00CE5A9A /* LaunchScreen.storyboard in Resources */,
+				5287F0162256FF7F00CE5A9A /* Assets.xcassets in Resources */,
+				5287F0142256FF7F00CE5A9A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		52B22C0F225674CF0089774F /* Sources */ = {
+		5287F0072256FF7F00CE5A9A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5287F0252257180000CE5A9A /* 노동자.swift in Sources */,
-				52B22C19225674CF0089774F /* 일터.swift in Sources */,
-				52B22C17225674CF0089774F /* AppDelegate.swift in Sources */,
-				52B22C292256750A0089774F /* 노가다회사.swift in Sources */,
+				5287F0212257018000CE5A9A /* SecondViewController.swift in Sources */,
+				5287F0112256FF7F00CE5A9A /* FirstViewController.swift in Sources */,
+				5287F023225706F700CE5A9A /* ThridViewController.swift in Sources */,
+				5287F00F2256FF7F00CE5A9A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		52B22C1A225674CF0089774F /* Main.storyboard */ = {
+		5287F0122256FF7F00CE5A9A /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				52B22C1B225674CF0089774F /* Base */,
+				5287F0132256FF7F00CE5A9A /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		52B22C1F225674CF0089774F /* LaunchScreen.storyboard */ = {
+		5287F0172256FF7F00CE5A9A /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				52B22C20225674CF0089774F /* Base */,
+				5287F0182256FF7F00CE5A9A /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -170,7 +170,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		52B22C23225674CF0089774F /* Debug */ = {
+		5287F01B2256FF7F00CE5A9A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -231,7 +231,7 @@
 			};
 			name = Debug;
 		};
-		52B22C24225674CF0089774F /* Release */ = {
+		5287F01C2256FF7F00CE5A9A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -286,36 +286,36 @@
 			};
 			name = Release;
 		};
-		52B22C26225674CF0089774F /* Debug */ = {
+		5287F01E2256FF7F00CE5A9A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5W72YMDK56;
-				INFOPLIST_FILE = EasyDelegate/Info.plist;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = tapBarController/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "hyeoktae-com.github.EasyDelegate";
+				PRODUCT_BUNDLE_IDENTIFIER = "hyeoktae-com.github.tapBarController";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		52B22C27225674CF0089774F /* Release */ = {
+		5287F01F2256FF7F00CE5A9A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5W72YMDK56;
-				INFOPLIST_FILE = EasyDelegate/Info.plist;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = tapBarController/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "hyeoktae-com.github.EasyDelegate";
+				PRODUCT_BUNDLE_IDENTIFIER = "hyeoktae-com.github.tapBarController";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -325,25 +325,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		52B22C0E225674CF0089774F /* Build configuration list for PBXProject "EasyDelegate" */ = {
+		5287F0062256FF7F00CE5A9A /* Build configuration list for PBXProject "tapBarController" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				52B22C23225674CF0089774F /* Debug */,
-				52B22C24225674CF0089774F /* Release */,
+				5287F01B2256FF7F00CE5A9A /* Debug */,
+				5287F01C2256FF7F00CE5A9A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		52B22C25225674CF0089774F /* Build configuration list for PBXNativeTarget "EasyDelegate" */ = {
+		5287F01D2256FF7F00CE5A9A /* Build configuration list for PBXNativeTarget "tapBarController" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				52B22C26225674CF0089774F /* Debug */,
-				52B22C27225674CF0089774F /* Release */,
+				5287F01E2256FF7F00CE5A9A /* Debug */,
+				5287F01F2256FF7F00CE5A9A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 52B22C0B225674CF0089774F /* Project object */;
+	rootObject = 5287F0032256FF7F00CE5A9A /* Project object */;
 }
