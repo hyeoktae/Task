@@ -15,12 +15,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        print(CheckLoginState.checkLoginState.checkLoginState())
+        if CheckLoginState.checkLoginState.checkLoginState() {
+            window = UIWindow(frame: UIScreen.main.bounds)
+            window?.rootViewController = AfterLoginPageViewController()
+            window?.makeKeyAndVisible()
+        }
+        
         return true
     }
-
+    
     func applicationWillResignActive(_ application: UIApplication) {
     }
-
+    
     func applicationDidEnterBackground(_ application: UIApplication) {
     }
 

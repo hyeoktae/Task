@@ -16,6 +16,7 @@
 		5208EBEE225725D3006F2E9D /* PublicValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5208EBED225725D3006F2E9D /* PublicValues.swift */; };
 		5208EBF0225727FB006F2E9D /* TripleSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5208EBEF225727FB006F2E9D /* TripleSquare.swift */; };
 		5208EBF222572878006F2E9D /* Square.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5208EBF122572878006F2E9D /* Square.swift */; };
+		5208EBF42258744D006F2E9D /* SignUpPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5208EBF32258744D006F2E9D /* SignUpPageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		5208EBED225725D3006F2E9D /* PublicValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicValues.swift; sourceTree = "<group>"; };
 		5208EBEF225727FB006F2E9D /* TripleSquare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripleSquare.swift; sourceTree = "<group>"; };
 		5208EBF122572878006F2E9D /* Square.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Square.swift; sourceTree = "<group>"; };
+		5208EBF32258744D006F2E9D /* SignUpPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				5208EBD922572062006F2E9D /* AppDelegate.swift */,
 				5208EBDB22572062006F2E9D /* LoginPageViewController.swift */,
 				5208EBEB22572162006F2E9D /* AfterLoginPageViewController.swift */,
+				5208EBF32258744D006F2E9D /* SignUpPageViewController.swift */,
 				5208EBEF225727FB006F2E9D /* TripleSquare.swift */,
 				5208EBF122572878006F2E9D /* Square.swift */,
 				5208EBED225725D3006F2E9D /* PublicValues.swift */,
@@ -148,6 +151,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5208EBF222572878006F2E9D /* Square.swift in Sources */,
+				5208EBF42258744D006F2E9D /* SignUpPageViewController.swift in Sources */,
 				5208EBEE225725D3006F2E9D /* PublicValues.swift in Sources */,
 				5208EBF0225727FB006F2E9D /* TripleSquare.swift in Sources */,
 				5208EBDC22572062006F2E9D /* LoginPageViewController.swift in Sources */,

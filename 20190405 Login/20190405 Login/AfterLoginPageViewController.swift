@@ -9,23 +9,25 @@
 import UIKit
 
 protocol AfterLoginPageViewControllerDelegate: class {
-    func loginInformation() -> String
-    func loginStateOrigin() -> Bool
+    func loginInformation() -> String? 
 }
 
 class AfterLoginPageViewController: UIViewController {
     
-    var loginState = false
     
     weak var delegate: AfterLoginPageViewControllerDelegate?
-    
+    let IDLabel = UILabel()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        loginState = delegate?.loginStateOrigin() ?? false
         creatSignOutButton()
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         creatIDLabel()
     }
     
@@ -39,33 +41,52 @@ class AfterLoginPageViewController: UIViewController {
     }
     
     func creatIDLabel() {
-        let IDLabel = UILabel()
+        
         IDLabel.frame = CGRect(x: view.frame.width/2-100, y: 200, width: 200, height: 100)
-        IDLabel.text = delegate?.loginInformation()
+        guard let ID = UserDefaults.standard.object(forKey: "LoginID") as? String else {
+            print("이게작동되면 안대는디")
+            IDLabel.text = delegate?.loginInformation()
+            return
+        }
+        IDLabel.text = ID
         self.view.addSubview(IDLabel)
     }
     
     
     
     @objc func signOutButton(_ sender: UIButton) {
-        inputID.ID.ID = ""
-        inputPW.PW.PW = ""
-        loginState = false
+        OffLoginState.offLoginState.offLoginState()
         
         guard let beforeVC = presentingViewController as? LoginPageViewController else {
             print("beforeVC: nil")
+            restartApplication()
             return
         }
-        beforeVC.delegate = self
-        
-        presentingViewController?.dismiss(animated: true)
+        beforeVC.IDTextField.text = ""
+        beforeVC.PWTextField.text = ""
+        IDLabel.text = ""
+        beforeVC.dismiss(animated: true)
     }
-}
-
-extension AfterLoginPageViewController: LoginPageViewControllerDelegate {
     
-    func changeLoginState() -> Bool {
-        print("실행")
-        return loginState
+    func restartApplication() {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        // 스토리보드를 객체로 받아와야 스토리보드상에서 만든 모든내용들을 가지고 쓸수있음
+                storyboard.instantiateInitialViewController()         // 스토리보드에서 화살표가 지정된 뷰컨트롤러 불러오기
+                guard let secondVC = storyboard.instantiateViewController(withIdentifier: "LoginPage") as? LoginPageViewController else {return}      // Identifier에 지정된 내용으로 뷰컨트롤러 불러오기
+        
+        //        secondVC.count        이렇게 스토리보드상에서 만들어진 뷰컨트롤러에 접근할수있음
+        //        present(secondVC, animated : true)
+        
+        guard
+            let window = UIApplication.shared.keyWindow
+            else {
+                return
+        }
+        
+        UIView.transition(with: window, duration: 0.3, options: .transitionCrossDissolve, animations: {
+            window.rootViewController = secondVC
+        })
+        
     }
 }

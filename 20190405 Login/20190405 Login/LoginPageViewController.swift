@@ -8,62 +8,87 @@
 
 import UIKit
 
-protocol LoginPageViewControllerDelegate: class {
-    func changeLoginState() -> Bool
-}
-
 class LoginPageViewController: UIViewController {
     
-    let ID: String = "tass"
-    let PW: String = "1234"
-    var stateLogin = false
-    
-    weak var delegate: LoginPageViewControllerDelegate?
+    var rejectLogin = false
     
     let afterLoginPage = AfterLoginPageViewController()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        creatTripleSquare()
+    }
+    
     
     @IBOutlet weak var IDTextField: UITextField!
     @IBOutlet weak var PWTextField: UITextField!
     @IBOutlet weak var viewIDPW: UIView!
     
     @IBAction func toAfterLoginPage(_ sender: UIButton) {
-        checkIDPW()
+        checkIDPWFromUD()
+        if (!CheckLoginState.checkLoginState.checkLoginState()) || (rejectLogin) {
+            UIView.animate(withDuration: 0.2) {
+                self.IDTextField.backgroundColor = .red
+                self.PWTextField.backgroundColor = .red
+                self.IDTextField.backgroundColor = .white
+                self.PWTextField.backgroundColor = .white
+            }
+        }
         goAfterLoginPage()
-        stateLogin = delegate?.changeLoginState() ?? false
     }
     
-    func keyboardID() {
-        IDTextField.addTarget(self, action: #selector(keyboardOn(_:)), for: .editingDidBegin)
+    @IBAction func textController(_ sender: UITextField) {
+        guard let count = sender.text?.count else {
+            return
+        }
+        if count > 20 {
+            sender.deleteBackward()
+        } else if (count < 4) || (count > 16) {
+            self.rejectLogin = true
+        } else if (count > 4) || (count < 16) {
+            self.rejectLogin = false
+        }
+        print(rejectLogin)
     }
     
-    @objc func keyboardOn(_ sender: UITextField) {
-        becomeFirstResponder()
+    
+    @IBAction func keyboardOn(_ sender: UITextField) {
         UIView.animate(withDuration: 0.2) {
             self.viewIDPW.frame.origin.y = 300
         }
+        becomeFirstResponder()
     }
     
-    
-    
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        creatTripleSquare()
+    @IBAction func keyboardOff(_ sender: UITextField) {
+        UIView.animate(withDuration: 0.2) {
+            self.viewIDPW.frame.origin.y = 444
+        }
+        resignFirstResponder()
     }
+    
     
     func goAfterLoginPage() {
-        if stateLogin {
+        print("세컨뷰: ", afterLoginPage)
+        print(CheckLoginState.checkLoginState.checkLoginState())
+        if CheckLoginState.checkLoginState.checkLoginState() {
+            print("이건 실행 되는가?")
             afterLoginPage.delegate = self
+            UserDefaults.standard.set(IDTextField.text, forKey: "LoginID")
             present(afterLoginPage, animated: true)
-        } else {
-            print("로그인실패")
-            UIView.animate(withDuration: 0.1) {
-                self.view.backgroundColor = .red
-            }
-            UIView.animate(withDuration: 0.1) {
-                self.view.backgroundColor = .white
-            }
+            self.rejectLogin = false
+            
         }
+        //        else {
+        //            print("로그인실패")
+        //            UIView.animate(withDuration: 0.1) {
+        //                self.view.backgroundColor = .red
+        //                self.viewIDPW.backgroundColor = .red
+        //            }
+        //            UIView.animate(withDuration: 0.1) {
+        //                self.view.backgroundColor = .white
+        //                self.viewIDPW.backgroundColor = .white
+        //            }
+        //        }
     }
     
     func creatTripleSquare() {
@@ -72,25 +97,27 @@ class LoginPageViewController: UIViewController {
         self.view.addSubview(tripleSquare)
     }
     
-    func checkIDPW() {
-        inputID.ID.ID = IDTextField.text ?? ""
-        inputPW.PW.PW = PWTextField.text ?? ""
-        
-        if (self.ID == inputID.ID.ID) && (self.PW == inputPW.PW.PW){
-            stateLogin = true
+    
+    func checkIDPWFromUD() {
+        let PWFromUD = FindUsers.findUsers.findUsers(ID: IDTextField.text ?? "")
+        if (PWFromUD == PWTextField.text ?? "") && (!rejectLogin){
+            OnLoginState.onLoginState.onLoginState(ID: IDTextField.text ?? "")
         }
     }
+    
+    @IBAction func toSignUp(_ sender: UIButton) {
+        performSegue(withIdentifier: "toSignUp", sender: self)
+    }
+    
+    
+    
+    
+    
     
 }
 
 extension LoginPageViewController: AfterLoginPageViewControllerDelegate {
-    func loginStateOrigin() -> Bool {
-        return stateLogin
+    func loginInformation() -> String? {
+        return UserDefaults.standard.object(forKey: "LoginID") as? String
     }
-    
-    func loginInformation() -> String {
-        return IDTextField.text ?? ""
-    }
-    
-    
 }
