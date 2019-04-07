@@ -15,3 +15,6 @@
 * 20190329 - 시험
 * 20190402 - segue 기본
 * 20190404 - Delegate, UserDefaults, Singleton
+* 20190405 - 과제들 올림 Delegate, Singleton, UserDefaults, UISlider 사용
+* 20190406 - 과제들 올림 Delegate, Singleton, UserDefaults, UISlider 사용
+* 20190407 - 마지막 과제 올림, tableView 예습 겸 테스트해봄, 짝퉁카카오에 적용해봄
