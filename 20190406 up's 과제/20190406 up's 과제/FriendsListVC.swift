@@ -46,7 +46,6 @@ class FriendsListVC: UIViewController {
                                                    attribute: .trailing, relatedBy: .equal, toItem: self.view,
                                                    attribute: .trailing, multiplier: 1.0, constant: 0))
         
-        
     }
     
     @objc func refresh() { // 혹시나 데이터 리로드 안되면 이걸로 리로드

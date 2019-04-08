@@ -8,7 +8,7 @@
 
 import UIKit
 
-class 일터: UIViewController {
+class 노가다꾼: UIViewController {
     
     @IBOutlet weak var 삽: UITextField!
     
@@ -23,29 +23,28 @@ class 일터: UIViewController {
         performSegue(withIdentifier: "삽질끝", sender: self)
     }
     
-    let 노동자1 = 노동자()
+//    let 노동자1 = 노동자()
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: self)
         guard let 회사 = segue.destination as? 노가다회사 else {
             return
         }
-        노동자1.something = 삽.text ?? ""
-        회사.채용공고 = 노동자1
+        회사.채용공고 = self
     }
     
 }
 
-//
-//extension 일터: 노가다회사Delegate {
-//    func 삽질잘하는() -> String {
-//        guard let 삽질 = 삽.text else {
-//            return "일안했냐?"
-//        }
-//        return 삽질
-//    }
-//
-//    @IBAction func unwindTo일터(_ unwindSegue: UIStoryboardSegue) {
-//        삽.text = nil
-//    }
-//
-//}
+
+extension 노가다꾼: 노가다회사Delegate {
+    func 삽질잘하는() -> String {
+        guard let 삽질 = 삽.text else {
+            return "일안했냐?"
+        }
+        return 삽질
+    }
+
+    @IBAction func unwindTo일터(_ unwindSegue: UIStoryboardSegue) {
+        삽.text = nil
+    }
+
+}

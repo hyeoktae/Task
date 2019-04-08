@@ -9,12 +9,12 @@
 import Foundation
 
 
-class 노동자: 노가다회사Delegate {
-    var something: String = ""
-//    init() {}
-    
-    func 삽질잘하는() -> String {
-            return something
-        
-    }
-}
+//class 노동자: 노가다회사Delegate {
+//    var something: String = ""
+////    init() {}
+//    
+//    func 삽질잘하는() -> String {
+//            return something
+//        
+//    }
+//}

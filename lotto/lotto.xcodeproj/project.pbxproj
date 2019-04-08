@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		52109799225BBE7C007A7E01 /* FristCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52109798225BBE7C007A7E01 /* FristCustomCell.swift */; };
 		E6263EA62254BF8000B5B0D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6263EA52254BF8000B5B0D3 /* AppDelegate.swift */; };
 		E6263EA82254BF8000B5B0D3 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6263EA72254BF8000B5B0D3 /* FirstViewController.swift */; };
 		E6263EAB2254BF8000B5B0D3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6263EA92254BF8000B5B0D3 /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		52109798225BBE7C007A7E01 /* FristCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FristCustomCell.swift; sourceTree = "<group>"; };
 		E6263EA22254BF8000B5B0D3 /* lotto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lotto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6263EA52254BF8000B5B0D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E6263EA72254BF8000B5B0D3 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -58,8 +60,9 @@
 			children = (
 				E6263EA52254BF8000B5B0D3 /* AppDelegate.swift */,
 				E6263EA72254BF8000B5B0D3 /* FirstViewController.swift */,
-				E6263EA92254BF8000B5B0D3 /* Main.storyboard */,
 				E6263EB72254DA8400B5B0D3 /* SecondViewController.swift */,
+				E6263EA92254BF8000B5B0D3 /* Main.storyboard */,
+				52109798225BBE7C007A7E01 /* FristCustomCell.swift */,
 				E6263EAC2254BF8200B5B0D3 /* Assets.xcassets */,
 				E6263EAE2254BF8200B5B0D3 /* LaunchScreen.storyboard */,
 				E6263EB12254BF8200B5B0D3 /* Info.plist */,
@@ -141,6 +144,7 @@
 				E6263EB82254DA8400B5B0D3 /* SecondViewController.swift in Sources */,
 				E6263EA82254BF8000B5B0D3 /* FirstViewController.swift in Sources */,
 				E6263EA62254BF8000B5B0D3 /* AppDelegate.swift in Sources */,
+				52109799225BBE7C007A7E01 /* FristCustomCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

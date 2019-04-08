@@ -11,12 +11,14 @@ import UIKit
 class SecondViewController: UIViewController {
 
     @IBOutlet weak var secondLabel: UILabel!
-    var textForLabel:String? = ""
+    var textForLabel: String? = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         secondLabel.text = textForLabel // label.text에 firstVC에서 가져온(매개변수를통해) 값을 넣음
     }
+    
+//    firstVC.delegate = self
     
     @IBAction func toFirstVC(_ sender: UIButton) {
         guard let firstVC = presentingViewController as? FirstViewController else {

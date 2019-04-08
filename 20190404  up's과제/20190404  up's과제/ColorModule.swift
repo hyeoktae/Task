@@ -19,19 +19,11 @@ class ColorModule: UIView {
         colorView.text = colorText
         colorView.textColor = .white
         slider.tag = tag
-//        slider.maximumValue = 255
-//        slider.minimumValue = 0
         self.addSubview(colorView)
         self.addSubview(slider)
     }
-    
-    
-    
-    
-
     override func layoutSubviews() {
         super.layoutSubviews()
-        
         colorView.frame = CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height/3)
         slider.frame = CGRect(x: 0, y: self.frame.height/1.5, width: self.frame.width, height: self.frame.height/3)
     }

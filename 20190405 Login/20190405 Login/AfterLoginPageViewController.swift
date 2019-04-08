@@ -84,7 +84,7 @@ class AfterLoginPageViewController: UIViewController {
                 return
         }
         
-        UIView.transition(with: window, duration: 0.3, options: .transitionCrossDissolve, animations: {
+        UIView.transition(with: window, duration: 0.01, options: .transitionCrossDissolve, animations: {
             window.rootViewController = secondVC
         })
         
