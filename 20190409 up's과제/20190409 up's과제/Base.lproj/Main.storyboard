@@ -33,21 +33,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KwH-OR-JOi">
-                                <rect key="frame" x="87" y="313" width="240" height="270"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KwH-OR-JOi">
+                                <rect key="frame" x="87" y="318" width="240" height="270"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="색을 변경하시겠습니까?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ogn-nz-9qn">
-                                        <rect key="frame" x="39" y="33" width="163" height="38"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="색을 변경하시겠습니까?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ogn-nz-9qn">
+                                        <rect key="frame" x="38" y="30" width="164" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cbK-3u-1h3">
-                                        <rect key="frame" x="39" y="110" width="50" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cbK-3u-1h3">
+                                        <rect key="frame" x="37" y="110" width="50" height="50"/>
                                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="BzN-lw-u54"/>
+                                            <constraint firstAttribute="height" constant="50" id="W50-hE-fwp"/>
+                                        </constraints>
                                         <state key="normal" title="노랑">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -60,10 +61,13 @@
                                             <action selector="changeColor:" destination="S8U-zI-vpX" eventType="touchUpInside" id="SNj-9V-68O"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aPo-01-PXb">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aPo-01-PXb">
                                         <rect key="frame" x="152" y="110" width="50" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="Pgd-Qi-DJm"/>
+                                            <constraint firstAttribute="height" constant="50" id="nhB-gV-5Gg"/>
+                                        </constraints>
                                         <state key="normal" title="흰색">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -76,10 +80,12 @@
                                             <action selector="changeColor:" destination="S8U-zI-vpX" eventType="touchUpInside" id="M2a-4z-OzW"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fZu-Ov-u3r">
-                                        <rect key="frame" x="39" y="208" width="163" height="40"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fZu-Ov-u3r">
+                                        <rect key="frame" x="38" y="208" width="164" height="40"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="bgU-GM-y6b"/>
+                                        </constraints>
                                         <state key="normal" title="확인">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -94,6 +100,21 @@
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="aPo-01-PXb" firstAttribute="centerY" secondItem="KwH-OR-JOi" secondAttribute="centerY" id="0QT-sU-G1e"/>
+                                    <constraint firstAttribute="trailing" secondItem="fZu-Ov-u3r" secondAttribute="trailing" constant="38" id="4Kf-RD-Ep3"/>
+                                    <constraint firstAttribute="bottom" secondItem="fZu-Ov-u3r" secondAttribute="bottom" constant="22" id="4Mh-id-5eM"/>
+                                    <constraint firstItem="fZu-Ov-u3r" firstAttribute="trailing" secondItem="ogn-nz-9qn" secondAttribute="trailing" id="6WE-i6-jsJ"/>
+                                    <constraint firstItem="aPo-01-PXb" firstAttribute="trailing" secondItem="ogn-nz-9qn" secondAttribute="trailing" id="6b8-hn-lkw"/>
+                                    <constraint firstItem="cbK-3u-1h3" firstAttribute="leading" secondItem="ogn-nz-9qn" secondAttribute="leading" constant="-1" id="BtY-1g-hR1"/>
+                                    <constraint firstAttribute="height" constant="270" id="C81-hG-jyw"/>
+                                    <constraint firstItem="ogn-nz-9qn" firstAttribute="top" secondItem="KwH-OR-JOi" secondAttribute="top" constant="30" id="CIx-U5-UEu"/>
+                                    <constraint firstItem="ogn-nz-9qn" firstAttribute="centerX" secondItem="KwH-OR-JOi" secondAttribute="centerX" id="Im5-8q-0IG"/>
+                                    <constraint firstItem="fZu-Ov-u3r" firstAttribute="leading" secondItem="ogn-nz-9qn" secondAttribute="leading" id="TZH-9g-iCh"/>
+                                    <constraint firstAttribute="width" constant="240" id="Uet-Vx-9ZC"/>
+                                    <constraint firstItem="cbK-3u-1h3" firstAttribute="centerY" secondItem="KwH-OR-JOi" secondAttribute="centerY" id="jx7-mp-woJ"/>
+                                    <constraint firstItem="fZu-Ov-u3r" firstAttribute="centerX" secondItem="KwH-OR-JOi" secondAttribute="centerX" id="w9k-Wm-lsM"/>
+                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="10"/>
@@ -101,6 +122,10 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
+                        <constraints>
+                            <constraint firstItem="KwH-OR-JOi" firstAttribute="centerX" secondItem="na1-Yk-RYV" secondAttribute="centerX" id="haC-oT-f9L"/>
+                            <constraint firstItem="KwH-OR-JOi" firstAttribute="centerY" secondItem="na1-Yk-RYV" secondAttribute="centerY" id="u3m-Gt-xE3"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="na1-Yk-RYV"/>
                     </view>
                 </viewController>
