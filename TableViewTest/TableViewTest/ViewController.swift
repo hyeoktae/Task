@@ -41,9 +41,11 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             for: indexPath)
         
         let currentRowOfList = testArray[indexPath.row]
-//        cell.addSubview(testLabel)
         
-//        testLabel.text = currentRowOfList
+        for i in 0..<testArray.count {
+            print(i)
+        }
+        
         cell.textLabel?.text = currentRowOfList
         
         

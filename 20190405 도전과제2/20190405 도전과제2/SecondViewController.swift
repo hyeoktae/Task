@@ -31,6 +31,7 @@ class SecondViewController: UIViewController {
 
 extension SecondViewController: FirstViewControllerDelegate { // 일 하는 부분
     func textSender(_ text: String?){ // 일 시킬때 text에다가 textfield.text를 같이 준다.
+        print("일한다")
         textForLabel = text // 일 한다, secondVC에 가지고 있는 String변수에 text넣음
         return
     }

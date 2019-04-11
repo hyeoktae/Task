@@ -72,11 +72,9 @@ class SecondViewController: UIViewController {
         var row: Int = 0
         if check == 0 {
             UserDefaults.standard.set(1, forKey: "Row")
-            print("if 0: ", UserDefaults.standard.integer(forKey: "Row"))
         } else {
             row = check + 1
             UserDefaults.standard.set(row, forKey: "Row")
-            print("if over 1: ", UserDefaults.standard.integer(forKey: "Row"))
         }
     }
     

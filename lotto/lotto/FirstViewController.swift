@@ -12,9 +12,9 @@ class FirstViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var selectedNum1 = ""
-    var selectedNum2 = ""
-    var selectedNum3 = ""
+    var selectedNum1 = "11"
+    var selectedNum2 = "22"
+    var selectedNum3 = "33"
     var errorCount = false
     
 //    @IBOutlet weak var origin: UILabel!
@@ -44,11 +44,25 @@ class FirstViewController: UIViewController {
             return
         }
         
+        if (selectedNum1 == selectedNum2) || (selectedNum1 == selectedNum3) || (selectedNum2 == selectedNum3)
+        {
+            errorCount = true
+            textFieldForNum1.text = ""
+            textFieldForNum2.text = ""
+            textFieldForNum3.text = ""
+            selectedNum1 = "11"
+            selectedNum2 = "22"
+            selectedNum3 = "33"
+        }
+        
         if (textFieldForNum1.text?.count ?? 0 > 1) || (textFieldForNum2.text?.count ?? 0 > 1) || (textFieldForNum3.text?.count ?? 0 > 1){
             errorCount = true
             textFieldForNum1.text = ""
             textFieldForNum2.text = ""
             textFieldForNum3.text = ""
+            selectedNum1 = "11"
+            selectedNum2 = "22"
+            selectedNum3 = "33"
         }
     }
     
@@ -58,8 +72,8 @@ class FirstViewController: UIViewController {
             let n2 = Int(selectedNum2),
             let n3 = Int(selectedNum3),
             let secondVC = segue.destination as? SecondViewController else {
-            print("숫자입력해야함")
-            return
+                print("숫자입력해야함")
+                return
         }
         secondVC.sNum1 = n1
         secondVC.sNum2 = n2
@@ -68,10 +82,16 @@ class FirstViewController: UIViewController {
     
     // 돌리기 버튼 클릭시, 'toSecondVC'라는 Identifier를 가진 segue를 실행
     @IBAction func toSecondVC(_ sender: UIButton) {
-        guard let n1 = Int(selectedNum1),
-            let n2 = Int(selectedNum2),
-            let n3 = Int(selectedNum3) else {
+        guard let _ = Int(selectedNum1),
+            let _ = Int(selectedNum2),
+            let _ = Int(selectedNum3) else {
                 print("숫자입력해야함")
+                textFieldForNum1.text = ""
+                textFieldForNum2.text = ""
+                textFieldForNum3.text = ""
+                selectedNum1 = "11"
+                selectedNum2 = "22"
+                selectedNum3 = "33"
             return
         }
         performSegue(withIdentifier: "toSecondVC", sender: self)
@@ -80,6 +100,9 @@ class FirstViewController: UIViewController {
         textFieldForNum1.text = ""
         textFieldForNum2.text = ""
         textFieldForNum3.text = ""
+        selectedNum1 = "11"
+        selectedNum2 = "22"
+        selectedNum3 = "33"
         tableView.reloadData()
     }
     
@@ -149,15 +172,6 @@ extension FirstViewController: UITableViewDelegate, UITableViewDataSource {
             gradeCount1 = 0
             randArrayForCheck = []
         }
-        
-//        let currentRowOfList = "\(randArray[indexPath.row])"
-        
-        
-//        cell.textLabel?.text = String(count)
-//        origin.text = "\(randArray[indexPath.row])"
-//        select.text = "\(selectArray[indexPath.row])"
-//        cell.contentView.addSubview(origin)
-//        cell.contentView.addSubview(select)
         
         cell.num.text = String(indexPath.row+1)
         cell.origin.text = "로또번호: \(randArray[indexPath.row])"
