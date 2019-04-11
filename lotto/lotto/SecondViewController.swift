@@ -17,10 +17,8 @@ class SecondViewController: UIViewController {
     var sNum2 = 0
     var sNum3 = 0
     
-    var gradeCount = 0
-    
-    var numbers: Set<Int> = [] //중복되지 않는 값 저장
-    var result: [Int] = [] //결과 저장 배열
+    var numbers: Set<Int> = []
+    var result: [Int] = []
     
     @IBOutlet weak var num1Label: UILabel!
     @IBOutlet weak var num2Label: UILabel!
@@ -35,8 +33,6 @@ class SecondViewController: UIViewController {
         super.viewDidLoad()
         runRandom()
         updateNumbers()
-        viewGrade()
-        
     }
     
     func runRandom() {
@@ -64,7 +60,7 @@ class SecondViewController: UIViewController {
         NumbersArray.append(sNum3)
         
         UserDefaults.standard.set(NumbersArray, forKey: String(check))
-        checkNumbers()
+        _ = checkNumber(label: gradeView, ForCell: false)
     }
     
     func saveCellRow() {
@@ -78,39 +74,9 @@ class SecondViewController: UIViewController {
         }
     }
     
-    func checkNumbers() {
-        let numbers2 = UserDefaults.standard.object(forKey: String(UserDefaults.standard.integer(forKey: "Row")))
-        let resultSelect: [Int] = (numbers2) as? [Int] ?? []
-        
-        if result.contains(resultSelect[3]) {
-            gradeCount += 1
-        }
-        if result.contains(resultSelect[4]) {
-            gradeCount += 1
-        }
-        if result.contains(resultSelect[5]) {
-            gradeCount += 1
-        }
-    }
-    
     func updateNumbers() {
         selectedNum1.text = String(sNum1)
         selectedNum2.text = String(sNum2)
         selectedNum3.text = String(sNum3)
-    }
-    
-    func viewGrade() {
-        switch gradeCount {
-        case 0:
-            gradeView.text = "꽝"
-        case 1:
-            gradeView.text = "3등"
-        case 2:
-            gradeView.text = "2등"
-        case 3:
-            gradeView.text = "1등"
-        default:
-            return
-        }
     }
 }
