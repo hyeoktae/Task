@@ -42,9 +42,9 @@ class SecondViewController: UIViewController {
             numbers.insert(number)
         }
         result = [Int](numbers)
-        num1Label.text = String(result[0]) //num1Label에 첫번째 수 저장
-        num2Label.text = String(result[1])//num2Label에 두번째 수 저장
-        num3Label.text = String(result[2])//num3Label에 세번째 수 저장
+        num1Label.text = String(result[0])
+        num2Label.text = String(result[1])
+        num3Label.text = String(result[2])
         saveNumbers(result[0],result[1],result[2])
     }
     
