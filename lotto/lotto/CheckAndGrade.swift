@@ -24,6 +24,10 @@ class checkNumber {
         self.init(label: label, ForCell: ForCell, count: nil)
     }
     
+    deinit {
+        
+    }
+    
     func check(i: Int?) {
         var randArrayForCheck: [Int] = []
         
