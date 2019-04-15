@@ -69,7 +69,7 @@ class ViewController: UIViewController {
     }
     
     func addSelectNum(){
-        guard seledcedArray != [] else {
+        guard !seledcedArray.isEmpty else {
             makeRand()
             return
         }
