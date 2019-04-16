@@ -26,6 +26,7 @@ final class ItemCell: UITableViewCell {
     }
     
     @objc func click(_ sender: UIButton) {
+//        limit()
         delegate?.addCount(self, didTapButton: sender)
     }
     
@@ -35,6 +36,24 @@ final class ItemCell: UITableViewCell {
         stock.frame = CGRect(x: frame.width - 50, y: frame.height/2-10, width: 30, height: 20)
         stock.textColor = .black
     }
+    
+//    func limit() {
+//        let vc = self.superview as? ViewController
+//        let indexPath = vc?.tableView.indexPath(for: self)
+//        let count = saleArray[indexPath?.row ?? 0].count
+//        let stock = saleArray[indexPath?.row ?? 0].stock
+//        if count < stock {
+//            let addCount = count + 1
+//            saleArray[indexPath?.row ?? 0].count = addCount
+//            self.stock.text = "\(addCount)"
+//        } else {
+//            print("재고부족")
+//            UIView.animate(withDuration: 0.2) {
+//                self.backgroundColor = .red
+//                self.backgroundColor = .white
+//            }
+//        }
+//    }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
