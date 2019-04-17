@@ -75,3 +75,19 @@ for (index, element) in phonebook.enumerated() {
     print("index: \(index)")
     print(element)
 }
+
+var test = [Int:[String:String]]()
+
+func test1() {
+    for i in 0...5 {
+        test.updateValue(["a":"b"], forKey: i)
+    }
+//    print(test.keys.sorted())
+}
+test1()
+
+for i in 0...5 {
+    var inner = test[i]
+    inner?.updateValue("c", forKey: "a")
+    print(inner)
+}

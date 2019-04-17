@@ -12,9 +12,11 @@ final class ViewController: UIViewController {
     
     var tableView = UITableView()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         makeTableView()
+        
     }
     
     func makeTableView() {
@@ -49,6 +51,8 @@ extension ViewController: UITableViewDataSource {
         
         return cell
     }
+    
+    
 }
 
 extension ViewController: ItemCellDelegate {
