@@ -76,7 +76,9 @@ for (index, element) in phonebook.enumerated() {
     print(element)
 }
 
-var test = [Int:[String:String]]()
+var test = [1:["a":"b"]]
+
+let abc = test[1]?.keys.first
 
 func test1() {
     for i in 0...5 {
@@ -89,5 +91,5 @@ test1()
 for i in 0...5 {
     var inner = test[i]
     inner?.updateValue("c", forKey: "a")
-    print(inner)
+//    print(inner)
 }
