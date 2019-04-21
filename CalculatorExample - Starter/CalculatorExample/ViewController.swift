@@ -14,7 +14,8 @@ final class ViewController: UIViewController {
     
     var result = Double() {
         didSet{
-            DisplayLabel.text = "\(result)"
+            resultString = formatter.string(from: result as NSNumber) ?? ""
+            DisplayLabel.text = resultString
         }
     }
     var right: Double? = nil
@@ -23,13 +24,18 @@ final class ViewController: UIViewController {
     var flag = true
     var flagEql = false
     var flagReset = false
-    
+    let formatter = NumberFormatter()
+    var resultString: String = ""
+    var inputString: String = ""
+    var flagNumber = false
     
     @IBOutlet weak var DisplayLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        formatter.numberStyle = .decimal
+        formatter.minimumFractionDigits = 0
+        formatter.maximumFractionDigits = 3
     }
     
     @IBAction func numbers(_ sender: UIButton) {
@@ -37,76 +43,73 @@ final class ViewController: UIViewController {
             toZero()
         }
         input = input + "\(sender.tag)"
-        print(sender.tag)
-        DisplayLabel.text = "\(Double(input)!)"
+        inputString = formatter.string(from: Double(input)! as NSNumber) ?? ""
+        DisplayLabel.text = inputString
         flagEql = false
-        
+        flagNumber = true
+        reset()
+    }
+    
+    func reset() {
+        if left == nil && right == nil {
+            flag = true
+        }
     }
     
     func insert() {
-        if flag {
+        if flag && flagNumber {
+            print("run")
             left = Double(input)!
             right = nil
-        } else {
+        } else if !flag && flagNumber {
             right = Double(input) ?? nil
         }
         input = ""
         flag = false
-        print("in insert -> left: ", left, "right: ", right)
+        print("left: ", left ?? 0 , "right: ", right ?? 0)
     }
     
     @IBAction func oprators(_ sender: UIButton) {
         flagReset = false
-        
         insert()
         work(oper, left, right)
-        switch sender.tag {
-        case 11:
-            oper = .add
-        case 12:
-            oper = .sub
-        case 13:
-            oper = .mul
-        case 14:
-            oper = .div
-        default:
-            return
+        if flagNumber {
+            switch sender.tag {
+            case 11:
+                oper = .add
+            case 12:
+                oper = .sub
+            case 13:
+                oper = .mul
+            case 14:
+                oper = .div
+            default:
+                break
+            }
         }
-        
     }
     
     @IBAction func equl(_ sender: UIButton) {
         flagReset = true
-        
-        if !flagEql {
+        if !flagEql && flagNumber {
             insert()
-        switch oper {
-        case .add:
             right = (right == nil) ? left! : right
-            result = right! + left!
-            left = result
-            right = nil
-        case .sub:
-            right = (right == nil) ? left! : right
-            result = left! - right!
-            left = result
-            right = nil
-        case .mul:
-            right = (right == nil) ? left! : right
-            result = right! * left!
-            left = result
-            right = nil
-        case .div:
-            right = (right == nil) ? left! : right
-            result = left! / right!
-            left = result
-            right = nil
-        default:
-            ()
-        }
+            switch oper {
+            case .add:
+                result = right! + left!
+            case .sub:
+                result = left! - right!
+            case .mul:
+                result = right! * left!
+            case .div:
+                result = left! / right!
+            default:
+                break
+            }
             flagEql = true
+            left = result
+            right = nil
         }
-        print("in Eql -> left: ", left, "right: ", right)
     }
     
     func work(_ oper: checkOper, _ check1: Double?, _ check2: Double?) {
@@ -114,25 +117,18 @@ final class ViewController: UIViewController {
             switch oper {
             case .add:
                 result = (right == nil) ? left! : (left!+right!)
-                left = result
-                right = nil
             case .sub:
                 result = (right == nil) ? left! : (left!-right!)
-                left = result
-                right = nil
             case .mul:
                 result = (right == nil) ? left! : (left!*right!)
-                left = result
-                right = nil
             case .div:
                 result = (right == nil) ? left! : (left!/right!)
-                left = result
-                right = nil
             default:
-                ()
+                break
             }
+            left = result
+            right = nil
         }
-        print("in oper -> left: ", left, "right: ", right)
     }
     
     
@@ -154,6 +150,7 @@ final class ViewController: UIViewController {
         right = nil
         flagEql = false
         flagReset = false
+        flagNumber = false
     }
     
 }
