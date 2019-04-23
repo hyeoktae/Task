@@ -11,13 +11,6 @@ import UIKit
 final class ViewController: UIViewController {
     
     var left: Double? = nil
-    
-    var result = Double() {
-        didSet{
-            resultString = formatter.string(from: result as NSNumber) ?? ""
-            DisplayLabel.text = resultString
-        }
-    }
     var right: Double? = nil
     var input: String = ""
     var oper = checkOper.none
@@ -28,6 +21,12 @@ final class ViewController: UIViewController {
     var resultString: String = ""
     var inputString: String = ""
     var flagNumber = false
+    var result = Double() {
+        didSet{
+            resultString = formatter.string(from: result as NSNumber) ?? ""
+            DisplayLabel.text = resultString
+        }
+    }
     
     @IBOutlet weak var DisplayLabel: UILabel!
     
@@ -37,6 +36,8 @@ final class ViewController: UIViewController {
         formatter.minimumFractionDigits = 0
         formatter.maximumFractionDigits = 3
     }
+    
+
     
     @IBAction func numbers(_ sender: UIButton) {
         if flagReset {
