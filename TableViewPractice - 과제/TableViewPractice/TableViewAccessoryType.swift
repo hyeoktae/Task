@@ -54,7 +54,6 @@ final class TableViewAccessoryType: UIViewController {
 extension TableViewAccessoryType: UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return animals.count
-    
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -66,6 +65,8 @@ extension TableViewAccessoryType: UITableViewDataSource {
     } else {
         cell.accessoryType = .none
     }
+    
+//    cell.accessoryType = selectDict[indexPath.row] ?? false ? .checkmark : .none
     
     return cell
   }
@@ -79,6 +80,7 @@ extension TableViewAccessoryType: UITableViewDelegate {
         } else {
             selectDict[indexPath.row] = false
         }
+//        selectDict[indexPath.row] = !(selectDict[indexPath.row] ?? false) ? true : false
         tableView.reloadData()
     }
 }
