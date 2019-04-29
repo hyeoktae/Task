@@ -12,6 +12,9 @@
 		52F57B3B2276D70100CE9018 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52F57B392276D70100CE9018 /* Main.storyboard */; };
 		52F57B3D2276D70100CE9018 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52F57B3C2276D70100CE9018 /* Assets.xcassets */; };
 		52F57B402276D70100CE9018 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52F57B3E2276D70100CE9018 /* LaunchScreen.storyboard */; };
+		52F57B482276DE8700CE9018 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F57B472276DE8700CE9018 /* MainView.swift */; };
+		52F57B4A2277066400CE9018 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F57B492277066400CE9018 /* HeaderView.swift */; };
+		52F57B4C2277068900CE9018 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F57B4B2277068900CE9018 /* Data.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		52F57B3C2276D70100CE9018 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		52F57B3F2276D70100CE9018 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		52F57B412276D70100CE9018 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52F57B472276DE8700CE9018 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		52F57B492277066400CE9018 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		52F57B4B2277068900CE9018 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +62,9 @@
 			children = (
 				52F57B352276D70100CE9018 /* AppDelegate.swift */,
 				52F57B372276D70100CE9018 /* ViewController.swift */,
+				52F57B492277066400CE9018 /* HeaderView.swift */,
+				52F57B4B2277068900CE9018 /* Data.swift */,
+				52F57B472276DE8700CE9018 /* MainView.swift */,
 				52F57B392276D70100CE9018 /* Main.storyboard */,
 				52F57B3C2276D70100CE9018 /* Assets.xcassets */,
 				52F57B3E2276D70100CE9018 /* LaunchScreen.storyboard */,
@@ -136,7 +145,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				52F57B382276D70100CE9018 /* ViewController.swift in Sources */,
+				52F57B4C2277068900CE9018 /* Data.swift in Sources */,
+				52F57B482276DE8700CE9018 /* MainView.swift in Sources */,
 				52F57B362276D70100CE9018 /* AppDelegate.swift in Sources */,
+				52F57B4A2277066400CE9018 /* HeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
