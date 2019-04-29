@@ -13,9 +13,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var greenView: UIView!
     @IBOutlet weak var yellowView: UIView!
     @IBOutlet weak var carrotView: UIView!
-    var skyView = UIView()
+    var skyView: UIView = {
+        let skyView = UIView()
+        skyView.translatesAutoresizingMaskIntoConstraints = false
+        return skyView
+    }()
     var blueView = UIView()
     var label = UILabel()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
