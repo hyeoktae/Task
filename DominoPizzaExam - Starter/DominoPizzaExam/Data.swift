@@ -20,13 +20,9 @@ protocol basicData {
 
 struct Category: basicData {
     var folder: String
-    
     var Name: String
-    
     var count: Int
-    
     var price: Int
-    
 }
 
 struct Data {

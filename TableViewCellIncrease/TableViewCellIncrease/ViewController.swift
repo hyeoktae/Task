@@ -15,7 +15,12 @@ class ViewController: UIViewController {
     var data = [DataModel(headerName: "Men", subType: ["pants", "jeans", "Shits"], isExpandable: false),
                 DataModel(headerName: "Kid", subType: ["pants", "jeans", "toys"], isExpandable: false),
                 DataModel(headerName: "Wemen", subType: ["pants", "jeans", "Tint"], isExpandable: false),
-                DataModel(headerName: "Uni", subType: ["Hood", "Jumper", "Socks"], isExpandable: false)
+                DataModel(headerName: "Uni", subType: ["Hood", "Jumper", "Socks"], isExpandable: false),
+                DataModel(headerName: "Uni1", subType: ["Hood", "Jumper", "Socks"], isExpandable: false),
+                DataModel(headerName: "Uni3", subType: ["Hood", "Jumper", "Socks"], isExpandable: false),
+                DataModel(headerName: "Uni4", subType: ["Hood", "Jumper", "Socks"], isExpandable: false),
+                DataModel(headerName: "Uni5", subType: ["Hood", "Jumper", "Socks"], isExpandable: false),
+                DataModel(headerName: "Uni6", subType: ["Hood", "Jumper", "Socks"], isExpandable: false)
     ]
 
     override func viewDidLoad() {
@@ -76,5 +81,4 @@ extension ViewController: HeaderViewDelegate {
         data[idx].isExpandable = !data[idx].isExpandable
         tableView.reloadSections([idx], with: .automatic)
     }
-    
 }
