@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5295DC4E2276A63B0046D0E1 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5295DC4D2276A63B0046D0E1 /* HeaderView.swift */; };
 		52F9D62E22759D3C00F325C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F9D62D22759D3C00F325C6 /* AppDelegate.swift */; };
 		52F9D63022759D3C00F325C6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F9D62F22759D3C00F325C6 /* ViewController.swift */; };
 		52F9D63322759D3C00F325C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52F9D63122759D3C00F325C6 /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5295DC4D2276A63B0046D0E1 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		52F9D62A22759D3C00F325C6 /* TableViewCellIncrease.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableViewCellIncrease.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52F9D62D22759D3C00F325C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52F9D62F22759D3C00F325C6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 				52F9D62D22759D3C00F325C6 /* AppDelegate.swift */,
 				52F9D62F22759D3C00F325C6 /* ViewController.swift */,
 				52F9D63F2275A0C400F325C6 /* Data.swift */,
+				5295DC4D2276A63B0046D0E1 /* HeaderView.swift */,
 				52F9D63122759D3C00F325C6 /* Main.storyboard */,
 				52F9D63422759D3C00F325C6 /* Assets.xcassets */,
 				52F9D63622759D3C00F325C6 /* LaunchScreen.storyboard */,
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				52F9D63022759D3C00F325C6 /* ViewController.swift in Sources */,
+				5295DC4E2276A63B0046D0E1 /* HeaderView.swift in Sources */,
 				52F9D6402275A0C400F325C6 /* Data.swift in Sources */,
 				52F9D62E22759D3C00F325C6 /* AppDelegate.swift in Sources */,
 			);

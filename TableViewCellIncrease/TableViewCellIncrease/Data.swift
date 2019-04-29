@@ -9,5 +9,14 @@
 import Foundation
 
 
-var testArr1: [Int] = [1,2,3,4,5,6,7,8,9,10]
-let testArr2 = [1,2,3]
+class DataModel {
+    var headerName: String?
+    var subType = [String]()
+    var isExpandable: Bool = false
+    
+    init(headerName: String, subType: [String], isExpandable: Bool) {
+        self.headerName = headerName
+        self.subType = subType
+        self.isExpandable = isExpandable
+    }
+}
