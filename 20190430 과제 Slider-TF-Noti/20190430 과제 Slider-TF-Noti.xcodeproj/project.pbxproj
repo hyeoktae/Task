@@ -1,0 +1,377 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		52F57B5C227838CF00CE9018 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F57B5B227838CF00CE9018 /* AppDelegate.swift */; };
+		52F57B5E227838CF00CE9018 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F57B5D227838CF00CE9018 /* ViewController.swift */; };
+		52F57B61227838CF00CE9018 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52F57B5F227838CF00CE9018 /* Main.storyboard */; };
+		52F57B63227838D100CE9018 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52F57B62227838D100CE9018 /* Assets.xcassets */; };
+		52F57B66227838D100CE9018 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52F57B64227838D100CE9018 /* LaunchScreen.storyboard */; };
+		52F57B6E22783C7C00CE9018 /* SliderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F57B6D22783C7C00CE9018 /* SliderVC.swift */; };
+		52F57B7022783C8D00CE9018 /* SliderResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F57B6F22783C8D00CE9018 /* SliderResultVC.swift */; };
+		52F57B7422783CCF00CE9018 /* TextFieldVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F57B7322783CCF00CE9018 /* TextFieldVC.swift */; };
+		52F57B7622783CDC00CE9018 /* TextFieldResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F57B7522783CDC00CE9018 /* TextFieldResultVC.swift */; };
+		52F57B782278416D00CE9018 /* SliderV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F57B772278416D00CE9018 /* SliderV.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		52F57B58227838CF00CE9018 /* 20190430 과제 Slider-TF-Noti.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "20190430 과제 Slider-TF-Noti.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		52F57B5B227838CF00CE9018 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		52F57B5D227838CF00CE9018 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		52F57B60227838CF00CE9018 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		52F57B62227838D100CE9018 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		52F57B65227838D100CE9018 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		52F57B67227838D100CE9018 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52F57B6D22783C7C00CE9018 /* SliderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderVC.swift; sourceTree = "<group>"; };
+		52F57B6F22783C8D00CE9018 /* SliderResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderResultVC.swift; sourceTree = "<group>"; };
+		52F57B7322783CCF00CE9018 /* TextFieldVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldVC.swift; sourceTree = "<group>"; };
+		52F57B7522783CDC00CE9018 /* TextFieldResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldResultVC.swift; sourceTree = "<group>"; };
+		52F57B772278416D00CE9018 /* SliderV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderV.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		52F57B55227838CF00CE9018 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		52F57B4F227838CF00CE9018 = {
+			isa = PBXGroup;
+			children = (
+				52F57B5A227838CF00CE9018 /* 20190430 과제 Slider-TF-Noti */,
+				52F57B59227838CF00CE9018 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		52F57B59227838CF00CE9018 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				52F57B58227838CF00CE9018 /* 20190430 과제 Slider-TF-Noti.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		52F57B5A227838CF00CE9018 /* 20190430 과제 Slider-TF-Noti */ = {
+			isa = PBXGroup;
+			children = (
+				52F57B7222783CBA00CE9018 /* TextField */,
+				52F57B7122783CAC00CE9018 /* Slider */,
+				52F57B5B227838CF00CE9018 /* AppDelegate.swift */,
+				52F57B5D227838CF00CE9018 /* ViewController.swift */,
+				52F57B5F227838CF00CE9018 /* Main.storyboard */,
+				52F57B62227838D100CE9018 /* Assets.xcassets */,
+				52F57B64227838D100CE9018 /* LaunchScreen.storyboard */,
+				52F57B67227838D100CE9018 /* Info.plist */,
+			);
+			path = "20190430 과제 Slider-TF-Noti";
+			sourceTree = "<group>";
+		};
+		52F57B7122783CAC00CE9018 /* Slider */ = {
+			isa = PBXGroup;
+			children = (
+				52F57B6D22783C7C00CE9018 /* SliderVC.swift */,
+				52F57B6F22783C8D00CE9018 /* SliderResultVC.swift */,
+				52F57B772278416D00CE9018 /* SliderV.swift */,
+			);
+			path = Slider;
+			sourceTree = "<group>";
+		};
+		52F57B7222783CBA00CE9018 /* TextField */ = {
+			isa = PBXGroup;
+			children = (
+				52F57B7322783CCF00CE9018 /* TextFieldVC.swift */,
+				52F57B7522783CDC00CE9018 /* TextFieldResultVC.swift */,
+			);
+			path = TextField;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		52F57B57227838CF00CE9018 /* 20190430 과제 Slider-TF-Noti */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52F57B6A227838D100CE9018 /* Build configuration list for PBXNativeTarget "20190430 과제 Slider-TF-Noti" */;
+			buildPhases = (
+				52F57B54227838CF00CE9018 /* Sources */,
+				52F57B55227838CF00CE9018 /* Frameworks */,
+				52F57B56227838CF00CE9018 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "20190430 과제 Slider-TF-Noti";
+			productName = "20190430 과제 Slider-TF-Noti";
+			productReference = 52F57B58227838CF00CE9018 /* 20190430 과제 Slider-TF-Noti.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		52F57B50227838CF00CE9018 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = "hyeoktae kwon";
+				TargetAttributes = {
+					52F57B57227838CF00CE9018 = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+				};
+			};
+			buildConfigurationList = 52F57B53227838CF00CE9018 /* Build configuration list for PBXProject "20190430 과제 Slider-TF-Noti" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 52F57B4F227838CF00CE9018;
+			productRefGroup = 52F57B59227838CF00CE9018 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				52F57B57227838CF00CE9018 /* 20190430 과제 Slider-TF-Noti */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		52F57B56227838CF00CE9018 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52F57B66227838D100CE9018 /* LaunchScreen.storyboard in Resources */,
+				52F57B63227838D100CE9018 /* Assets.xcassets in Resources */,
+				52F57B61227838CF00CE9018 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		52F57B54227838CF00CE9018 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52F57B6E22783C7C00CE9018 /* SliderVC.swift in Sources */,
+				52F57B5E227838CF00CE9018 /* ViewController.swift in Sources */,
+				52F57B782278416D00CE9018 /* SliderV.swift in Sources */,
+				52F57B7422783CCF00CE9018 /* TextFieldVC.swift in Sources */,
+				52F57B7622783CDC00CE9018 /* TextFieldResultVC.swift in Sources */,
+				52F57B7022783C8D00CE9018 /* SliderResultVC.swift in Sources */,
+				52F57B5C227838CF00CE9018 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		52F57B5F227838CF00CE9018 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				52F57B60227838CF00CE9018 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		52F57B64227838D100CE9018 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				52F57B65227838D100CE9018 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		52F57B68227838D100CE9018 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		52F57B69227838D100CE9018 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		52F57B6B227838D100CE9018 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5W72YMDK56;
+				INFOPLIST_FILE = "20190430 과제 Slider-TF-Noti/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "hyeoktae-com.github.-0190430------Slider-TF-Noti";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		52F57B6C227838D100CE9018 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5W72YMDK56;
+				INFOPLIST_FILE = "20190430 과제 Slider-TF-Noti/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "hyeoktae-com.github.-0190430------Slider-TF-Noti";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		52F57B53227838CF00CE9018 /* Build configuration list for PBXProject "20190430 과제 Slider-TF-Noti" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52F57B68227838D100CE9018 /* Debug */,
+				52F57B69227838D100CE9018 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		52F57B6A227838D100CE9018 /* Build configuration list for PBXNativeTarget "20190430 과제 Slider-TF-Noti" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52F57B6B227838D100CE9018 /* Debug */,
+				52F57B6C227838D100CE9018 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 52F57B50227838CF00CE9018 /* Project object */;
+}
