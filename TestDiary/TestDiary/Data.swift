@@ -12,13 +12,14 @@ import UIKit
 class CurrentDate {
     static let shared = CurrentDate()
     
+    private init(){}
+    
     var date: Date {
         get {
             return Date()
         }
     }
     var cal = Calendar.current
-    
     var arr: DateComponents {
         get {
         return cal.dateComponents([.year,.month,.day,.hour,.minute,.second], from: date)
@@ -26,18 +27,35 @@ class CurrentDate {
     }
     
     func currentDate()-> String {
-        return "\(arr.year!)-\(arr.month!)-\(arr.day!), \(arr.hour!):\(arr.minute!),\(arr.second!)"
+        return "\(arr.year!)-\(arr.month!)-\(arr.day!), \(arr.hour!):\(arr.minute!))"
     }
 }
 
-class DataModel {
-    var headerDate: String?
-    var title = [String?]()
-    var contents = [String?]()
+protocol Data {
+    var title: String {get set}
+    var contents: String {get set}
+}
+
+
+struct DataModel: Data {
+    var title: String
+    var contents: String
     
-    init(title: String, contents: String) {
-        self.headerDate = CurrentDate.shared.currentDate()
-        self.title.append(title)
-        self.contents.append(contents)
+    init(title: String?, contents: String?) {
+        self.title = title ?? "제목없음"
+        self.contents = contents ?? ""
+    }
+}
+
+class DataModels {
+    
+    var headerName = String()
+    var isExpandable: Bool = false
+    var datas: [DataModel] = []
+    
+    init(data: DataModel) {
+        self.datas.append(data)
+        self.headerName = CurrentDate.shared.currentDate()
+        self.isExpandable = false
     }
 }

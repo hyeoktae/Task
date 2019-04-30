@@ -8,7 +8,13 @@
 
 import UIKit
 
+protocol MainViewDelegate: class {
+    func toAddVC()
+}
+
 class MainView: UIView {
+    
+    weak var delegate: MainViewDelegate?
     
     lazy var btn: UIButton = {
         let btn = UIButton(type: .system)
@@ -42,10 +48,7 @@ class MainView: UIView {
     }
     
     @objc func clickAdd() {
-        let current: String = {
-           return CurrentDate.shared.currentDate()
-        }()
-        print(current)
+        delegate?.toAddVC()
     }
     
     func autoLayout() {

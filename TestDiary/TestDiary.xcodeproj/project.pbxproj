@@ -15,6 +15,7 @@
 		52F57B482276DE8700CE9018 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F57B472276DE8700CE9018 /* MainView.swift */; };
 		52F57B4A2277066400CE9018 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F57B492277066400CE9018 /* HeaderView.swift */; };
 		52F57B4C2277068900CE9018 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F57B4B2277068900CE9018 /* Data.swift */; };
+		52F57B4E22774FF500CE9018 /* AddVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F57B4D22774FF500CE9018 /* AddVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		52F57B472276DE8700CE9018 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		52F57B492277066400CE9018 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		52F57B4B2277068900CE9018 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		52F57B4D22774FF500CE9018 /* AddVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 			children = (
 				52F57B352276D70100CE9018 /* AppDelegate.swift */,
 				52F57B372276D70100CE9018 /* ViewController.swift */,
+				52F57B4D22774FF500CE9018 /* AddVC.swift */,
 				52F57B492277066400CE9018 /* HeaderView.swift */,
 				52F57B4B2277068900CE9018 /* Data.swift */,
 				52F57B472276DE8700CE9018 /* MainView.swift */,
@@ -144,6 +147,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52F57B4E22774FF500CE9018 /* AddVC.swift in Sources */,
 				52F57B382276D70100CE9018 /* ViewController.swift in Sources */,
 				52F57B4C2277068900CE9018 /* Data.swift in Sources */,
 				52F57B482276DE8700CE9018 /* MainView.swift in Sources */,
