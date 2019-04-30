@@ -18,3 +18,5 @@
 * 20190405 - 과제들 올림 Delegate, Singleton, UserDefaults, UISlider 사용
 * 20190406 - 과제들 올림 Delegate, Singleton, UserDefaults, UISlider 사용
 * 20190407 - 마지막 과제 올림, tableView 예습 겸 테스트해봄, 짝퉁카카오에 적용해봄
+
+* 20190429 - 일기장 연습중
