@@ -84,14 +84,22 @@ class AddVC: UIViewController {
     }
     
     @objc func buttons(_ sender: UIButton) {
+        guard let vc = presentingViewController as? ViewController else {
+            return
+        }
         switch sender.tag {
         case 1:
             presentingViewController?.dismiss(animated: true)
+            addBTN.isEnabled = true
+            addBTN.isHidden = false
         case 2:
             delegate?.addData(title: titleTF.text, content: contents.text)
+            presentingViewController?.dismiss(animated: true)
         default:
             break
         }
+        vc.header = nil
+        vc.idx = nil
     }
     
     func autoLayout() {

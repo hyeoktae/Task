@@ -30,7 +30,7 @@ class MainView: UIView {
     lazy var mainLabel: UILabel = {
         let mainLabel = UILabel(frame: CGRect(x: self.frame.origin.x, y: self.frame.origin.y, width: self.frame.width, height: self.frame.height))
         mainLabel.backgroundColor = .lightGray
-        mainLabel.text = "일기장"
+        mainLabel.text = "메모장"
         mainLabel.textAlignment = .center
         mainLabel.font = mainLabel.font.withSize(20)
         return mainLabel

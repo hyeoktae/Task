@@ -27,35 +27,34 @@ class CurrentDate {
     }
     
     func currentDate()-> String {
-        return "\(arr.year!)-\(arr.month!)-\(arr.day!), \(arr.hour!):\(arr.minute!))"
+        return "\(arr.year!)년 \(arr.month!)월 \(arr.day!)일  \(arr.hour!)시 \(arr.minute!)분"
     }
 }
+
+protocol Info {
+    var editHeader: String? {get set}
+    var idx: IndexPath? {get set}
+}
+
+struct EditInfo: Info {
+    var editHeader: String?
+    var idx: IndexPath?
+}
+
+var datas = [String:[DataModel]]()
+var expandable = [String:Bool]()
 
 protocol Data {
     var title: String {get set}
     var contents: String {get set}
 }
 
-
-struct DataModel: Data {
+class DataModel: Data {
     var title: String
     var contents: String
     
     init(title: String?, contents: String?) {
         self.title = title ?? "제목없음"
         self.contents = contents ?? ""
-    }
-}
-
-class DataModels {
-    
-    var headerName = String()
-    var isExpandable: Bool = false
-    var datas: [DataModel] = []
-    
-    init(data: DataModel) {
-        self.datas.append(data)
-        self.headerName = CurrentDate.shared.currentDate()
-        self.isExpandable = false
     }
 }

@@ -43,5 +43,4 @@ class HeaderView: UIView {
         }
         delegate?.callHeader(idx: idx)
     }
-    
 }
