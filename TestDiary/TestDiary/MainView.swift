@@ -6,8 +6,13 @@
 //  Copyright © 2019 hyeoktae kwon. All rights reserved.
 //
 
+
+// MARK: - MainView
+// 상단 뷰, Add btn
 import UIKit
 
+// MARK: - MainViewDelegate
+// to AddVC 뷰 이기 때문에 delegate로 present하는 시점 전달
 protocol MainViewDelegate: class {
     func toAddVC()
 }

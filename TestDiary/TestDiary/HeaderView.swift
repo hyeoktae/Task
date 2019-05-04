@@ -7,11 +7,11 @@
 //
 
 import UIKit
-
+// 현재 헤더의 section을 담아서 보냄
 protocol HeaderViewDelegate {
     func callHeader(idx: Int)
 }
-
+// 테이블뷰의 header , view 타입이다.
 class HeaderView: UIView {
 
     var secIndex: Int?
