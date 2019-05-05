@@ -19,7 +19,6 @@ class TextFieldResultVC: UIViewController {
         l.translatesAutoresizingMaskIntoConstraints = false
         l.layer.borderWidth = 1
         l.font = l.font?.withSize(50)
-        //        l.text = " "
         return l
     }()
 
