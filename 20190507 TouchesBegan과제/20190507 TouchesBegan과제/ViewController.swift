@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  20190507 Touch도전과제
+//  20190507 TouchesBegan과제
 //
 //  Created by hyeoktae kwon on 07/05/2019.
 //  Copyright © 2019 hyeoktae kwon. All rights reserved.
@@ -19,8 +19,6 @@ class ViewController: UIViewController {
     
     var countNum: Int = 0
     
-    let tap = UITapGestureRecognizer()
-    
     let count: UILabel = {
         let l = UILabel()
         l.translatesAutoresizingMaskIntoConstraints = false
@@ -32,26 +30,28 @@ class ViewController: UIViewController {
         l.translatesAutoresizingMaskIntoConstraints = false
         return l
     }()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(count)
         view.addSubview(location)
-        view.addGestureRecognizer(tap)
+        autoLayout()
         count.text = "count: 0"
         location.text = "Location: ()"
-        autoLayout()
-        tap.addTarget(self, action: #selector(tapCount(_:)))
     }
     
-    @objc func tapCount(_ sender: UITapGestureRecognizer) {
-        countNum += sender.numberOfTapsRequired
-        first = sender.location(in: self.view)
-        if abs(second.x - first.x) > 10 || abs(second.y - first.y) > 10 || abs(first.x -  second.x) > 10 || abs(first.y - second.y) > 10 {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        first = (touches.first?.location(in: self.view))!
+        
+        if abs(second.x - first.x) < 10 || abs(second.y - first.y) < 10 || abs(first.x -  second.x) < 10 || abs(first.y - second.y) < 10 {
+            countNum += 1
+        } else {
             countNum = 1
         }
-        count.text = "count:  \(countNum)"
-        location.text = "Location: " + String(format: "%.1f", sender.location(in: self.view).x) + ", " + String(format: "%.1f", sender.location(in: self.view).y)
+        
+        count.text = "count: \(countNum)"
+        location.text = "Location: " + String(format: "%.1f", (touches.first?.location(in: self.view))!.x) + ", " + String(format: "%.1f", (touches.first?.location(in: self.view))!.y)
     }
     
     func autoLayout() {
@@ -64,5 +64,6 @@ class ViewController: UIViewController {
         location.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20).isActive = true
         location.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20).isActive = true
     }
-    
+
 }
+
