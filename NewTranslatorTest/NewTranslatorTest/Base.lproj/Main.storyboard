@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="NewTranslatorTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="y6l-04-dsH">
+                                <rect key="frame" x="20" y="44" width="374" height="371"/>
+                                <color key="backgroundColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="pCr-S2-QhQ">
+                                <rect key="frame" x="20" y="491" width="374" height="371"/>
+                                <color key="backgroundColor" red="0.46055430173873901" green="0.84597790241241455" blue="0.067805580794811249" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <segmentedControl opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="mwW-ub-eIm">
+                                <rect key="frame" x="20" y="439" width="98" height="29"/>
+                                <segments>
+                                    <segment title="KR"/>
+                                    <segment title="EN"/>
+                                    <segment title="JP"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segue:" destination="BYZ-38-t0r" eventType="valueChanged" id="Z8W-5u-odf"/>
+                                </connections>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ejU-Vd-XCD">
+                                <rect key="frame" x="167.5" y="435" width="79" height="36"/>
+                                <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Translate"/>
+                                <connections>
+                                    <action selector="transBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ye6-2E-az4"/>
+                                </connections>
+                            </button>
+                            <segmentedControl opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="phI-4z-2WI">
+                                <rect key="frame" x="296" y="439" width="98" height="29"/>
+                                <segments>
+                                    <segment title="KR"/>
+                                    <segment title="EN"/>
+                                    <segment title="JP"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segue:" destination="BYZ-38-t0r" eventType="valueChanged" id="xgk-5S-Jyf"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="y6l-04-dsH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="3Dm-ao-VaM"/>
+                            <constraint firstItem="pCr-S2-QhQ" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="I4X-ba-qP5"/>
+                            <constraint firstItem="pCr-S2-QhQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="JA8-4p-jPv"/>
+                            <constraint firstItem="mwW-ub-eIm" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="JfG-5c-So7"/>
+                            <constraint firstItem="y6l-04-dsH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="XhW-7h-fDd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pCr-S2-QhQ" secondAttribute="trailing" constant="20" id="aC7-dK-rp3"/>
+                            <constraint firstItem="ejU-Vd-XCD" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="ccF-hG-vio"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="phI-4z-2WI" secondAttribute="trailing" constant="20" id="cxK-iJ-nUJ"/>
+                            <constraint firstItem="ejU-Vd-XCD" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="jUW-Tl-G86"/>
+                            <constraint firstItem="phI-4z-2WI" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="mPE-SD-hRV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="y6l-04-dsH" secondAttribute="trailing" constant="20" id="sFn-1P-1B5"/>
+                            <constraint firstItem="pCr-S2-QhQ" firstAttribute="top" secondItem="ejU-Vd-XCD" secondAttribute="bottom" constant="20" id="tgq-iE-dIX"/>
+                            <constraint firstItem="ejU-Vd-XCD" firstAttribute="top" secondItem="y6l-04-dsH" secondAttribute="bottom" constant="20" id="vm7-sH-EVa"/>
+                            <constraint firstItem="mwW-ub-eIm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="wmx-p7-Wac"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="srcSeg" destination="mwW-ub-eIm" id="IXa-H2-8Gz"/>
+                        <outlet property="srcText" destination="y6l-04-dsH" id="pdY-Pw-bgP"/>
+                        <outlet property="targetSeg" destination="phI-4z-2WI" id="Zsr-hx-SCE"/>
+                        <outlet property="targetText" destination="pCr-S2-QhQ" id="FIF-oE-uZ3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="103.79464285714285"/>
+        </scene>
+    </scenes>
+</document>
