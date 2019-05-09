@@ -59,7 +59,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return expandable[sort[section]] ?? false ? datas[sort[section]]?
-            .count ?? 0 : 0
+            .count ?? 0 : 00
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
