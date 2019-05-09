@@ -25,14 +25,19 @@ class ViewController: UIViewController {
             switch sender.selectedSegmentIndex {
             case 0:
                 src = Language.kr
+                targetSeg.setEnabled(false, forSegmentAt: 0)
+                targetSeg.setEnabled(true, forSegmentAt: 1)
+                targetSeg.setEnabled(true, forSegmentAt: 2)
             case 1:
                 src = Language.en
-                targetSeg.selectedSegmentIndex = 0
-                target = Language.kr
+                targetSeg.setEnabled(true, forSegmentAt: 0)
+                targetSeg.setEnabled(false, forSegmentAt: 1)
+                targetSeg.setEnabled(false, forSegmentAt: 2)
             case 2:
                 src = Language.jp
-                targetSeg.selectedSegmentIndex = 0
-                target = Language.kr
+                targetSeg.setEnabled(true, forSegmentAt: 0)
+                targetSeg.setEnabled(false, forSegmentAt: 1)
+                targetSeg.setEnabled(false, forSegmentAt: 2)
             default:
                 break
             }
@@ -53,19 +58,17 @@ class ViewController: UIViewController {
     }
     
     @IBAction func transBtn(_ sender: UIButton) {
-        print("src: \(src), target: \(target), text: \(srcText.text)")
-        
-        let text = translate(text: srcText.text ?? "", src: src, target: target)
-        
-            targetText.text = text
-        
+        guard src != "", target != "" else {
+            targetText.text = "세그먼트 체크"
+            return
+        }
+        targetText.text = translate(text: srcText.text ?? "", src: src, target: target)
+        src = ""
+        target = ""
     }
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
-
 }
 

@@ -8,6 +8,7 @@
 
 import Foundation
 
+
 enum Language {
     static var kr: String {return "kr"}
     static var en: String {return "en"}
@@ -15,6 +16,10 @@ enum Language {
 }
 
 func translate(text: String, src: String, target: String) -> String {
+    
+    let group = DispatchGroup.init()
+    
+    let queue = DispatchQueue.global()
     
     var translatedText = String()
     
@@ -30,34 +35,38 @@ func translate(text: String, src: String, target: String) -> String {
         "Connection": "keep-alive",
         "cache-control": "no-cache"
     ]
-    
-    let request = NSMutableURLRequest(url: NSURL(string: "https://kapi.kakao.com/v1/translation/translate?query=\(text)&src_lang=\(src)&target_lang=\(target)")! as URL,
-        cachePolicy: .useProtocolCachePolicy,
-        timeoutInterval: 10.0)
-    request.httpMethod = "POST"
-    request.allHTTPHeaderFields = headers
-    
-    let session = URLSession.shared
-    let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
-        if (error != nil) {
-            print(error)
-            translatedText = "error"
-        } else {
-            let httpResponse = response as? HTTPURLResponse
-            print(httpResponse)
-            do{
-            let result = try JSONDecoder().decode(Result.self, from: data!)
-                
-                translatedText = result.translatedText[0][0]
-                print(translatedText)
-            }catch(let error){
-                print(error.localizedDescription)
+    group.enter()
+    queue.async {
+        
+        let url = "https://kapi.kakao.com/v1/translation/translate?query=\(text)&src_lang=\(src)&target_lang=\(target)"
+        let encoded = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        
+        let request = NSMutableURLRequest(url: NSURL(string: encoded)! as URL,
+            cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10.0)
+        request.httpMethod = "POST"
+        request.allHTTPHeaderFields = headers
+        
+        let session = URLSession.shared
+        let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
+            if (error != nil) {
                 translatedText = "error"
+                print(error!.localizedDescription)
+            } else {
+                do{
+                    let result = try JSONDecoder().decode(Result.self, from: data!)
+                    print(result)
+                    translatedText = result.translatedText[0][0]
+                    group.leave()
+                }catch{
+//                    print("JSONDecoder Error", error.localizedDescription)
+                    translatedText = "error"
+                }
             }
-        }
-    })
-    
-    dataTask.resume()
+        })
+        dataTask.resume()
+    }
+    print(group.wait(timeout: .distantFuture))
+    print(translatedText)
     return translatedText
 }
 
