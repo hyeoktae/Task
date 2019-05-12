@@ -45,9 +45,6 @@ class ViewController: UIViewController {
         autoLayout()
     }
     
-    
-    
-    
     @objc func checkLocation() {
         let geocoder = CLGeocoder()
         
@@ -58,6 +55,7 @@ class ViewController: UIViewController {
             self.mapView.removeOverlays(self.mapView.overlays)
             self.mapView.removeAnnotations(self.mapView.annotations)
             self.addAnnotations(self.destinations)
+            self.addTF.text = ""
         })
     }
     
@@ -93,15 +91,15 @@ class ViewController: UIViewController {
         mapView.addOverlay(destinationLine)
         mapView.setRegion(region, animated: true)
     }
-    
+    // 기본 과제
     func addAnnotation(_ center: CLLocationCoordinate2D) {
         
         let span = MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02)
         let region = MKCoordinateRegion(center: center, span: span)
-        var p1 = center; p1.latitude += 0.003; p1.longitude -= 0.003
-        var p2 = center; p2.latitude += 0.003; p2.longitude += 0.003
-        var p3 = center; p3.latitude -= 0.003; p3.longitude += 0.003
-        var p4 = center; p4.latitude -= 0.003; p4.longitude -= 0.003
+        var p1 = center; p1.latitude += 0.002; p1.longitude -= 0.002
+        var p2 = center; p2.latitude += 0.002; p2.longitude += 0.002
+        var p3 = center; p3.latitude -= 0.002; p3.longitude += 0.002
+        var p4 = center; p4.latitude -= 0.002; p4.longitude -= 0.002
         
         let points: [CLLocationCoordinate2D] = [p1, p2, p3, p4, p1]
         let polyLine = MKPolyline(coordinates: points, count: points.count)
@@ -114,7 +112,6 @@ class ViewController: UIViewController {
             a.coordinate = center
             return a
         }()
-        
         mapView.delegate = self
         mapView.addOverlay(polyLine)
         mapView.addOverlay(destinationLine)
@@ -207,7 +204,6 @@ extension ViewController: MKMapViewDelegate {
                 addButton.addTarget(self, action: #selector(deleteAnnotation), for: .touchUpInside)
                 return addButton
             }()
-            
             annotationView.rightCalloutAccessoryView = addButton
         }
         return annotationView
@@ -221,7 +217,6 @@ extension ViewController: MKMapViewDelegate {
         mapView.removeAnnotations(mapView.selectedAnnotations)
         destinations.remove(at: idx! - 1)
         addAnnotations(destinations)
-        
     }
     
 }
