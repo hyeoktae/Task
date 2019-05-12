@@ -20,6 +20,8 @@ class ViewController: UIViewController {
     
     
     @IBAction func segue(_ sender: UISegmentedControl) {
+        srcText.resignFirstResponder()
+        targetText.resignFirstResponder()
         switch sender.tag {
         case 1:
             switch sender.selectedSegmentIndex {
@@ -58,6 +60,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction func transBtn(_ sender: UIButton) {
+        srcText.resignFirstResponder()
+        targetText.resignFirstResponder()
         guard src != "", target != "" else {
             targetText.text = "세그먼트 체크"
             return
@@ -70,5 +74,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
 }
+
 
