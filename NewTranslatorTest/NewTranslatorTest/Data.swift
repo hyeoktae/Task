@@ -52,6 +52,8 @@ func translate(text: String, src: String, target: String) -> String {
                 translatedText = "error"
                 print(error!.localizedDescription)
             } else {
+                let httpResponse = response as? HTTPURLResponse
+                print(httpResponse)
                 do{
                     let result = try JSONDecoder().decode(Result.self, from: data!)
                     print(result)

@@ -64,10 +64,11 @@ class BasicVC: UIViewController {
     }
     
     @objc func toResult() {
+        request(image)
         let resultVC = ResultVC()
-        resultVC.imageView.image = self.image
+        resultVC.imageView.image = image
         present(resultVC, animated: true)
-        print(self.image)
+        print(image)
     }
 
     func autoLayout() {
@@ -103,8 +104,8 @@ extension BasicVC: UIImagePickerControllerDelegate {
         let mediaType = info[.mediaType] as! NSString
         if UTTypeEqual(mediaType, kUTTypeImage) {
             
-            self.image = info[.originalImage] as! UIImage
-            print("delegate", self.image)
+            image = info[.originalImage] as! UIImage
+            print("delegate", image)
             
         }
         picker.dismiss(animated: true)
