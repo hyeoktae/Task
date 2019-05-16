@@ -9,6 +9,11 @@
 import Foundation
 import AVFoundation
 
+struct ErrorCode: Codable {
+    let msg: String
+    let code: Int
+}
+
 enum voiceKind {
     static var woman1: String {return "WOMAN_READ_CALM"}
     static var woman2: String {return "WOMAN_DIALOG_BRIGHT"}
@@ -35,7 +40,13 @@ func request(text: String) -> Data? {
         "Content-Type": "application/xml"
     ]
     
-    let postData = NSData(data: "<speak><voice>\(text)</voice></speak>".data(using: String.Encoding.utf8)!)
+    let postData = NSData(data: """
+<speak>
+        <voice>그는 그렇게 말했습니다.</voice>
+        <voice name=MAN_DIALOG_BRIGHT>잘 지냈어? 나도 잘 지냈어.</voice>
+        <voice name=WOMAN_DIALOG_BRIGH speechStyle=SS_ALT_FAST_1>금요일이 좋아요.</voice>
+        </speak>
+""".data(using: String.Encoding.utf8)!)
     
     let url: URL = URL(string: "https://kakaoi-newtone-openapi.kakao.com/v1/synthesize")!
     
@@ -60,7 +71,8 @@ func request(text: String) -> Data? {
                 print(httpResponse)
                 print(data)
                 resultData = data
-                
+                let errorCode = try? JSONDecoder().decode(ErrorCode.self, from: data)
+                print(errorCode?.msg, errorCode?.code)
                 
                 group.leave()
             }

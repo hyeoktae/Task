@@ -20,6 +20,7 @@ class ViewController: UIViewController {
         let v = UITextView()
         v.translatesAutoresizingMaskIntoConstraints = false
         v.layer.borderWidth = 1
+        
         return v
         
     }()
@@ -39,6 +40,10 @@ class ViewController: UIViewController {
         btn.addTarget(self, action: #selector(read(_:)), for: .touchUpInside)
         return btn
     }()
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        textView.resignFirstResponder()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,8 +66,8 @@ class ViewController: UIViewController {
         
         do {
 //            try AVAssetWriter(url: saveData(soundData), fileType: .mp3)
-            let resultData = try AVAsset(url: saveData(soundData))
-            try self.player = AVAudioPlayer(data: resultData.metadata as Data)
+//            let resultData = try AVAsset(url: saveData(soundData))
+            try self.player = AVAudioPlayer(data: soundData)
             self.player.delegate = self
         } catch(let error as NSError) {
             print("플레이어 초기화 실패")
@@ -93,16 +98,19 @@ class ViewController: UIViewController {
     }
     
     @objc func read(_ sender: UIButton) {
-        initializePlayer()
+//        initializePlayer()
+        saveData(request(text: textView.text!)!)
+        
+        
         sender.isSelected.toggle()
         
-        if sender.isSelected {
-            self.player.play()
-            self.makeAndFireTimer()
-        } else {
-            self.player.pause()
-            self.invalidateTimer()
-        }
+//        if sender.isSelected {
+//            self.player.play()
+//            self.makeAndFireTimer()
+//        } else {
+//            self.player.pause()
+//            self.invalidateTimer()
+//        }
     }
 
     func autoLayout() {

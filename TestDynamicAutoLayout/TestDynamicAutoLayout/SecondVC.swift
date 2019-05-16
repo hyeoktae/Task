@@ -7,8 +7,16 @@
 //
 
 import UIKit
+import AudioToolbox.AudioServices
 
 class SecondVC: UIViewController {
+    
+    private let activityIndicatorView: UIActivityIndicatorView = {
+        let indicatorView = UIActivityIndicatorView(style: .gray)
+        indicatorView.hidesWhenStopped = true
+        return indicatorView
+    }()
+    private var indicatorViewLeadingConst: NSLayoutConstraint!
     
     private let wsNameTextField: UITextField = {
         let textField = UITextField()
@@ -26,11 +34,20 @@ class SecondVC: UIViewController {
         return textField
     }()
     
+    private let floatingLabel: UILabel = {
+        let l = UILabel()
+        l.text = "Name your workspace"
+        l.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
+        l.alpha = 0
+        return l
+    }()
+    private var floatingCenterYConst: NSLayoutConstraint!
+    
     private let nextButton: UIButton = {
         let button = UIButton(type: .custom)
         button.setTitle("Next", for: .normal)
         button.setTitleColor(.lightGray, for: .normal)
-        button.setTitleColor(.init(red: 18/255, green: 90/255, blue: 153/255, alpha: 1.0), for: .selected)
+        button.setTitleColor(.blue, for: .selected)
         button.titleLabel?.font = UIFont.preferredFont(forTextStyle: .headline)
         button.addTarget(self, action: #selector(didTapNextButton(_:)), for: .touchUpInside)
         return button
@@ -50,10 +67,19 @@ class SecondVC: UIViewController {
         setupConstraints()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        wsNameTextField.becomeFirstResponder()
+        
+        
+    }
+    
     private func setupViews() {
         view.addSubview(nextButton)
         view.addSubview(closeButton)
         view.addSubview(wsNameTextField)
+        view.addSubview(floatingLabel)
+        view.addSubview(activityIndicatorView)
         view.backgroundColor = .white
         
         navigationController?.navigationBar.isHidden = true
@@ -64,22 +90,64 @@ class SecondVC: UIViewController {
     private func setupConstraints() {
         nextButton.layout.top().trailing(constant: -16)
         
-        closeButton.layout.leading(constant: 16).centerY(equalTo: nextButton.centerYAnchor)
+        closeButton.layout
+            .leading(constant: 16)
+            .centerY(equalTo: nextButton.centerYAnchor)
+        
+        wsNameTextField.layout
+            .leading(constant: 16)
+            .trailing(constant: -16)
+            .centerY(constant: -115)
+        
+        floatingLabel.layout
+            .leading(equalTo: wsNameTextField.leadingAnchor)
+        let defaultCenterYConst = floatingLabel.centerYAnchor
+            .constraint(equalTo: wsNameTextField.centerYAnchor)
+        defaultCenterYConst.priority = UILayoutPriority(500) // priority 적용
+        defaultCenterYConst.isActive = true
+        
+        floatingCenterYConst = floatingLabel.centerYAnchor
+            .constraint(equalTo: wsNameTextField.centerYAnchor, constant: -30)
+        floatingCenterYConst.priority = .defaultLow
+        floatingCenterYConst.isActive = true
+        
+        activityIndicatorView.layout.centerY(equalTo: wsNameTextField.centerYAnchor)
+        
+        indicatorViewLeadingConst = activityIndicatorView.leadingAnchor.constraint(equalTo: wsNameTextField.leadingAnchor)
+        indicatorViewLeadingConst.isActive = true
+    }
+    
+    private func vibration() {
+        // kSystemSoundID_Vibrate  4095
+        AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
     }
     
     @objc func didTapNextButton(_ sender: UIButton) {
+        guard nextButton.isSelected, let text = wsNameTextField.text else { return vibration() }
+        guard !activityIndicatorView.isAnimating else { return }
         
+        let textSize = (text as NSString).size(withAttributes: [.font: wsNameTextField.font!])
+        indicatorViewLeadingConst.constant = textSize.width + 8
+        activityIndicatorView.startAnimating()
+        let vc = ThirdVC()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.activityIndicatorView.stopAnimating()
+            vc.wsNameTextField.text = text
+            self.navigationController?.pushViewController(vc, animated: true)
+            // 1, 다음 vc 띄우기
+            // 2, text를 다음 뷰 컨트롤러에 넘기기 ...
+        }
     }
     
     @objc func didTapCloseButton(_ sender: UIButton) {
-        
+        dismiss(animated: true)
     }
 
 }
 
 extension SecondVC: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        
+
         return true
         
     }
@@ -88,6 +156,23 @@ extension SecondVC: UITextFieldDelegate {
         let text = textField.text ?? ""
         let replaceText = (text as NSString).replacingCharacters(in: range, with: string)
         nextButton.isSelected = !replaceText.isEmpty
+        
+        UIView.animate(withDuration: 0.3, delay: 0, options: [.curveEaseInOut], animations: {
+            if replaceText.isEmpty {
+                self.floatingCenterYConst.priority = .defaultLow
+                self.floatingLabel.alpha = 0.0
+            } else {
+                self.floatingCenterYConst.priority = .defaultHigh
+                self.floatingLabel.alpha = 1.0
+            }
+            
+            // false - layout 에 대한 변화가 필요 ㄴㄴ
+            // true - layout 에 대한 변화가 필요 ㅇㅇ
+            self.view.setNeedsLayout() // true, false
+            
+            self.view.layoutIfNeeded() // 즉시 변경된 layout 적용하라
+        })
+        
         return true
     }
 }

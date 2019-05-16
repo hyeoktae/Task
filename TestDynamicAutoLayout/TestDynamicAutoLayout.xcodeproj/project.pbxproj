@@ -12,6 +12,7 @@
 		52E23A1E228D0103002F513B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52E23A1D228D0103002F513B /* Assets.xcassets */; };
 		52E23A29228D0D97002F513B /* SecondVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E23A28228D0D97002F513B /* SecondVC.swift */; };
 		52E23A2B228D1230002F513B /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E23A2A228D1230002F513B /* UIViewExtension.swift */; };
+		52E23A2E228D3B69002F513B /* ThirdVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E23A2D228D3B69002F513B /* ThirdVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		52E23A22228D0103002F513B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52E23A28228D0D97002F513B /* SecondVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondVC.swift; sourceTree = "<group>"; };
 		52E23A2A228D1230002F513B /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		52E23A2D228D3B69002F513B /* ThirdVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 				52E23A16228D0101002F513B /* AppDelegate.swift */,
 				52E23A18228D0101002F513B /* ViewController.swift */,
 				52E23A28228D0D97002F513B /* SecondVC.swift */,
+				52E23A2D228D3B69002F513B /* ThirdVC.swift */,
 				52E23A2A228D1230002F513B /* UIViewExtension.swift */,
 				52E23A1D228D0103002F513B /* Assets.xcassets */,
 				52E23A22228D0103002F513B /* Info.plist */,
@@ -137,6 +140,7 @@
 				52E23A29228D0D97002F513B /* SecondVC.swift in Sources */,
 				52E23A2B228D1230002F513B /* UIViewExtension.swift in Sources */,
 				52E23A17228D0101002F513B /* AppDelegate.swift in Sources */,
+				52E23A2E228D3B69002F513B /* ThirdVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
