@@ -59,14 +59,11 @@ class ViewController: UIViewController {
     }
     // player init
     func initializePlayer() {
-        guard let soundData = request(text: textView.text!) else {
+        guard let soundData = postman(textView.text!) else {
             print("재생불가")
             return
         }
-        
         do {
-//            try AVAssetWriter(url: saveData(soundData), fileType: .mp3)
-//            let resultData = try AVAsset(url: saveData(soundData))
             try self.player = AVAudioPlayer(data: soundData)
             self.player.delegate = self
         } catch(let error as NSError) {
@@ -98,19 +95,18 @@ class ViewController: UIViewController {
     }
     
     @objc func read(_ sender: UIButton) {
-//        initializePlayer()
-        saveData(request(text: textView.text!)!)
+        initializePlayer()
         
         
         sender.isSelected.toggle()
         
-//        if sender.isSelected {
-//            self.player.play()
-//            self.makeAndFireTimer()
-//        } else {
-//            self.player.pause()
-//            self.invalidateTimer()
-//        }
+        if sender.isSelected {
+            self.player.play()
+            self.makeAndFireTimer()
+        } else {
+            self.player.pause()
+            self.invalidateTimer()
+        }
     }
 
     func autoLayout() {
@@ -144,6 +140,7 @@ extension ViewController: AVAudioPlayerDelegate {
             print("오디오 플레이어 디코드 오류")
             return
         }
+        print(error.localizedDescription)
     }
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         self.btn.isSelected = false

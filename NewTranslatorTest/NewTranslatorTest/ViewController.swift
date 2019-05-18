@@ -73,6 +73,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("안녕하세요 반가워요".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)
     }
     
 }
