@@ -10,7 +10,7 @@ import UIKit
 
 protocol ChangePlayerDelegate {
     func changePlayer(_ state: Bool)
-    func winner(_ who: Int)
+    func winner(_ who: Bool)
 }
 
 class Map: UIView {
@@ -76,7 +76,7 @@ class Map: UIView {
                 sender.isEnabled = false
                 let x = Int((sender.titleLabel?.text!.components(separatedBy: ",")[0])!)
                 let y = Int((sender.titleLabel?.text!.components(separatedBy: ",")[1])!)
-                saveStones(originX: x!, originY: y!, player: turn)
+                saveStones(x: x!, y: y!, player: turn)
                 turn.toggle()
                 delegate?.changePlayer(turn)
                 sender.setTitle("", for: .normal)
@@ -84,8 +84,9 @@ class Map: UIView {
                 break
             }
         }
-        if winner {
-            delegate?.winner(turn ? 2 : 1)
+        if gameOver {
+            btns.forEach{ $0.isEnabled = false }
+            delegate?.winner(winner)
         }
     }
     
@@ -99,6 +100,8 @@ extension Map: ResetDelegate{
     func resetBtn() {
         btns.forEach{ $0.alpha = 0.1; $0.isEnabled = true; $0.backgroundColor = .white }
         turn = false
+        winner = false
+        gameOver = false
         delegate?.changePlayer(turn)
     }
 }

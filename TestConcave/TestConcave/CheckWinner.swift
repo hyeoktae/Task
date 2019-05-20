@@ -11,7 +11,10 @@ import UIKit
 
 var player1: Int8 = 0
 var player2: Int8 = 0
-var winner: Bool = false
+var winner = false
+var gameOver = false
+
+
 
 protocol Piece {
     var stone: Int {get}
@@ -41,30 +44,178 @@ func saveStones(x: Int, y: Int, player: Bool) {
     let po = poMap[x][y]
     po.stone = player ? 2 : 1
     checkStones(x: x, y: y)
-    for i in poMap{
-        print("\n")
-        for jj in i{
-            print(jj.stone, terminator: "   ")
-        }
-    }
-    print("\n=================================\n")
+//    var checkWinner:(Bool, Bool) = { return checkStones(x: x, y: y) }()
+//    gameOver = checkWinner.0
+//    winner = checkWinner.1
+//    print("save's gameOver: \(checkWinner.0), winner: \(checkWinner.1)")
+    
+//    for i in poMap{
+//        print("\n")
+//        for jj in i{
+//            print(jj.stone, terminator: "   ")
+//        }
+//    }
+//    print("\n=================================\n")
 }
 
 
-func checkStones(x: Int, y: Int) -> Bool{
-    
+func checkStones(x: Int, y: Int){
+    var count = 0
     for x in 0...10 {
+         count = 0
         for y in 0...10 {
-            guard poMap[x][y].stone != 0 else { break }
-            var countX = 0
-            var countY = 0
-            countX = x > 6 ? x : 0
-            countY = y < 5 ? y : 0
-            
+            if poMap[x][y].stone == 1 {
+                count += 1
+            } else {
+                count = 0
+            }
+            if count == 5 {
+                winner = false
+                gameOver = true
+                return
+            }
         }
     }
     
-    return false
+    for y in 0...10 {
+        count = 0
+        for x in 0...10 {
+            if poMap[x][y].stone == 1 {
+                count += 1
+            } else {
+                count = 0
+            }
+            if count == 5 {
+                winner = false
+                gameOver = true
+                return
+            }
+        }
+    }
+    
+    for x in 0...6 {
+        count = 0
+        for y in 0...6 {
+            var tempX = x
+            var tempY = y
+            for _ in 0..<5{
+                if poMap[tempX][tempY].stone == 1 {
+                    count += 1
+                } else {
+                    count = 0
+                }
+                tempX += 1
+                tempY += 1
+            }
+            if count == 5 {
+                winner = false
+                gameOver = true
+                return
+            }
+        }
+    }
+    
+    for x in 0...6 {
+        count = 0
+        for y in 4...10 {
+            var tempX = x
+            var tempY = y
+            for _ in 0..<5{
+                if poMap[tempX][tempY].stone == 1 {
+                    count += 1
+                } else {
+                    count = 0
+                }
+                tempX += 1
+                tempY -= 1
+            }
+            if count == 5 {
+                winner = false
+                gameOver = true
+                return
+            }
+        }
+    }
+    
+    for x in 0...10 {
+        count = 0
+        for y in 0...10 {
+            if poMap[x][y].stone == 2 {
+                count += 1
+            } else {
+                count = 0
+            }
+            if count == 5 {
+                winner = true
+                gameOver = true
+                return
+            }
+        }
+    }
+    
+    for y in 0...10 {
+        count = 0
+        for x in 0...10 {
+            if poMap[x][y].stone == 2 {
+                count += 1
+            } else {
+                count = 0
+            }
+            if count == 5 {
+                winner = true
+                gameOver = true
+                return
+            }
+        }
+    }
+    
+    for x in 0...6 {
+        count = 0
+        for y in 0...6 {
+            var tempX = x
+            var tempY = y
+            for _ in 0..<5{
+                if poMap[tempX][tempY].stone == 2 {
+                    count += 1
+                } else {
+                    count = 0
+                }
+                tempX += 1
+                tempY += 1
+            }
+            if count == 5 {
+                winner = true
+                gameOver = true
+                return
+            }
+        }
+    }
+    
+    for x in 0...6 {
+        count = 0
+        for y in 4...10 {
+            var tempX = x
+            var tempY = y
+            for _ in 0..<5{
+                if poMap[tempX][tempY].stone == 2 {
+                    count += 1
+                } else {
+                    count = 0
+                }
+                tempX += 1
+                tempY -= 1
+            }
+            if count == 5 {
+                winner = true
+                gameOver = true
+                return
+            }
+        }
+    }
+//    if count != 5 {
+//        winner = false
+//        gameOver = false
+//    }
 }
 
 

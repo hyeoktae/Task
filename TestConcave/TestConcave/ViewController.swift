@@ -83,16 +83,11 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: ChangePlayerDelegate {
-    func winner(_ who: Int) {
+    func winner(_ who: Bool) {
         winnerLabel.isHidden = false
-        winnerLabel.text = "Player\(who) WIN"
+        winnerLabel.text = who ? "흑돌 승!!!" : "백돌 승!!!"
     }
-    
     func changePlayer(_ state: Bool) {
         player.text = state ? "Player 2" : "Player 1"
     }
-    
-    
-    
-    
 }
