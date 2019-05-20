@@ -11,6 +11,7 @@ import UIKit
 
 var player1: Int8 = 0
 var player2: Int8 = 0
+var winner: Bool = false
 
 protocol Piece {
     var player: Bool? {get}
@@ -42,19 +43,117 @@ func saveStones(x: Int, y: Int, player: Bool) {
     checkStones(x: x, y: y)
     for i in poMap{
         print("\n")
-        for j in i{
-            print(j.player, terminator: "   ")
+        for jj in i{
+            var pi: Int = 0
+            if jj.player == true {
+                pi = 1
+            } else if jj.player == false {
+                pi = 2
+            } else {
+                pi = 0
+            }
+            print(pi, terminator: "   ")
         }
     }
     print("\n=================================\n")
 }
 
 
-
 func checkStones(x: Int, y: Int) {
     
+    var count = 0
+    var cX = x
+    var cY = y
+    let origin = poMap[x][y].player
     
-   
+    while count != 5 {
+        guard cX > 10 && cX < 0 else {
+            count = 0
+            break }
+        guard poMap[cX][y].player != nil else {
+            count = 0
+            break }
+        if origin == poMap[cX][y].player {
+            count += 1
+        } else {
+            count = 0
+        }
+        cX += 1
+    }
+//    print("count", count)
+    if count == 5 {
+        winner = true
+        return
+    } else {
+        count = 0
+    }
+    
+    while count != 5 {
+        guard cX > 10 && cX < 0 else {
+            count = 0
+            break }
+        guard poMap[cX][y].player != nil else {
+            count = 0
+            break }
+        if origin == poMap[cX][y].player {
+            count += 1
+        } else {
+            count = 0
+        }
+        cX -= 1
+    }
+//    print("count", count)
+    if count == 5 {
+        winner = true
+        return
+    } else {
+        count = 0
+    }
+    
+    while count != 5 {
+        guard cY < 10 && cY > 0 else {
+            count = 0
+            break }
+        guard poMap[x][cY].player != nil else {
+            count = 0
+            break }
+        if origin == poMap[x][cY].player {
+            count += 1
+        } else {
+            count = 0
+        }
+        cY += 1
+    }
+//    print("count", count)
+    if count == 5 {
+        winner = true
+        return
+    } else {
+        count = 0
+    }
+    
+    while count != 5 {
+        guard cY < 10 && cY > 0 else {
+            count = 0
+            break }
+        guard poMap[x][cY].player != nil else {
+            count = 0
+            break }
+        if origin == poMap[x][cY].player {
+            count += 1
+        } else {
+            count = 0
+        }
+        cY -= 1
+    }
+//    print("count", count)
+    if count == 5 {
+        winner = true
+        return
+    } else {
+        count = 0
+    }
+    
 }
 
 

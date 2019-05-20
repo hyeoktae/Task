@@ -84,6 +84,9 @@ class Map: UIView {
                 break
             }
         }
+        if winner {
+            delegate?.winner(turn ? 2 : 1)
+        }
     }
     
     required init?(coder aDecoder: NSCoder) {
