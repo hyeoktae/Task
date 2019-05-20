@@ -76,7 +76,7 @@ class Map: UIView {
                 sender.isEnabled = false
                 let x = Int((sender.titleLabel?.text!.components(separatedBy: ",")[0])!)
                 let y = Int((sender.titleLabel?.text!.components(separatedBy: ",")[1])!)
-                saveStones(x: x!, y: y!, player: turn)
+                saveStones(originX: x!, originY: y!, player: turn)
                 turn.toggle()
                 delegate?.changePlayer(turn)
                 sender.setTitle("", for: .normal)

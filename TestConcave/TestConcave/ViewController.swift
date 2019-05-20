@@ -63,7 +63,7 @@ class ViewController: UIViewController {
         delegate?.resetBtn()
         winnerLabel.isHidden = true
         winnerLabel.text = ""
-        poMap.forEach{ $0.forEach{ $0.player = nil } }
+        poMap.forEach{ $0.forEach{ $0.stone = 0 } }
     }
     
     func autoLayout() {

@@ -14,11 +14,11 @@ var player2: Int8 = 0
 var winner: Bool = false
 
 protocol Piece {
-    var player: Bool? {get}
+    var stone: Int {get}
 }
 
 class Po: Piece {
-    var player: Bool? = nil
+    var stone: Int = 0
 }
 
 var poMap =
@@ -39,121 +39,32 @@ var poMap =
 
 func saveStones(x: Int, y: Int, player: Bool) {
     let po = poMap[x][y]
-    po.player = player
+    po.stone = player ? 2 : 1
     checkStones(x: x, y: y)
     for i in poMap{
         print("\n")
         for jj in i{
-            var pi: Int = 0
-            if jj.player == true {
-                pi = 1
-            } else if jj.player == false {
-                pi = 2
-            } else {
-                pi = 0
-            }
-            print(pi, terminator: "   ")
+            print(jj.stone, terminator: "   ")
         }
     }
     print("\n=================================\n")
 }
 
 
-func checkStones(x: Int, y: Int) {
+func checkStones(x: Int, y: Int) -> Bool{
     
-    var count = 0
-    var cX = x
-    var cY = y
-    let origin = poMap[x][y].player
-    
-    while count != 5 {
-        guard cX > 10 && cX < 0 else {
-            count = 0
-            break }
-        guard poMap[cX][y].player != nil else {
-            count = 0
-            break }
-        if origin == poMap[cX][y].player {
-            count += 1
-        } else {
-            count = 0
+    for x in 0...10 {
+        for y in 0...10 {
+            guard poMap[x][y].stone != 0 else { break }
+            var countX = 0
+            var countY = 0
+            countX = x > 6 ? x : 0
+            countY = y < 5 ? y : 0
+            
         }
-        cX += 1
-    }
-//    print("count", count)
-    if count == 5 {
-        winner = true
-        return
-    } else {
-        count = 0
     }
     
-    while count != 5 {
-        guard cX > 10 && cX < 0 else {
-            count = 0
-            break }
-        guard poMap[cX][y].player != nil else {
-            count = 0
-            break }
-        if origin == poMap[cX][y].player {
-            count += 1
-        } else {
-            count = 0
-        }
-        cX -= 1
-    }
-//    print("count", count)
-    if count == 5 {
-        winner = true
-        return
-    } else {
-        count = 0
-    }
-    
-    while count != 5 {
-        guard cY < 10 && cY > 0 else {
-            count = 0
-            break }
-        guard poMap[x][cY].player != nil else {
-            count = 0
-            break }
-        if origin == poMap[x][cY].player {
-            count += 1
-        } else {
-            count = 0
-        }
-        cY += 1
-    }
-//    print("count", count)
-    if count == 5 {
-        winner = true
-        return
-    } else {
-        count = 0
-    }
-    
-    while count != 5 {
-        guard cY < 10 && cY > 0 else {
-            count = 0
-            break }
-        guard poMap[x][cY].player != nil else {
-            count = 0
-            break }
-        if origin == poMap[x][cY].player {
-            count += 1
-        } else {
-            count = 0
-        }
-        cY -= 1
-    }
-//    print("count", count)
-    if count == 5 {
-        winner = true
-        return
-    } else {
-        count = 0
-    }
-    
+    return false
 }
 
 
