@@ -16,6 +16,8 @@ protocol ChangePlayerDelegate {
 
 class Map: UIView {
     
+    let databaseRef = Database.database().reference()
+    
     var changedX = 0
     var changedY = 0
     
@@ -41,7 +43,7 @@ class Map: UIView {
         db = Firestore.firestore()
         
         
-        let databaseRef = Database.database().reference()
+        
         databaseRef.child("game").child("map").setValue(["player1 vs player2": binaryMap])
         
         
@@ -82,6 +84,7 @@ class Map: UIView {
                     btn.alpha = 0.1
                     btn.addTarget(self, action: #selector(didTapBtns(_:)), for: .touchUpInside)
                     btn.setTitle("\(i),\(j)", for: .normal)
+                    btn.titleLabel?.font = btn.titleLabel?.font.withSize(0.01)
                     return btn
                 }()
                 btns.append(btn)
@@ -154,5 +157,6 @@ extension Map: ResetDelegate{
         winner = false
         gameOver = false
         delegate?.changePlayer(turn)
+        databaseRef.child("game").child("map").setValue(["player1 vs player2": firstMap])
     }
 }
