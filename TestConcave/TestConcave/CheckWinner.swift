@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Firebase
 
 var player1: Int8 = 0
 var player2: Int8 = 0
@@ -23,6 +24,36 @@ protocol Piece {
 class Po: Piece {
     var stone: Int = 0
 }
+
+var binaryMap =
+[
+[0,0,0,0,0,0,0,0,0,0,0],
+[0,0,0,0,0,0,0,0,0,0,0],
+[0,0,0,0,0,0,0,0,0,0,0],
+[0,0,0,0,0,0,0,0,0,0,0],
+[0,0,0,0,0,0,0,0,0,0,0],
+[0,0,0,0,0,0,0,0,0,0,0],
+[0,0,0,0,0,0,0,0,0,0,0],
+[0,0,0,0,0,0,0,0,0,0,0],
+[0,0,0,0,0,0,0,0,0,0,0],
+[0,0,0,0,0,0,0,0,0,0,0],
+[0,0,0,0,0,0,0,0,0,0,0],
+    ]
+
+var firebaseData =
+    [
+        [0,0,0,0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0,0],
+        [0,0,0,0,0,0,0,0,0,0,0],
+]
 
 var poMap =
     [
@@ -40,10 +71,21 @@ var poMap =
 ]
 
 
+
+
+
 func saveStones(x: Int, y: Int, player: Bool) {
-    let po = poMap[x][y]
-    po.stone = player ? 2 : 1
-    checkStones(x: x, y: y)
+//    let po = poMap[x][y]
+//    po.stone = player ? 2 : 1
+    
+    
+    
+    let databaseRef = Database.database().reference()
+    let game = databaseRef.child("game").child("map")
+    firebaseData[x][y] = player ? 2 : 1
+    game.updateChildValues(["player1 vs player2":firebaseData])
+    
+//    checkStones()
 //    var checkWinner:(Bool, Bool) = { return checkStones(x: x, y: y) }()
 //    gameOver = checkWinner.0
 //    winner = checkWinner.1
@@ -59,12 +101,12 @@ func saveStones(x: Int, y: Int, player: Bool) {
 }
 
 
-func checkStones(x: Int, y: Int){
+func checkStones(){
     var count = 0
     for x in 0...10 {
          count = 0
         for y in 0...10 {
-            if poMap[x][y].stone == 1 {
+            if binaryMap[x][y] == 1 {
                 count += 1
             } else {
                 count = 0
@@ -80,7 +122,7 @@ func checkStones(x: Int, y: Int){
     for y in 0...10 {
         count = 0
         for x in 0...10 {
-            if poMap[x][y].stone == 1 {
+            if binaryMap[x][y] == 1 {
                 count += 1
             } else {
                 count = 0
@@ -99,7 +141,7 @@ func checkStones(x: Int, y: Int){
             var tempX = x
             var tempY = y
             for _ in 0..<5{
-                if poMap[tempX][tempY].stone == 1 {
+                if binaryMap[tempX][tempY] == 1 {
                     count += 1
                 } else {
                     count = 0
@@ -121,7 +163,7 @@ func checkStones(x: Int, y: Int){
             var tempX = x
             var tempY = y
             for _ in 0..<5{
-                if poMap[tempX][tempY].stone == 1 {
+                if binaryMap[tempX][tempY] == 1 {
                     count += 1
                 } else {
                     count = 0
@@ -140,7 +182,7 @@ func checkStones(x: Int, y: Int){
     for x in 0...10 {
         count = 0
         for y in 0...10 {
-            if poMap[x][y].stone == 2 {
+            if binaryMap[x][y] == 2 {
                 count += 1
             } else {
                 count = 0
@@ -156,7 +198,7 @@ func checkStones(x: Int, y: Int){
     for y in 0...10 {
         count = 0
         for x in 0...10 {
-            if poMap[x][y].stone == 2 {
+            if binaryMap[x][y] == 2 {
                 count += 1
             } else {
                 count = 0
@@ -175,7 +217,7 @@ func checkStones(x: Int, y: Int){
             var tempX = x
             var tempY = y
             for _ in 0..<5{
-                if poMap[tempX][tempY].stone == 2 {
+                if binaryMap[tempX][tempY] == 2 {
                     count += 1
                 } else {
                     count = 0
@@ -197,7 +239,7 @@ func checkStones(x: Int, y: Int){
             var tempX = x
             var tempY = y
             for _ in 0..<5{
-                if poMap[tempX][tempY].stone == 2 {
+                if binaryMap[tempX][tempY] == 2 {
                     count += 1
                 } else {
                     count = 0

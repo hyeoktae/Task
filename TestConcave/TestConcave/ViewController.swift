@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 protocol ResetDelegate {
     func resetBtn()
@@ -57,6 +58,8 @@ class ViewController: UIViewController {
         autoLayout()
         self.delegate = map
         map.delegate = self
+        
+        
     }
     
     @objc func resetAll(_ sender: UIButton) {

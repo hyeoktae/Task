@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 protocol ChangePlayerDelegate {
     func changePlayer(_ state: Bool)
@@ -14,6 +15,11 @@ protocol ChangePlayerDelegate {
 }
 
 class Map: UIView {
+    
+    var changedX = 0
+    var changedY = 0
+    
+    var db: Firestore!
     
     var delegate: ChangePlayerDelegate?
     
@@ -27,7 +33,24 @@ class Map: UIView {
         makebtn()
         maps.forEach{ self.addSubview($0) }
         btns.forEach{ self.addSubview($0) }
+        
+        let settings = FirestoreSettings()
+        
+        Firestore.firestore().settings = settings
+        
+        db = Firestore.firestore()
+        
+        
+        let databaseRef = Database.database().reference()
+        databaseRef.child("game").child("map").setValue(["player1 vs player2": binaryMap])
+        
+        
+        observeMap()
     }
+    
+//    func resetMap() {
+//        db.collection("omok").document("concave").setv
+//    }
     
     func makeMap() {
         let width = self.frame.width/12
@@ -71,24 +94,52 @@ class Map: UIView {
         for i in 1...121 {
             switch sender.tag {
             case i:
-                sender.backgroundColor = turn ? .black : .white
-                sender.alpha = 1
-                sender.isEnabled = false
+                
+//
                 let x = Int((sender.titleLabel?.text!.components(separatedBy: ",")[0])!)
                 let y = Int((sender.titleLabel?.text!.components(separatedBy: ",")[1])!)
                 saveStones(x: x!, y: y!, player: turn)
-                turn.toggle()
+                
                 delegate?.changePlayer(turn)
                 sender.setTitle("", for: .normal)
             default:
                 break
             }
         }
-        if gameOver {
-            btns.forEach{ $0.isEnabled = false }
-            delegate?.winner(winner)
-        }
+        
+        
+        
     }
+    
+    func observeMap() {
+        let databaseRef = Database.database().reference()
+        
+        databaseRef.child("game").child("map").observe(.childChanged) { (snapshot) in
+            if let data = snapshot.value as? [[Int]] {
+                for x in 0...10 {
+                    for y in 0...10 {
+                        if data[x][y] != binaryMap[x][y] {
+                            let btn: UIButton =  self.btns.filter{$0.titleLabel?.text == "\(x),\(y)"}[0]
+                            btn.backgroundColor = self.turn ? .black : .white
+                            btn.alpha = 1
+                            btn.isEnabled = false
+                        }
+                    }
+                }
+                binaryMap = data
+                firebaseData = data
+                checkStones()
+                self.turn.toggle()
+            }
+            if gameOver {
+                self.btns.forEach{ $0.isEnabled = false }
+                self.delegate?.winner(winner)
+            }
+        }
+        
+    }
+    
+    
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
