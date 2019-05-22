@@ -12,6 +12,7 @@ import Firebase
 protocol ChangePlayerDelegate {
     func changePlayer(_ state: Bool)
     func winner(_ who: Bool)
+    func draw()
 }
 
 class Map: UIView {
@@ -50,9 +51,9 @@ class Map: UIView {
         observeMap()
     }
     
-//    func resetMap() {
-//        db.collection("omok").document("concave").setv
-//    }
+    //    func resetMap() {
+    //        db.collection("omok").document("concave").setv
+    //    }
     
     func makeMap() {
         let width = self.frame.width/12
@@ -98,7 +99,7 @@ class Map: UIView {
             switch sender.tag {
             case i:
                 
-//
+                //
                 let x = Int((sender.titleLabel?.text!.components(separatedBy: ",")[0])!)
                 let y = Int((sender.titleLabel?.text!.components(separatedBy: ",")[1])!)
                 saveStones(x: x!, y: y!, player: turn)
@@ -134,6 +135,17 @@ class Map: UIView {
                 checkStones()
                 self.turn.toggle()
             }
+            var count = 0
+            for i in 0...10 {
+                count += binaryMap[i].filter{$0 == 0}.count
+                print(binaryMap[i])
+                print("count: \(count)")
+            }
+            if count < 5  {
+                self.btns.forEach{ $0.isEnabled = false }
+                self.delegate?.draw()
+                return }
+            
             if gameOver {
                 self.btns.forEach{ $0.isEnabled = false }
                 self.delegate?.winner(winner)
