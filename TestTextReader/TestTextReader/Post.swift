@@ -8,7 +8,6 @@
 
 import Foundation
 import AVFoundation
-import AppleTextureEncoder
 
 //struct speak: Codable {
 //    var voice: String
