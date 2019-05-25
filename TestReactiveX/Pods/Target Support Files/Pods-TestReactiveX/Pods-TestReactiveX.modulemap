@@ -1,0 +1,6 @@
+framework module Pods_TestReactiveX {
+  umbrella header "Pods-TestReactiveX-umbrella.h"
+
+  export *
+  module * { export * }
+}
