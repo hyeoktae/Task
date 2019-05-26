@@ -9,6 +9,19 @@
 import Foundation
 import RxSwift
 
+var test3 = 5
+var test4 = 6
+
+class Test01 {
+    var oper01: Int
+    init(_ num: Int) {
+        self.oper01 = num
+    }
+}
+
+struct Test02 {
+    var oper02: Int
+}
 
 func checkArrayObservable(items: [Int]) -> Observable<Int> {
     return Observable<Int>.create { observer -> Disposable in
