@@ -39,16 +39,7 @@ func postman(_ input: String) -> Data? {
     
     let headers = [
         "Authorization": "KakaoAK 51ee73d3f90160581db5903f59b35e88",
-        "Content-Type": "application/xml",
-        "User-Agent": "PostmanRuntime/7.13.0",
-        "Accept": "*/*",
-        "Cache-Control": "no-cache",
-        "Postman-Token": "d693d920-38be-448b-98e5-2d5183f5200d,3687a5b7-4dbe-426d-a044-1d42f5df6397",
-        "Host": "kakaoi-newtone-openapi.kakao.com",
-        "accept-encoding": "gzip, deflate",
-        "content-length": "60",
-        "Connection": "keep-alive",
-        "cache-control": "no-cache"
+        "Content-Type": "application/xml"
     ]
     
     let postData = NSData(data:
@@ -73,6 +64,7 @@ func postman(_ input: String) -> Data? {
     let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
         if (error != nil) {
             print(error!)
+            group.leave()
         } else {
             let httpResponse = response as? HTTPURLResponse
             print(httpResponse!)
@@ -80,8 +72,8 @@ func postman(_ input: String) -> Data? {
             group.leave()
         }
     })
-    
-        dataTask.resume() }
+        dataTask.resume()
+    }
     print(group.wait(timeout: .distantFuture))
     return resultData
     

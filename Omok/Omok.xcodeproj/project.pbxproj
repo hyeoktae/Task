@@ -8,20 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		521E9872229A761C007F8003 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521E9871229A761C007F8003 /* AppDelegate.swift */; };
-		521E9874229A761C007F8003 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521E9873229A761C007F8003 /* ViewController.swift */; };
-		521E9877229A761C007F8003 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 521E9875229A761C007F8003 /* Main.storyboard */; };
 		521E9879229A761D007F8003 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 521E9878229A761D007F8003 /* Assets.xcassets */; };
-		521E987C229A761D007F8003 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 521E987A229A761D007F8003 /* LaunchScreen.storyboard */; };
+		521E9887229A8D40007F8003 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521E9886229A8D40007F8003 /* DataModel.swift */; };
+		521E9889229A946B007F8003 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521E9888229A946B007F8003 /* MainVC.swift */; };
+		521E988F229A9A82007F8003 /* FireBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521E988E229A9A82007F8003 /* FireBase.swift */; };
+		521E9891229A9B80007F8003 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521E9890229A9B80007F8003 /* LoginView.swift */; };
+		521E9893229AB05B007F8003 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 521E9892229AB05B007F8003 /* GoogleService-Info.plist */; };
+		68D89B46D3E2D55860B04D2D /* Pods_Omok.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 625AF9ED40E34FB10E2B3972 /* Pods_Omok.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		242EAF7AB91031E7B9464C6C /* Pods-Omok.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Omok.release.xcconfig"; path = "Target Support Files/Pods-Omok/Pods-Omok.release.xcconfig"; sourceTree = "<group>"; };
 		521E986E229A761C007F8003 /* Omok.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Omok.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		521E9871229A761C007F8003 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		521E9873229A761C007F8003 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		521E9876229A761C007F8003 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		521E9878229A761D007F8003 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		521E987B229A761D007F8003 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		521E987D229A761D007F8003 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		521E9886229A8D40007F8003 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		521E9888229A946B007F8003 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
+		521E988E229A9A82007F8003 /* FireBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireBase.swift; sourceTree = "<group>"; };
+		521E9890229A9B80007F8003 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		521E9892229AB05B007F8003 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		625AF9ED40E34FB10E2B3972 /* Pods_Omok.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Omok.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2173D82BBE4953A9B706304 /* Pods-Omok.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Omok.debug.xcconfig"; path = "Target Support Files/Pods-Omok/Pods-Omok.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68D89B46D3E2D55860B04D2D /* Pods_Omok.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +49,8 @@
 			children = (
 				521E9870229A761C007F8003 /* Omok */,
 				521E986F229A761C007F8003 /* Products */,
+				9D459693AB4B90EA55152A1C /* Pods */,
+				AB45E6701564E772076D74C5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,13 +66,56 @@
 			isa = PBXGroup;
 			children = (
 				521E9871229A761C007F8003 /* AppDelegate.swift */,
-				521E9873229A761C007F8003 /* ViewController.swift */,
-				521E9875229A761C007F8003 /* Main.storyboard */,
+				521E9883229A8C96007F8003 /* Controller */,
+				521E9885229A8CBA007F8003 /* Model */,
+				521E9884229A8CB4007F8003 /* View */,
 				521E9878229A761D007F8003 /* Assets.xcassets */,
-				521E987A229A761D007F8003 /* LaunchScreen.storyboard */,
 				521E987D229A761D007F8003 /* Info.plist */,
+				521E9892229AB05B007F8003 /* GoogleService-Info.plist */,
 			);
 			path = Omok;
+			sourceTree = "<group>";
+		};
+		521E9883229A8C96007F8003 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				521E9888229A946B007F8003 /* MainVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		521E9884229A8CB4007F8003 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				521E9890229A9B80007F8003 /* LoginView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		521E9885229A8CBA007F8003 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				521E9886229A8D40007F8003 /* DataModel.swift */,
+				521E988E229A9A82007F8003 /* FireBase.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9D459693AB4B90EA55152A1C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C2173D82BBE4953A9B706304 /* Pods-Omok.debug.xcconfig */,
+				242EAF7AB91031E7B9464C6C /* Pods-Omok.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		AB45E6701564E772076D74C5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				625AF9ED40E34FB10E2B3972 /* Pods_Omok.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +125,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 521E9880229A761D007F8003 /* Build configuration list for PBXNativeTarget "Omok" */;
 			buildPhases = (
+				12DBDEF9C54DD5ABAC46B74D /* [CP] Check Pods Manifest.lock */,
 				521E986A229A761C007F8003 /* Sources */,
 				521E986B229A761C007F8003 /* Frameworks */,
 				521E986C229A761C007F8003 /* Resources */,
+				41281866BD17E5B25EFEC86F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -122,44 +178,84 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				521E987C229A761D007F8003 /* LaunchScreen.storyboard in Resources */,
 				521E9879229A761D007F8003 /* Assets.xcassets in Resources */,
-				521E9877229A761C007F8003 /* Main.storyboard in Resources */,
+				521E9893229AB05B007F8003 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		12DBDEF9C54DD5ABAC46B74D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Omok-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		41281866BD17E5B25EFEC86F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Omok/Pods-Omok-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRelay.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Omok/Pods-Omok-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		521E986A229A761C007F8003 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				521E9874229A761C007F8003 /* ViewController.swift in Sources */,
 				521E9872229A761C007F8003 /* AppDelegate.swift in Sources */,
+				521E9889229A946B007F8003 /* MainVC.swift in Sources */,
+				521E988F229A9A82007F8003 /* FireBase.swift in Sources */,
+				521E9891229A9B80007F8003 /* LoginView.swift in Sources */,
+				521E9887229A8D40007F8003 /* DataModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		521E9875229A761C007F8003 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				521E9876229A761C007F8003 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		521E987A229A761D007F8003 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				521E987B229A761D007F8003 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		521E987E229A761D007F8003 /* Debug */ = {
@@ -280,6 +376,7 @@
 		};
 		521E9881229A761D007F8003 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C2173D82BBE4953A9B706304 /* Pods-Omok.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -292,12 +389,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "hyeoktae-com.github.Omok";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		521E9882229A761D007F8003 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 242EAF7AB91031E7B9464C6C /* Pods-Omok.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -310,7 +408,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "hyeoktae-com.github.Omok";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

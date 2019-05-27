@@ -1,0 +1,6 @@
+framework module Pods_Omok {
+  umbrella header "Pods-Omok-umbrella.h"
+
+  export *
+  module * { export * }
+}
