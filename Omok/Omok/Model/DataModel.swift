@@ -24,53 +24,41 @@ protocol User {
 
 
 // MARK: - Users Silgleton Pattern
-class Users {
+final class Users {
     static let shared = Users()
     
     private init() {}
     
     private var users = [UserInfo]()
     private var usersName = [String]()
-    private var MyLoginInfo = UserInfo?()
+    private var myInfo = UserInfo(name: "", loginState: false, playerImg: nil, vs: "", winCount: 0, loseCount: 0)
     
-    var takeUsersInfo: [UserInfo]  {
+    var usersInfo: [UserInfo]  {
         get {
             return users
         }
-    }
-    
-    var takeMyInfo: UserInfo {
-        get {
-            return MyLoginInfo
+        set {
+            users = newValue
         }
     }
     
-    var takeUsersName: [String] {
+    var myLoginInfo: UserInfo {
+        get {
+            return myInfo
+        }
+        set {
+            myInfo = newValue
+        }
+    }
+    
+    var names: [String] {
         get {
             return usersName
         }
-    }
-    
-    var saveUsers: UserInfo {
-        get {
-            return MyLoginInfo
-        }
         set {
-            users.append(newValue)
+            usersName = newValue
         }
     }
-    
-    var saveMyInfo: UserInfo {
-        get {
-            return MyLoginInfo
-        }
-        set {
-            MyLoginInfo = newValue
-        }
-    }
-    
-    
-    
 }
 
 
@@ -82,15 +70,20 @@ struct UserInfo: User {
     var vs: String
     var winCount: Int
     var loseCount: Int
-    
-    init() {
-        self.name = ""
-        self.loginState = false
-        self.playerImg = nil
-        self.vs = ""
-        self.winCount = 0
-        self.loseCount = 0
+}
+
+// MARK: - UIImage - String || String - UIImage
+extension String {
+    func toImage() -> UIImage? {
+        if let data = Data(base64Encoded: self, options: .ignoreUnknownCharacters) {
+            return UIImage(data: data)
+        }
+        return nil
     }
 }
 
-
+extension UIImage {
+    func toString() -> String? {
+        return self.pngData()?.base64EncodedString(options: .endLineWithLineFeed)
+    }
+}

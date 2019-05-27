@@ -7,13 +7,12 @@
 //
 
 import UIKit
-import Firebase
 
-class MainVC: UIViewController {
+final class LoginVC: UIViewController {
     
     // MARK: - MainVC's Properties & Configure
-    let loginView: LoginView = {
-        let view = LoginView(frame: .zero)
+    private let loginView: LoginView = {
+        let view = LoginView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -22,11 +21,7 @@ class MainVC: UIViewController {
         super.viewDidLoad()
         view.addSubview(loginView)
         autoLayout()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        FirebaseApp.configure()
+        loginView.delegate = self
     }
     
     func autoLayout() {
@@ -34,5 +29,20 @@ class MainVC: UIViewController {
         loginView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         loginView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         loginView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+    }
+}
+
+// choose the LoginViewDelegate
+extension LoginVC: LoginViewDelegate {
+    func presentSuccessLoginVC() {
+        present(TestSuccessLoginVC(), animated: true) {
+            ()
+        }
+    }
+    
+    func presentSignUp() {
+        present(SignUpVC(), animated: true) {
+            ()
+        }
     }
 }

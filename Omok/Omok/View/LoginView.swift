@@ -8,48 +8,59 @@
 
 import UIKit
 
-class LoginView: UIView {
+// delegate for Present
+protocol LoginViewDelegate {
+    func presentSignUp()
+    func presentSuccessLoginVC()
+}
+
+final class LoginView: UIView {
+    
+    var delegate: LoginViewDelegate?
     
     // MARK: - LoginView's Property & Configure
-    let IDLabel: UILabel = {
+    private let IDLabel: UILabel = {
         let label = UILabel()
         label.text = "ID"
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
-    let IDTF: UITextField = {
+    private let IDTF: UITextField = {
         let tf = UITextField()
         tf.layer.borderWidth = 1
         tf.translatesAutoresizingMaskIntoConstraints = false
         return tf
     }()
     
-    let PWLabel: UILabel = {
+    private let PWLabel: UILabel = {
         let label = UILabel()
         label.text = "PW"
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
-    let PWTF: UITextField = {
+    private let PWTF: UITextField = {
         let tf = UITextField()
         tf.layer.borderWidth = 1
         tf.translatesAutoresizingMaskIntoConstraints = false
+        tf.isSecureTextEntry = true
         return tf
     }()
     
-    let LoginBtn: UIButton = {
+    private let LoginBtn: UIButton = {
         let btn = UIButton(type: .system)
         btn.setTitle("Login", for: .normal)
         btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.addTarget(self, action: #selector(didTapLoginBtn(_:)), for: .touchUpInside)
         return btn
     }()
 
-    let SignUpBtn: UIButton = {
+    private let SignUpBtn: UIButton = {
         let btn = UIButton(type: .system)
         btn.setTitle("SignUp", for: .normal)
         btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.addTarget(self, action: #selector(didTapSignUpBtn(_:)), for: .touchUpInside)
         return btn
     }()
     
@@ -57,6 +68,20 @@ class LoginView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+    }
+    
+    @objc private func didTapLoginBtn(_ sender: UIButton) {
+        guard IDTF.text != "", PWTF.text != "" else {
+            print("ID or PW are a nil")
+            return
+        }
+        Networking.shared.tryLogin(id: IDTF.text!, pw: PWTF.text!) {
+            $0 ? self.delegate?.presentSuccessLoginVC() : print("fail to Login")
+        }
+    }
+    
+    @objc private func didTapSignUpBtn(_ sender: UIButton) {
+        delegate?.presentSignUp()
     }
     
     // MARK: - LoginView's layoutSubviews

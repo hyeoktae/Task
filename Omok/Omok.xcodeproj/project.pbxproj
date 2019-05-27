@@ -10,10 +10,13 @@
 		521E9872229A761C007F8003 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521E9871229A761C007F8003 /* AppDelegate.swift */; };
 		521E9879229A761D007F8003 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 521E9878229A761D007F8003 /* Assets.xcassets */; };
 		521E9887229A8D40007F8003 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521E9886229A8D40007F8003 /* DataModel.swift */; };
-		521E9889229A946B007F8003 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521E9888229A946B007F8003 /* MainVC.swift */; };
+		521E9889229A946B007F8003 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521E9888229A946B007F8003 /* LoginVC.swift */; };
 		521E988F229A9A82007F8003 /* FireBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521E988E229A9A82007F8003 /* FireBase.swift */; };
 		521E9891229A9B80007F8003 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521E9890229A9B80007F8003 /* LoginView.swift */; };
 		521E9893229AB05B007F8003 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 521E9892229AB05B007F8003 /* GoogleService-Info.plist */; };
+		5283FEB5229C3C3E009AA3B5 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5283FEB4229C3C3E009AA3B5 /* SignUpVC.swift */; };
+		5283FEB7229C3C70009AA3B5 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5283FEB6229C3C70009AA3B5 /* SignUpView.swift */; };
+		5283FEB9229C5347009AA3B5 /* TestSuccessLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5283FEB8229C5347009AA3B5 /* TestSuccessLoginVC.swift */; };
 		68D89B46D3E2D55860B04D2D /* Pods_Omok.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 625AF9ED40E34FB10E2B3972 /* Pods_Omok.framework */; };
 /* End PBXBuildFile section */
 
@@ -24,10 +27,13 @@
 		521E9878229A761D007F8003 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		521E987D229A761D007F8003 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		521E9886229A8D40007F8003 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
-		521E9888229A946B007F8003 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
+		521E9888229A946B007F8003 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		521E988E229A9A82007F8003 /* FireBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireBase.swift; sourceTree = "<group>"; };
 		521E9890229A9B80007F8003 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		521E9892229AB05B007F8003 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5283FEB4229C3C3E009AA3B5 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
+		5283FEB6229C3C70009AA3B5 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		5283FEB8229C5347009AA3B5 /* TestSuccessLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSuccessLoginVC.swift; sourceTree = "<group>"; };
 		625AF9ED40E34FB10E2B3972 /* Pods_Omok.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Omok.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2173D82BBE4953A9B706304 /* Pods-Omok.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Omok.debug.xcconfig"; path = "Target Support Files/Pods-Omok/Pods-Omok.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -79,7 +85,9 @@
 		521E9883229A8C96007F8003 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				521E9888229A946B007F8003 /* MainVC.swift */,
+				521E9888229A946B007F8003 /* LoginVC.swift */,
+				5283FEB4229C3C3E009AA3B5 /* SignUpVC.swift */,
+				5283FEB8229C5347009AA3B5 /* TestSuccessLoginVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -88,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				521E9890229A9B80007F8003 /* LoginView.swift */,
+				5283FEB6229C3C70009AA3B5 /* SignUpView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -248,9 +257,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				521E9872229A761C007F8003 /* AppDelegate.swift in Sources */,
-				521E9889229A946B007F8003 /* MainVC.swift in Sources */,
+				521E9889229A946B007F8003 /* LoginVC.swift in Sources */,
 				521E988F229A9A82007F8003 /* FireBase.swift in Sources */,
+				5283FEB7229C3C70009AA3B5 /* SignUpView.swift in Sources */,
 				521E9891229A9B80007F8003 /* LoginView.swift in Sources */,
+				5283FEB5229C3C3E009AA3B5 /* SignUpVC.swift in Sources */,
+				5283FEB9229C5347009AA3B5 /* TestSuccessLoginVC.swift in Sources */,
 				521E9887229A8D40007F8003 /* DataModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
