@@ -76,7 +76,6 @@ final class LoginView: UIView {
             return
         }
         delegate?.presentSuccessLoginVC(ID: IDTF.text!, PW: PWTF.text!)
-        
     }
     
     @objc private func didTapSignUpBtn(_ sender: UIButton) {

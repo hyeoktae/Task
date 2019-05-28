@@ -33,6 +33,12 @@ final class SignUpVC: UIViewController {
 
 // choose the SignUpViewDelegate
 extension SignUpVC: SignUpViewDelegate {
+    func trySignUp(ID: String, PW: String, nickName: String) {
+        Networking.shared.uploadNewUser(ID: ID, PW: PW, NickName: nickName) {
+            $0 ? self.cancel() : ()
+        }
+    }
+    
     func imagePickerPresent() {
         present(signUpView.imagePicker, animated: true) {
             ()

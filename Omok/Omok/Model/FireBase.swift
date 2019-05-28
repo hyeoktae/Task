@@ -43,8 +43,9 @@ final class Networking {
                 let enemy = detailData?["vs"] as? String
                 let winCount = detailData?["winCount"] as? Int
                 let loseCount = detailData?["loseCount"] as? Int
+                let nickName = detailData?["nickName"] as? String
                 
-                sampleUserInfo.append(UserInfo(name: user, loginState: state ?? false, playerImg: img, vs: enemy ?? "", winCount: winCount ?? 0, loseCount: loseCount ?? 0))
+                sampleUserInfo.append(UserInfo(ID: user, loginState: state ?? false, playerImg: img, vs: enemy ?? "", winCount: winCount ?? 0, loseCount: loseCount ?? 0, nickName: nickName ?? ""))
             }
             self.dataModel.usersInfo = sampleUserInfo
             // when success
@@ -57,34 +58,62 @@ final class Networking {
     }
     
     // New User's Info Upload to DB, must run before SignUp
-    func uploadNewUser(pw: String, completion: @escaping () -> () ) {
+    func uploadNewUser(ID: String, PW: String, NickName: String, completion: @escaping (Bool) -> () ) {
+        
         let userImage = dataModel.myLoginInfo.playerImg?.toString()
-        let userName = dataModel.myLoginInfo.name
         
-        dbRef.child("Users").child(userName).updateChildValues(["playerImg":userImage ?? ""])
-        dbRef.child("Users").child(userName).updateChildValues(["turn":false])
-        dbRef.child("Users").child(userName).updateChildValues(["vs":""])
-        dbRef.child("Users").child(userName).updateChildValues(["loginState":true])
-        dbRef.child("Users").child(userName).updateChildValues(["winCount":0])
-        dbRef.child("Users").child(userName).updateChildValues(["loseCount":0])
-        dbRef.child("Users").child(userName).updateChildValues(["pw":pw])
+        Auth.auth().createUser(withEmail: ID, password: PW) { (auth, error) in
+            guard error == nil else {
+                print("error", error?.localizedDescription)
+                completion(false)
+                return }
+            print(auth)
+            
+            let child = ID.filter { $0 != "." }
+            print("child: ", child)
+            self.dbRef.child("Users").child(child).updateChildValues(["playerImg":userImage ?? ""])
+            self.dbRef.child("Users").child(child).updateChildValues(["turn":false])
+            self.dbRef.child("Users").child(child).updateChildValues(["vs":""])
+            self.dbRef.child("Users").child(child).updateChildValues(["loginState":true])
+            self.dbRef.child("Users").child(child).updateChildValues(["winCount":0])
+            self.dbRef.child("Users").child(child).updateChildValues(["loseCount":0])
+            self.dbRef.child("Users").child(child).updateChildValues(["loseCount":0])
+            self.dbRef.child("Users").child(child).updateChildValues(["nickName":NickName])
+            completion(true)
+        }
         
-        completion()
+        
+        
+
+        
+        
+        
     }
     
     // MARK: - try Login
     func tryLogin(id: String, pw: String, completion: @escaping (Bool) -> () ) {
-        // download PW only once
-        dbRef.child("Users").child(id).child("pw").observeSingleEvent(of: .value, with: {
-            let originPW = $0.value as? String
-            // if right pw -> completion(true)
-            pw == originPW ? completion(true) : completion(false)
-        }) {
-            // if network error
-            completion(false)
-            print($0.localizedDescription)
+
+        Auth.auth().signIn(withEmail: id, password: pw) { (auth, error) in
+            guard auth != nil else {
+                dump(error?.localizedDescription)
+                completion(false)
+                return
+            }
+            print("auth: ", auth)
+            self.downloadUsers() {
+                $0 ? completion(true) : print("fail")
+            }
         }
+        //        // download PW only once
+        //        dbRef.child("Users").child(id).child("pw").observeSingleEvent(of: .value, with: {
+        //            let originPW = $0.value as? String
+        //            // if right pw -> completion(true)
+        //            pw == originPW ? completion(true) : completion(false)
+        //        }) {
+        //            // if network error
+        //            completion(false)
+        //            print($0.localizedDescription)
+        //        }
     }
-    
     
 }

@@ -12,12 +12,13 @@ import UIKit
 
 // MARK: - UserInfo
 protocol User {
-    var name: String { get set }
+    var ID: String { get set }
     var loginState: Bool { get set }
     var playerImg: UIImage? { get set }
     var vs: String { get set }
     var winCount: Int { get set }
     var loseCount: Int { get set }
+    var nickName: String { get set }
 }
 
 
@@ -31,7 +32,7 @@ final class Users {
     
     private var users = [UserInfo]()
     private var usersName = [String]()
-    private var myInfo = UserInfo(name: "", loginState: false, playerImg: nil, vs: "", winCount: 0, loseCount: 0)
+    private var myInfo = UserInfo(ID: "", loginState: false, playerImg: nil, vs: "", winCount: 0, loseCount: 0, nickName: "")
     
     var usersInfo: [UserInfo]  {
         get {
@@ -64,12 +65,13 @@ final class Users {
 
 // MARK: - MyLoginInfo
 struct UserInfo: User {
-    var name: String
+    var ID: String
     var loginState: Bool
     var playerImg: UIImage?
     var vs: String
     var winCount: Int
     var loseCount: Int
+    var nickName: String
 }
 
 // MARK: - UIImage - String || String - UIImage

@@ -13,6 +13,7 @@ import MobileCoreServices
 protocol SignUpViewDelegate {
     func cancel()
     func imagePickerPresent()
+    func trySignUp(ID: String, PW: String, nickName: String)
 }
 
 final class SignUpView: UIView {
@@ -63,6 +64,20 @@ final class SignUpView: UIView {
         return tf
     }()
     
+    private let nickNameLabel: UILabel = {
+        let label = UILabel()
+        label.text = "nickName"
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    private let nickNameTF: UITextField = {
+        let tf = UITextField()
+        tf.layer.borderWidth = 1
+        tf.translatesAutoresizingMaskIntoConstraints = false
+        return tf
+    }()
+    
     private let takeImage: UIButton = {
         let btn = UIButton(type: .system)
         btn.setTitle("takeImage", for: .normal)
@@ -108,13 +123,7 @@ final class SignUpView: UIView {
             print("ID or PW or Image are a nil")
             return
         }
-        
-        Users.shared.myLoginInfo.name = IDTF.text!
-        
-        Networking.shared.uploadNewUser(pw: PWTF.text!) {
-            print("Register New Account Complete")
-            self.delegate?.cancel()
-        }
+        delegate?.trySignUp(ID: IDTF.text!, PW: PWTF.text!, nickName: nickNameTF.text!)
     }
     
     @objc private func didTapTakeImageBtn(_ sender: UIButton) {
@@ -132,7 +141,7 @@ final class SignUpView: UIView {
         
         let guide = self.safeAreaLayoutGuide
         
-        let properties = [IDLabel, IDTF, PWLabel, PWTF, takeImage, signUpBtn, imageStateLabel, cancelBtn]
+        let properties = [IDLabel, IDTF, PWLabel, PWTF, takeImage, signUpBtn, imageStateLabel, cancelBtn, nickNameLabel, nickNameTF]
         
         properties.forEach { self.addSubview($0) }
         
@@ -152,7 +161,15 @@ final class SignUpView: UIView {
         PWTF.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -20).isActive = true
         PWTF.widthAnchor.constraint(equalTo: PWLabel.widthAnchor, multiplier: 3).isActive = true
         
-        takeImage.topAnchor.constraint(equalTo: PWTF.bottomAnchor, constant: 20).isActive = true
+        nickNameLabel.topAnchor.constraint(equalTo: PWLabel.bottomAnchor, constant: 20).isActive = true
+        nickNameLabel.leadingAnchor.constraint(equalTo: guide.leadingAnchor, constant: 20).isActive = true
+        nickNameLabel.trailingAnchor.constraint(equalTo: nickNameTF.leadingAnchor, constant: -20).isActive = true
+        
+        nickNameTF.topAnchor.constraint(equalTo: PWLabel.bottomAnchor, constant: 20).isActive = true
+        nickNameTF.trailingAnchor.constraint(equalTo: guide.trailingAnchor, constant: -20).isActive = true
+        nickNameTF.widthAnchor.constraint(equalTo: nickNameLabel.widthAnchor, multiplier: 3).isActive = true
+        
+        takeImage.topAnchor.constraint(equalTo: nickNameTF.bottomAnchor, constant: 20).isActive = true
         takeImage.centerXAnchor.constraint(equalTo: guide.centerXAnchor).isActive = true
         
         imageStateLabel.topAnchor.constraint(equalTo: takeImage.topAnchor).isActive = true
