@@ -11,7 +11,7 @@ import UIKit
 // delegate for Present
 protocol LoginViewDelegate {
     func presentSignUp()
-    func presentSuccessLoginVC()
+    func presentSuccessLoginVC(ID: String, PW: String)
 }
 
 final class LoginView: UIView {
@@ -75,9 +75,8 @@ final class LoginView: UIView {
             print("ID or PW are a nil")
             return
         }
-        Networking.shared.tryLogin(id: IDTF.text!, pw: PWTF.text!) {
-            $0 ? self.delegate?.presentSuccessLoginVC() : print("fail to Login")
-        }
+        delegate?.presentSuccessLoginVC(ID: IDTF.text!, PW: PWTF.text!)
+        
     }
     
     @objc private func didTapSignUpBtn(_ sender: UIButton) {

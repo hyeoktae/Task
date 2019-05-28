@@ -34,9 +34,9 @@ final class LoginVC: UIViewController {
 
 // choose the LoginViewDelegate
 extension LoginVC: LoginViewDelegate {
-    func presentSuccessLoginVC() {
-        present(TestSuccessLoginVC(), animated: true) {
-            ()
+    func presentSuccessLoginVC(ID: String, PW: String) {
+        Networking.shared.tryLogin(id: ID, pw: PW) {
+            $0 ? self.present(TestSuccessLoginVC(), animated: true) : print("fail to Login")
         }
     }
     

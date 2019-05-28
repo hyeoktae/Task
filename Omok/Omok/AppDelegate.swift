@@ -21,6 +21,9 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.backgroundColor = .white
         window?.rootViewController = LoginVC()
         window?.makeKeyAndVisible()
+        Auth.auth().signInAnonymously { (result, error) in
+            ()
+        }
         return true
     }
 }
