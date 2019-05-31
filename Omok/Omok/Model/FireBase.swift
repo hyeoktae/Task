@@ -27,7 +27,7 @@ final class Networking {
     private let dataModel = Users.shared
     
     // MARK: - Download Users Info from DB
-    func downloadUsers(completion: @escaping (Bool) -> () ) {
+    func downloadUsers(completion: @escaping (Bool) -> ()) {
         // register Observer at Users
         dbRef.child("Users").observe(.value, with: {
             // when observer worked, do this closure
@@ -54,6 +54,32 @@ final class Networking {
             // when fail
             completion(false)
             print($0.localizedDescription)
+        }
+    }
+    
+    func downloadMyInfo(ID: String, completion: @escaping () -> ()) {
+        let IDforChild = ID.filter { $0 != "." }
+        dbRef.child("Users").child(IDforChild).observeSingleEvent(of: .value) {
+            
+            let value = $0.value as? [String: Any]
+            let state = value?["loginState"] as? Bool
+            let img = (value?["playerImg"] as? String)?.toImage()
+            let enemy = value?["vs"] as? String
+            let winCount = value?["winCount"] as? Int
+            let loseCount = value?["loseCount"] as? Int
+            let nickName = value?["nickName"] as? String
+            
+            print("Firebase Nickname: ", nickName)
+            self.dataModel.myLoginInfo.ID = ID
+            self.dataModel.myLoginInfo.loginState = state ?? false
+            self.dataModel.myLoginInfo.playerImg = img
+            self.dataModel.myLoginInfo.loseCount = loseCount ?? 0
+            self.dataModel.myLoginInfo.nickName = nickName ?? ""
+            self.dataModel.myLoginInfo.vs = enemy ?? ""
+            self.dataModel.myLoginInfo.winCount = winCount ?? 0
+            
+            
+            completion()
         }
     }
     
@@ -114,6 +140,17 @@ final class Networking {
         //            completion(false)
         //            print($0.localizedDescription)
         //        }
+    }
+    
+    // MARK: - vsObserve
+    // someone challenge to User, present ChallengerVC
+    func vsObserve(myName: String, completion: @escaping (Bool) -> ()) {
+        dbRef.child("Users").child(myName).child("vs").observe(.value) {
+            let data = $0.value as? String
+            if data != "" && data != "ok" {
+                
+            }
+        }
     }
     
 }

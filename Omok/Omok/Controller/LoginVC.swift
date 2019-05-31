@@ -10,6 +10,8 @@ import UIKit
 
 final class LoginVC: UIViewController {
     
+    let waitRoomVC = WaitRoomVC()
+    
     // MARK: - MainVC's Properties & Configure
     private let loginView: LoginView = {
         let view = LoginView()
@@ -36,7 +38,14 @@ final class LoginVC: UIViewController {
 extension LoginVC: LoginViewDelegate {
     func presentSuccessLoginVC(ID: String, PW: String) {
         Networking.shared.tryLogin(id: ID, pw: PW) {
-            $0 ? self.present(TestSuccessLoginVC(), animated: true) : print("fail to Login")
+            if $0 {
+                Networking.shared.downloadMyInfo(ID: ID, completion: {
+                    self.waitRoomVC.waitRoomView.IDlabel.text = Users.shared.myLoginInfo.nickName
+                    self.waitRoomVC.waitRoomView.profileImg.image = Users.shared.myLoginInfo.playerImg
+                    print("nickName: ", Users.shared.myLoginInfo.nickName)
+                })
+            }
+            $0 ? self.present(self.waitRoomVC, animated: true) : print("fail to Login")
         }
     }
     
