@@ -24,3 +24,5 @@
 
 * 20190529 Firebase 로그인 회원가입 까지 성공
 * 20190530 Firebase 에 저장된 유저정보 불러오기
+
+* 20190605 Xcode 11 downloading...
