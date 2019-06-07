@@ -1,0 +1,610 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		523A9D8D22A8E90700047721 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523A9D8C22A8E90700047721 /* AppDelegate.swift */; };
+		523A9D8F22A8E90700047721 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523A9D8E22A8E90700047721 /* SceneDelegate.swift */; };
+		523A9D9122A8E90700047721 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523A9D9022A8E90700047721 /* ContentView.swift */; };
+		523A9D9322A8E90800047721 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 523A9D9222A8E90800047721 /* Assets.xcassets */; };
+		523A9D9622A8E90800047721 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 523A9D9522A8E90800047721 /* Preview Assets.xcassets */; };
+		523A9D9922A8E90800047721 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 523A9D9722A8E90800047721 /* LaunchScreen.storyboard */; };
+		523A9DA422A8E90800047721 /* Update_PadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523A9DA322A8E90800047721 /* Update_PadTests.swift */; };
+		523A9DAF22A8E90800047721 /* Update_PadUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523A9DAE22A8E90800047721 /* Update_PadUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		523A9DA022A8E90800047721 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 523A9D8122A8E90700047721 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 523A9D8822A8E90700047721;
+			remoteInfo = "Update Pad";
+		};
+		523A9DAB22A8E90800047721 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 523A9D8122A8E90700047721 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 523A9D8822A8E90700047721;
+			remoteInfo = "Update Pad";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		523A9D8922A8E90700047721 /* Update Pad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Update Pad.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		523A9D8C22A8E90700047721 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		523A9D8E22A8E90700047721 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		523A9D9022A8E90700047721 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		523A9D9222A8E90800047721 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		523A9D9522A8E90800047721 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		523A9D9822A8E90800047721 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		523A9D9A22A8E90800047721 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		523A9D9F22A8E90800047721 /* Update PadTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Update PadTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		523A9DA322A8E90800047721 /* Update_PadTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Update_PadTests.swift; sourceTree = "<group>"; };
+		523A9DA522A8E90800047721 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		523A9DAA22A8E90800047721 /* Update PadUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Update PadUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		523A9DAE22A8E90800047721 /* Update_PadUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Update_PadUITests.swift; sourceTree = "<group>"; };
+		523A9DB022A8E90800047721 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		523A9DBD22A8E98700047721 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file; name = Base; path = Base.lproj/iPad_Fall_2018_13.0_17A5492t_Restore.ipsw; sourceTree = "<group>"; };
+		523A9DBF22A8E9C400047721 /* en */ = {isa = PBXFileReference; lastKnownFileType = file; name = en; path = en.lproj/iPad_Fall_2018_13.0_17A5492t_Restore.ipsw; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		523A9D8622A8E90700047721 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		523A9D9C22A8E90800047721 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		523A9DA722A8E90800047721 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		523A9D8022A8E90700047721 = {
+			isa = PBXGroup;
+			children = (
+				523A9D8B22A8E90700047721 /* Update Pad */,
+				523A9DA222A8E90800047721 /* Update PadTests */,
+				523A9DAD22A8E90800047721 /* Update PadUITests */,
+				523A9D8A22A8E90700047721 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		523A9D8A22A8E90700047721 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				523A9D8922A8E90700047721 /* Update Pad.app */,
+				523A9D9F22A8E90800047721 /* Update PadTests.xctest */,
+				523A9DAA22A8E90800047721 /* Update PadUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		523A9D8B22A8E90700047721 /* Update Pad */ = {
+			isa = PBXGroup;
+			children = (
+				523A9DBE22A8E98700047721 /* iPad_Fall_2018_13.0_17A5492t_Restore.ipsw */,
+				523A9D8C22A8E90700047721 /* AppDelegate.swift */,
+				523A9D8E22A8E90700047721 /* SceneDelegate.swift */,
+				523A9D9022A8E90700047721 /* ContentView.swift */,
+				523A9D9222A8E90800047721 /* Assets.xcassets */,
+				523A9D9722A8E90800047721 /* LaunchScreen.storyboard */,
+				523A9D9A22A8E90800047721 /* Info.plist */,
+				523A9D9422A8E90800047721 /* Preview Content */,
+			);
+			path = "Update Pad";
+			sourceTree = "<group>";
+		};
+		523A9D9422A8E90800047721 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				523A9D9522A8E90800047721 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		523A9DA222A8E90800047721 /* Update PadTests */ = {
+			isa = PBXGroup;
+			children = (
+				523A9DA322A8E90800047721 /* Update_PadTests.swift */,
+				523A9DA522A8E90800047721 /* Info.plist */,
+			);
+			path = "Update PadTests";
+			sourceTree = "<group>";
+		};
+		523A9DAD22A8E90800047721 /* Update PadUITests */ = {
+			isa = PBXGroup;
+			children = (
+				523A9DAE22A8E90800047721 /* Update_PadUITests.swift */,
+				523A9DB022A8E90800047721 /* Info.plist */,
+			);
+			path = "Update PadUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		523A9D8822A8E90700047721 /* Update Pad */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 523A9DB322A8E90800047721 /* Build configuration list for PBXNativeTarget "Update Pad" */;
+			buildPhases = (
+				523A9D8522A8E90700047721 /* Sources */,
+				523A9D8622A8E90700047721 /* Frameworks */,
+				523A9D8722A8E90700047721 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Update Pad";
+			productName = "Update Pad";
+			productReference = 523A9D8922A8E90700047721 /* Update Pad.app */;
+			productType = "com.apple.product-type.application";
+		};
+		523A9D9E22A8E90800047721 /* Update PadTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 523A9DB622A8E90800047721 /* Build configuration list for PBXNativeTarget "Update PadTests" */;
+			buildPhases = (
+				523A9D9B22A8E90800047721 /* Sources */,
+				523A9D9C22A8E90800047721 /* Frameworks */,
+				523A9D9D22A8E90800047721 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				523A9DA122A8E90800047721 /* PBXTargetDependency */,
+			);
+			name = "Update PadTests";
+			productName = "Update PadTests";
+			productReference = 523A9D9F22A8E90800047721 /* Update PadTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		523A9DA922A8E90800047721 /* Update PadUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 523A9DB922A8E90800047721 /* Build configuration list for PBXNativeTarget "Update PadUITests" */;
+			buildPhases = (
+				523A9DA622A8E90800047721 /* Sources */,
+				523A9DA722A8E90800047721 /* Frameworks */,
+				523A9DA822A8E90800047721 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				523A9DAC22A8E90800047721 /* PBXTargetDependency */,
+			);
+			name = "Update PadUITests";
+			productName = "Update PadUITests";
+			productReference = 523A9DAA22A8E90800047721 /* Update PadUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		523A9D8122A8E90700047721 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+				ORGANIZATIONNAME = "hyeoktae kwon";
+				TargetAttributes = {
+					523A9D8822A8E90700047721 = {
+						CreatedOnToolsVersion = 11.0;
+					};
+					523A9D9E22A8E90800047721 = {
+						CreatedOnToolsVersion = 11.0;
+						TestTargetID = 523A9D8822A8E90700047721;
+					};
+					523A9DA922A8E90800047721 = {
+						CreatedOnToolsVersion = 11.0;
+						TestTargetID = 523A9D8822A8E90700047721;
+					};
+				};
+			};
+			buildConfigurationList = 523A9D8422A8E90700047721 /* Build configuration list for PBXProject "Update Pad" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 523A9D8022A8E90700047721;
+			productRefGroup = 523A9D8A22A8E90700047721 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				523A9D8822A8E90700047721 /* Update Pad */,
+				523A9D9E22A8E90800047721 /* Update PadTests */,
+				523A9DA922A8E90800047721 /* Update PadUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		523A9D8722A8E90700047721 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				523A9D9922A8E90800047721 /* LaunchScreen.storyboard in Resources */,
+				523A9D9622A8E90800047721 /* Preview Assets.xcassets in Resources */,
+				523A9D9322A8E90800047721 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		523A9D9D22A8E90800047721 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		523A9DA822A8E90800047721 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		523A9D8522A8E90700047721 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				523A9D8D22A8E90700047721 /* AppDelegate.swift in Sources */,
+				523A9D8F22A8E90700047721 /* SceneDelegate.swift in Sources */,
+				523A9D9122A8E90700047721 /* ContentView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		523A9D9B22A8E90800047721 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				523A9DA422A8E90800047721 /* Update_PadTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		523A9DA622A8E90800047721 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				523A9DAF22A8E90800047721 /* Update_PadUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		523A9DA122A8E90800047721 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 523A9D8822A8E90700047721 /* Update Pad */;
+			targetProxy = 523A9DA022A8E90800047721 /* PBXContainerItemProxy */;
+		};
+		523A9DAC22A8E90800047721 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 523A9D8822A8E90700047721 /* Update Pad */;
+			targetProxy = 523A9DAB22A8E90800047721 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		523A9D9722A8E90800047721 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				523A9D9822A8E90800047721 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		523A9DBE22A8E98700047721 /* iPad_Fall_2018_13.0_17A5492t_Restore.ipsw */ = {
+			isa = PBXVariantGroup;
+			children = (
+				523A9DBD22A8E98700047721 /* Base */,
+				523A9DBF22A8E9C400047721 /* en */,
+			);
+			name = iPad_Fall_2018_13.0_17A5492t_Restore.ipsw;
+			path = ../../../../../../../Downloads;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		523A9DB122A8E90800047721 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		523A9DB222A8E90800047721 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		523A9DB422A8E90800047721 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Update Pad\"/Preview\\ Content";
+				DEVELOPMENT_TEAM = 5W72YMDK56;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Update Pad/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "hyeoktae-com.github.Update-Pad";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		523A9DB522A8E90800047721 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Update Pad\"/Preview\\ Content";
+				DEVELOPMENT_TEAM = 5W72YMDK56;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Update Pad/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "hyeoktae-com.github.Update-Pad";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		523A9DB722A8E90800047721 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5W72YMDK56;
+				INFOPLIST_FILE = "Update PadTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "hyeoktae-com.github.Update-PadTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Update Pad.app/Update Pad";
+			};
+			name = Debug;
+		};
+		523A9DB822A8E90800047721 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5W72YMDK56;
+				INFOPLIST_FILE = "Update PadTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "hyeoktae-com.github.Update-PadTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Update Pad.app/Update Pad";
+			};
+			name = Release;
+		};
+		523A9DBA22A8E90800047721 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5W72YMDK56;
+				INFOPLIST_FILE = "Update PadUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "hyeoktae-com.github.Update-PadUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Update Pad";
+			};
+			name = Debug;
+		};
+		523A9DBB22A8E90800047721 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5W72YMDK56;
+				INFOPLIST_FILE = "Update PadUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "hyeoktae-com.github.Update-PadUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Update Pad";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		523A9D8422A8E90700047721 /* Build configuration list for PBXProject "Update Pad" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				523A9DB122A8E90800047721 /* Debug */,
+				523A9DB222A8E90800047721 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		523A9DB322A8E90800047721 /* Build configuration list for PBXNativeTarget "Update Pad" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				523A9DB422A8E90800047721 /* Debug */,
+				523A9DB522A8E90800047721 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		523A9DB622A8E90800047721 /* Build configuration list for PBXNativeTarget "Update PadTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				523A9DB722A8E90800047721 /* Debug */,
+				523A9DB822A8E90800047721 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		523A9DB922A8E90800047721 /* Build configuration list for PBXNativeTarget "Update PadUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				523A9DBA22A8E90800047721 /* Debug */,
+				523A9DBB22A8E90800047721 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 523A9D8122A8E90700047721 /* Project object */;
+}
