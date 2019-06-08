@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,6 +12,7 @@
 		52BA1C4C22AC239C00BD02B4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52BA1C4A22AC239C00BD02B4 /* Main.storyboard */; };
 		52BA1C4E22AC239D00BD02B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52BA1C4D22AC239D00BD02B4 /* Assets.xcassets */; };
 		52BA1C5122AC239D00BD02B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52BA1C4F22AC239D00BD02B4 /* LaunchScreen.storyboard */; };
+		52BA1C5B22AC4F6600BD02B4 /* Musics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BA1C5A22AC4F6600BD02B4 /* Musics.swift */; };
 		AC43DBC4C50C409872A77880 /* Pods_TestRXAmalofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F5FBE756D0B31E4F5A59143 /* Pods_TestRXAmalofire.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +26,7 @@
 		52BA1C4D22AC239D00BD02B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		52BA1C5022AC239D00BD02B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		52BA1C5222AC239D00BD02B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52BA1C5A22AC4F6600BD02B4 /* Musics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Musics.swift; sourceTree = "<group>"; };
 		61AE16679F7AF1B680900FB1 /* Pods-TestRXAmalofire.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestRXAmalofire.release.xcconfig"; path = "Target Support Files/Pods-TestRXAmalofire/Pods-TestRXAmalofire.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -46,7 +48,6 @@
 				3721D37FBD9E3855B26A55C7 /* Pods-TestRXAmalofire.debug.xcconfig */,
 				61AE16679F7AF1B680900FB1 /* Pods-TestRXAmalofire.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -79,14 +80,31 @@
 		52BA1C4522AC239C00BD02B4 /* TestRXAmalofire */ = {
 			isa = PBXGroup;
 			children = (
+				52BA1C5922AC4F5600BD02B4 /* Controller */,
+				52BA1C5822AC4F4900BD02B4 /* Data */,
 				52BA1C4622AC239C00BD02B4 /* AppDelegate.swift */,
-				52BA1C4822AC239C00BD02B4 /* ViewController.swift */,
 				52BA1C4A22AC239C00BD02B4 /* Main.storyboard */,
 				52BA1C4D22AC239D00BD02B4 /* Assets.xcassets */,
 				52BA1C4F22AC239D00BD02B4 /* LaunchScreen.storyboard */,
 				52BA1C5222AC239D00BD02B4 /* Info.plist */,
 			);
 			path = TestRXAmalofire;
+			sourceTree = "<group>";
+		};
+		52BA1C5822AC4F4900BD02B4 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				52BA1C5A22AC4F6600BD02B4 /* Musics.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		52BA1C5922AC4F5600BD02B4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				52BA1C4822AC239C00BD02B4 /* ViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,6 +224,7 @@
 			files = (
 				52BA1C4922AC239C00BD02B4 /* ViewController.swift in Sources */,
 				52BA1C4722AC239C00BD02B4 /* AppDelegate.swift in Sources */,
+				52BA1C5B22AC4F6600BD02B4 /* Musics.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

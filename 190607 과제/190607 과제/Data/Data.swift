@@ -39,6 +39,7 @@ final class Networking {
                 let result = idx.filter{ $0.key == "trackName" || $0.key == "artistName" || $0.key == "artworkUrl100" }
                 Tracks.shared.tracks.append(track(url: result["artworkUrl100"] as? String, name: result["trackName"] as? String, artist: result["artistName"] as? String))
             }
+            
             completion(Tracks.shared.tracks)
         }.resume()
     }
