@@ -1,0 +1,6 @@
+framework module Pods_TestRxLowVersion {
+  umbrella header "Pods-TestRxLowVersion-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -10,6 +10,8 @@ import UIKit
 
 final class MainViewController: UIViewController {
     
+    let searchController = UISearchController(searchResultsController: nil)
+    
     private lazy var mainView: MainView = {
         let view = MainView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -18,17 +20,15 @@ final class MainViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        self.navigationItem.searchController = searchController
+        self.searchController.obscuresBackgroundDuringPresentation = false
+        self.searchController.searchBar.delegate = self
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        Networking.shared.download("fuck") {
-            DispatchQueue.main.sync {
-                self.autoLayout()
-            }
-            self.mainView.reload()
-        }
+        autoLayout()
+        
     }
     
     private func autoLayout() {
@@ -40,5 +40,22 @@ final class MainViewController: UIViewController {
         mainView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
     }
     
-    
+    func filterContentForSearchText(_ searchText: String) {
+        print(searchText)
+        Tracks.shared.images = []
+        Tracks.shared.tracks = []
+        mainView.showSpinner(onView: self.view)
+        Networking.shared.download(searchText) {
+            DispatchQueue.main.sync {
+                self.mainView.reload()
+                self.mainView.removeSpinner()
+            }
+        }
+    }
+}
+
+extension MainViewController: UISearchBarDelegate {
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        filterContentForSearchText(searchController.searchBar.text ?? "")
+    }
 }

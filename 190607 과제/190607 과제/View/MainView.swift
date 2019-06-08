@@ -10,6 +10,8 @@ import UIKit
 
 final class MainView: UIView {
     
+    var vSpinner: UIView?
+    
     private let tableView: UITableView = {
         let tbl = UITableView()
         tbl.translatesAutoresizingMaskIntoConstraints = false
@@ -58,7 +60,26 @@ extension MainView: UITableViewDataSource {
         cell.subTitle.text = Tracks.shared.tracks[indexPath.row].artist
         return cell
     }
+}
+
+
+extension MainView {
+    func showSpinner(onView : UIView) {
+        let ai = UIActivityIndicatorView.init(style: .whiteLarge)
+        ai.startAnimating()
+        ai.color = .black
+        ai.center = onView.center
+        
+        DispatchQueue.main.async {
+            onView.addSubview(ai)
+        }
+        vSpinner = ai
+    }
     
-    
-    
+    func removeSpinner() {
+        DispatchQueue.main.async {
+            self.vSpinner?.removeFromSuperview()
+            self.vSpinner = nil
+        }
+    }
 }
