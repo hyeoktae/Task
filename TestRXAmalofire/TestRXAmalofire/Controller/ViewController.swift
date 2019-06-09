@@ -7,65 +7,97 @@
 //
 
 import UIKit
-import RxAlamofire
 import RxSwift
 import RxCocoa
 
 class ViewController: UIViewController {
     
-    let tableView = UITableView()
+    let searchController = UISearchController(searchResultsController: nil)
+    
+    var vSpinner: UIView?
+    
+    let bag = DisposeBag()
+    
+    private let tableView: UITableView = {
+        let tbl = UITableView()
+        tbl.translatesAutoresizingMaskIntoConstraints = false
+        tbl.rowHeight = 80
+        tbl.register(UINib(nibName: "TrackCell", bundle: nil), forCellReuseIdentifier: "cellId")
+        return tbl
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        autoLayout()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationItem.searchController = searchController
+        self.searchController.obscuresBackgroundDuringPresentation = false
+        self.searchController.searchBar.delegate = self
+//        searchController.searchBar.rx.setDelegate(self)
+    }
+    
+    func autoLayout() {
+        view.addSubview(tableView)
         
-//        _ = request(.get, "https://itunes.apple.com/search?media=music&entity=song&term=fuck")
-//            .validate(statusCode: 200..<300)
-//            .responseJSON()
-//            .observeOn(MainScheduler.instance)
-//            .subscribe {
-//                print($0)
-//        }
-//        _ = json(.get, "https://itunes.apple.com/search?media=music&entity=song&term=fuck")
-//            .observeOn(MainScheduler.instance)
-//            .subscribe {
-//                print($0)
-//        }
+        tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        tableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+    }
+    
+    func bindTableView() {
+        print("run")
+        let trackOb: Observable<[Result]> = Observable.of((Track.shared.musics?.results) ?? []).observeOn(ConcurrentMainScheduler.instance)
         
         
-//        _ = requestJSON(.get, "https://itunes.apple.com/search?media=music&entity=song&term=fuck")
-//            .subscribe(onNext: { (res, data) in
-//                guard let dict = data as? [String: Any], let arr = dict["results"] as? [Any] else {return}
-//
-//                for idx in arr {
-//                    guard let idx = idx as? [String: Any] else { return }
-//                    let result = idx.filter{ $0.key == "trackName" || $0.key == "artistName" || $0.key == "artworkUrl100" }
-//                    Tracks.shared.tracks.append(track(url: result["artworkUrl100"] as? String, name: result["trackName"] as? String, artist: result["artistName"] as? String))
-//                }
-//
-//            }, onError: { (err) in
-//                print(err.localizedDescription)
-//            }, onCompleted: {
-//                print("completed")
-//            }) {
-//                print("disposed")
-//        }
         
-        _ = requestData(.get, "https://itunes.apple.com/search?media=music&entity=song&term=fuck")
-            .observeOn(MainScheduler.instance)
-            .subscribe(onNext: { (res, data) in
-                print(res)
-                let result = try? JSONDecoder().decode(Musics.self, from: data)
-                print(result)
-            }, onError: {
-                print($0.localizedDescription)
-            }, onCompleted: {
-                print("completed")
-            }, onDisposed: {
-                print("disposed")
-            })
+        trackOb.bind(to: tableView.rx.items(cellIdentifier: "cellId")) { (index: Int, element: Result, cell: TrackCell) in
+            cell.title.text = element.trackName
+            cell.subTitle.text = element.artistName
+            cell.imageView?.image = Track.shared.images![index]
+        }.disposed(by: bag)
     }
 
 
 }
 
+extension ViewController {
+    func showSpinner(onView : UIView) {
+        let ai = UIActivityIndicatorView.init(style: .whiteLarge)
+        ai.startAnimating()
+        ai.color = .black
+        ai.center = onView.center
+        
+        DispatchQueue.main.async {
+            onView.addSubview(ai)
+        }
+        vSpinner = ai
+    }
+    
+    func removeSpinner() {
+        DispatchQueue.main.async {
+            self.vSpinner?.removeFromSuperview()
+            self.vSpinner = nil
+        }
+    }
+    
+    func filterContentForSearchText(_ searchText: String) {
+        print(searchText)
+        showSpinner(onView: self.view)
+        Networking.shared.download(searchText, completion: {
+            self.bindTableView()
+            self.removeSpinner()
+        })
+    }
+    
+}
+
+
+extension ViewController: UISearchBarDelegate {
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        filterContentForSearchText(searchController.searchBar.text ?? "")
+    }
+}

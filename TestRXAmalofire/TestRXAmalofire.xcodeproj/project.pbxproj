@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		525AAFF122AD6DF40020595F /* TrackCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 525AAFEF22AD6DF40020595F /* TrackCell.xib */; };
+		525AAFF222AD6DF40020595F /* TrackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525AAFF022AD6DF40020595F /* TrackCell.swift */; };
 		52BA1C4722AC239C00BD02B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BA1C4622AC239C00BD02B4 /* AppDelegate.swift */; };
 		52BA1C4922AC239C00BD02B4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BA1C4822AC239C00BD02B4 /* ViewController.swift */; };
 		52BA1C4C22AC239C00BD02B4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52BA1C4A22AC239C00BD02B4 /* Main.storyboard */; };
@@ -19,6 +21,8 @@
 /* Begin PBXFileReference section */
 		0F5FBE756D0B31E4F5A59143 /* Pods_TestRXAmalofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestRXAmalofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3721D37FBD9E3855B26A55C7 /* Pods-TestRXAmalofire.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestRXAmalofire.debug.xcconfig"; path = "Target Support Files/Pods-TestRXAmalofire/Pods-TestRXAmalofire.debug.xcconfig"; sourceTree = "<group>"; };
+		525AAFEF22AD6DF40020595F /* TrackCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TrackCell.xib; path = "../../../190607 과제/190607 과제/Cell/TrackCell.xib"; sourceTree = "<group>"; };
+		525AAFF022AD6DF40020595F /* TrackCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrackCell.swift; path = "../../../190607 과제/190607 과제/Cell/TrackCell.swift"; sourceTree = "<group>"; };
 		52BA1C4322AC239C00BD02B4 /* TestRXAmalofire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestRXAmalofire.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52BA1C4622AC239C00BD02B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52BA1C4822AC239C00BD02B4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +63,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		525AAFEE22AD6DE80020595F /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				525AAFF022AD6DF40020595F /* TrackCell.swift */,
+				525AAFEF22AD6DF40020595F /* TrackCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		52BA1C3A22AC239C00BD02B4 = {
 			isa = PBXGroup;
 			children = (
@@ -80,9 +93,10 @@
 		52BA1C4522AC239C00BD02B4 /* TestRXAmalofire */ = {
 			isa = PBXGroup;
 			children = (
+				52BA1C4622AC239C00BD02B4 /* AppDelegate.swift */,
+				525AAFEE22AD6DE80020595F /* Cell */,
 				52BA1C5922AC4F5600BD02B4 /* Controller */,
 				52BA1C5822AC4F4900BD02B4 /* Data */,
-				52BA1C4622AC239C00BD02B4 /* AppDelegate.swift */,
 				52BA1C4A22AC239C00BD02B4 /* Main.storyboard */,
 				52BA1C4D22AC239D00BD02B4 /* Assets.xcassets */,
 				52BA1C4F22AC239D00BD02B4 /* LaunchScreen.storyboard */,
@@ -170,6 +184,7 @@
 				52BA1C5122AC239D00BD02B4 /* LaunchScreen.storyboard in Resources */,
 				52BA1C4E22AC239D00BD02B4 /* Assets.xcassets in Resources */,
 				52BA1C4C22AC239C00BD02B4 /* Main.storyboard in Resources */,
+				525AAFF122AD6DF40020595F /* TrackCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,6 +240,7 @@
 				52BA1C4922AC239C00BD02B4 /* ViewController.swift in Sources */,
 				52BA1C4722AC239C00BD02B4 /* AppDelegate.swift in Sources */,
 				52BA1C5B22AC4F6600BD02B4 /* Musics.swift in Sources */,
+				525AAFF222AD6DF40020595F /* TrackCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
