@@ -26,3 +26,5 @@
 * 20190530 Firebase 에 저장된 유저정보 불러오기
 
 * 20190605 Xcode 11 downloading...
+
+* 20190611 SK DEVELOPER 에서 날씨 api 받아서 날씨 앱 만들
