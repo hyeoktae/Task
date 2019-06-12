@@ -11,6 +11,11 @@ import CoreLocation
 
 final class WeatherVC: UIViewController {
     
+//    let blur = UIBlurEffect(style: UIBlurEffect.Style.init(rawValue: 3)!)
+    private let blur = (NSClassFromString("_UICustomBlurEffect") as! UIBlurEffect.Type).init()
+    
+    var blurView = UIVisualEffectView(effect: nil)
+    
     var locationManager = CLLocationManager()
     
     var timeInterval = -18000
@@ -28,12 +33,6 @@ final class WeatherVC: UIViewController {
             self.locationLabel.text = new
         }
     }
-    
-//    var location: String {
-//        get {
-//            return "\(ResultData.shared.getGrid()?.county ?? "") \(ResultData.shared.getGrid()?.village ?? "")"
-//        }
-//    }
     
     let firstFormat: DateFormatter = {
         let format = DateFormatter()
@@ -90,7 +89,7 @@ final class WeatherVC: UIViewController {
     
     var backImg: UIImageView = {
         let view = UIImageView(frame: UIScreen.main.bounds)
-        view.image = UIImage(named: "backImg2")
+        view.image = UIImage(named: "backImg4")
         view.contentMode = .scaleAspectFill
         return view
     }()
@@ -109,6 +108,7 @@ final class WeatherVC: UIViewController {
         setupLocationManager()
         addSubViews()
         autoLayout()
+        setupBlurView()
         tblView.separatorInset = UIEdgeInsets(top: 0, left: view.center.x - 10, bottom: 0, right: view.center.x - 70)
         tblView.separatorColor = .white
         tblView.dataSource = self
@@ -117,6 +117,7 @@ final class WeatherVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -133,6 +134,13 @@ final class WeatherVC: UIViewController {
                     } : ()
             }
         }
+    }
+    
+    private func setupBlurView() {
+        blur.setValue(1, forKey: "blurRadius")
+        blurView.frame = UIScreen.main.bounds
+        
+        blurView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
     }
     
     @objc private func refresh(_ sender: UIButton) {
@@ -158,8 +166,9 @@ final class WeatherVC: UIViewController {
     }
     
     private func addSubViews() {
-        let views = [tblView, backImg, topView]
+        let views = [tblView, backImg, topView, blurView]
         let topProperties = [locationLabel, timeLabel, refreshBtn]
+//        backImg.addSubview(blurView)
         views.forEach { view.addSubview($0) }
         topProperties.forEach { topView.addSubview($0) }
         view.bringSubviewToFront(tblView)
@@ -177,10 +186,6 @@ final class WeatherVC: UIViewController {
     private func makeBackImg() {
         let num = (1...4).randomElement()!
         backImg.image = UIImage(named: "backImg\(num)")
-        view.willRemoveSubview(backImg)
-        view.addSubview(backImg)
-        view.bringSubviewToFront(topView)
-        view.bringSubviewToFront(tblView)
     }
     
     // after download!!!
@@ -294,18 +299,28 @@ extension WeatherVC: UITableViewDelegate {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
-        if scrollView.contentOffset.y < 30 {
-            visibleFirstCell = true
-        } else {
+        if scrollView.contentOffset.y < 100 {
             visibleFirstCell = false
+        } else {
+            visibleFirstCell = true
         }
-        
-        visibleFirstCell ? print("visible") : print("envisible")
         
         if visibleFirstCell {
-            backImg.transform.tx += 100
+            UIView.animate(withDuration: 1) {
+                self.blurView.effect = self.blur
+                self.backImg.center.x = 257
+                self.blurView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.6)
+            }
+            
         } else {
+            UIView.animate(withDuration: 1) {
+                self.blurView.effect = nil
+                self.backImg.center.x = 207
+                self.blurView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0)
+            }
             
         }
+        view.setNeedsUpdateConstraints()
     }
 }
+

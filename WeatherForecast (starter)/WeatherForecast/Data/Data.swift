@@ -102,3 +102,5 @@ struct Temperature: Codable {
     var tmax: String?
     var tmin: String?
 }
+
+
