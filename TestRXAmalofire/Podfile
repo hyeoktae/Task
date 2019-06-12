@@ -6,6 +6,7 @@ target 'TestRXAmalofire' do
   use_frameworks!
   pod 'RxAlamofire'
   pod 'RxCocoa', '~> 5'
+  pod 'RxDataSources'
   # Pods for TestRXAmalofire
 
 end

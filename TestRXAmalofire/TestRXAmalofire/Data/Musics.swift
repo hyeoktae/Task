@@ -53,8 +53,9 @@ final class Networking {
                 let url = URL(string: urlString.artworkUrl100!)!
                 let data = try? Data(contentsOf: url)
                 Track.shared.images?.append(UIImage(data: data!)!)
-                completion()
+                
             }
+            completion()
         }
     }
 }

@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import RxDataSources
 
 class ViewController: UIViewController {
     
@@ -18,7 +19,7 @@ class ViewController: UIViewController {
     
     let bag = DisposeBag()
     
-    private let tableView: UITableView = {
+    let tableView: UITableView = {
         let tbl = UITableView()
         tbl.translatesAutoresizingMaskIntoConstraints = false
         tbl.rowHeight = 80
@@ -29,6 +30,14 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         autoLayout()
+//        showSpinner(onView: self.view)
+//
+//            Networking.shared.download("", completion: {
+//
+//                self.bindTableView()
+//                self.removeSpinner()
+//            })
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -49,18 +58,21 @@ class ViewController: UIViewController {
     }
     
     func bindTableView() {
-        print("run")
-        let trackOb: Observable<[Result]> = Observable.of((Track.shared.musics?.results) ?? []).observeOn(ConcurrentMainScheduler.instance)
         
         
         
-        trackOb.bind(to: tableView.rx.items(cellIdentifier: "cellId")) { (index: Int, element: Result, cell: TrackCell) in
-            cell.title.text = element.trackName
-            cell.subTitle.text = element.artistName
-            cell.imageView?.image = Track.shared.images![index]
-        }.disposed(by: bag)
+//        typealias sectionModel = SectionModel<String, Result>
+//        let trackOb = Observable<[Result]>.just(Track.shared.musics!.results)
+//
+//        trackOb
+//            .bind(to: tableView.rx.items(cellIdentifier: "cellId")) {
+//                (index: Int, element: Result, cell: TrackCell) in
+//                cell.title.text = element.trackName
+//                cell.subTitle.text = element.artistName
+//                cell.TrackImgView?.image = Track.shared.images![index]
+//            }.disposed(by: bag)
     }
-
+    
 
 }
 
@@ -86,11 +98,13 @@ extension ViewController {
     
     func filterContentForSearchText(_ searchText: String) {
         print(searchText)
+        print("==============")
         showSpinner(onView: self.view)
         Networking.shared.download(searchText, completion: {
             self.bindTableView()
             self.removeSpinner()
         })
+        
     }
     
 }

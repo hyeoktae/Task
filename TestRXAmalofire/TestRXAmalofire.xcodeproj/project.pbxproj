@@ -7,13 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		525AAFF122AD6DF40020595F /* TrackCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 525AAFEF22AD6DF40020595F /* TrackCell.xib */; };
-		525AAFF222AD6DF40020595F /* TrackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525AAFF022AD6DF40020595F /* TrackCell.swift */; };
+		525AAFF522AE23770020595F /* TrackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525AAFF322AE23770020595F /* TrackCell.swift */; };
+		525AAFF622AE23770020595F /* TrackCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 525AAFF422AE23770020595F /* TrackCell.xib */; };
+		52977C4A22AE2B46005C46A9 /* TrackCellCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52977C4922AE2B46005C46A9 /* TrackCellCode.swift */; };
 		52BA1C4722AC239C00BD02B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BA1C4622AC239C00BD02B4 /* AppDelegate.swift */; };
 		52BA1C4922AC239C00BD02B4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BA1C4822AC239C00BD02B4 /* ViewController.swift */; };
-		52BA1C4C22AC239C00BD02B4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52BA1C4A22AC239C00BD02B4 /* Main.storyboard */; };
 		52BA1C4E22AC239D00BD02B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52BA1C4D22AC239D00BD02B4 /* Assets.xcassets */; };
-		52BA1C5122AC239D00BD02B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52BA1C4F22AC239D00BD02B4 /* LaunchScreen.storyboard */; };
 		52BA1C5B22AC4F6600BD02B4 /* Musics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BA1C5A22AC4F6600BD02B4 /* Musics.swift */; };
 		AC43DBC4C50C409872A77880 /* Pods_TestRXAmalofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F5FBE756D0B31E4F5A59143 /* Pods_TestRXAmalofire.framework */; };
 /* End PBXBuildFile section */
@@ -21,14 +20,13 @@
 /* Begin PBXFileReference section */
 		0F5FBE756D0B31E4F5A59143 /* Pods_TestRXAmalofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestRXAmalofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3721D37FBD9E3855B26A55C7 /* Pods-TestRXAmalofire.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestRXAmalofire.debug.xcconfig"; path = "Target Support Files/Pods-TestRXAmalofire/Pods-TestRXAmalofire.debug.xcconfig"; sourceTree = "<group>"; };
-		525AAFEF22AD6DF40020595F /* TrackCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TrackCell.xib; path = "../../../190607 과제/190607 과제/Cell/TrackCell.xib"; sourceTree = "<group>"; };
-		525AAFF022AD6DF40020595F /* TrackCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrackCell.swift; path = "../../../190607 과제/190607 과제/Cell/TrackCell.swift"; sourceTree = "<group>"; };
+		525AAFF322AE23770020595F /* TrackCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackCell.swift; sourceTree = "<group>"; };
+		525AAFF422AE23770020595F /* TrackCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TrackCell.xib; sourceTree = "<group>"; };
+		52977C4922AE2B46005C46A9 /* TrackCellCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCellCode.swift; sourceTree = "<group>"; };
 		52BA1C4322AC239C00BD02B4 /* TestRXAmalofire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestRXAmalofire.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52BA1C4622AC239C00BD02B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52BA1C4822AC239C00BD02B4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		52BA1C4B22AC239C00BD02B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		52BA1C4D22AC239D00BD02B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		52BA1C5022AC239D00BD02B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		52BA1C5222AC239D00BD02B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52BA1C5A22AC4F6600BD02B4 /* Musics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Musics.swift; sourceTree = "<group>"; };
 		61AE16679F7AF1B680900FB1 /* Pods-TestRXAmalofire.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestRXAmalofire.release.xcconfig"; path = "Target Support Files/Pods-TestRXAmalofire/Pods-TestRXAmalofire.release.xcconfig"; sourceTree = "<group>"; };
@@ -66,8 +64,9 @@
 		525AAFEE22AD6DE80020595F /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				525AAFF022AD6DF40020595F /* TrackCell.swift */,
-				525AAFEF22AD6DF40020595F /* TrackCell.xib */,
+				525AAFF322AE23770020595F /* TrackCell.swift */,
+				525AAFF422AE23770020595F /* TrackCell.xib */,
+				52977C4922AE2B46005C46A9 /* TrackCellCode.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -97,9 +96,7 @@
 				525AAFEE22AD6DE80020595F /* Cell */,
 				52BA1C5922AC4F5600BD02B4 /* Controller */,
 				52BA1C5822AC4F4900BD02B4 /* Data */,
-				52BA1C4A22AC239C00BD02B4 /* Main.storyboard */,
 				52BA1C4D22AC239D00BD02B4 /* Assets.xcassets */,
-				52BA1C4F22AC239D00BD02B4 /* LaunchScreen.storyboard */,
 				52BA1C5222AC239D00BD02B4 /* Info.plist */,
 			);
 			path = TestRXAmalofire;
@@ -181,10 +178,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52BA1C5122AC239D00BD02B4 /* LaunchScreen.storyboard in Resources */,
 				52BA1C4E22AC239D00BD02B4 /* Assets.xcassets in Resources */,
-				52BA1C4C22AC239C00BD02B4 /* Main.storyboard in Resources */,
-				525AAFF122AD6DF40020595F /* TrackCell.xib in Resources */,
+				525AAFF622AE23770020595F /* TrackCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,31 +234,13 @@
 			files = (
 				52BA1C4922AC239C00BD02B4 /* ViewController.swift in Sources */,
 				52BA1C4722AC239C00BD02B4 /* AppDelegate.swift in Sources */,
+				52977C4A22AE2B46005C46A9 /* TrackCellCode.swift in Sources */,
 				52BA1C5B22AC4F6600BD02B4 /* Musics.swift in Sources */,
-				525AAFF222AD6DF40020595F /* TrackCell.swift in Sources */,
+				525AAFF522AE23770020595F /* TrackCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		52BA1C4A22AC239C00BD02B4 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				52BA1C4B22AC239C00BD02B4 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		52BA1C4F22AC239D00BD02B4 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				52BA1C5022AC239D00BD02B4 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		52BA1C5322AC239D00BD02B4 /* Debug */ = {
