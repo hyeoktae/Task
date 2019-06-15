@@ -45,7 +45,7 @@ func test(completion: @escaping ([String: Any]?) -> ()) {
 }
 
 test() { abc in
-    print(abc)
+    print(abc) 
 }
 
 //func test3(com: @escaping () -> (Result<String, fail>)) {
