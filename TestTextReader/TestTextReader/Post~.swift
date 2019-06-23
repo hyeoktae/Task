@@ -45,10 +45,10 @@ func postman(_ input: String) -> Data? {
     let postData = NSData(data:
         """
 <speak>
-<voice name="WOMAN_DIALOG_BRIGHT">\(text)</voice>
+<voice>\(text)</voice>
 </speak>
 """
-        .data(using: .utf8)!)
+        .data(using: String.Encoding.utf8)!)
     
     group.enter()
     queue.async {
