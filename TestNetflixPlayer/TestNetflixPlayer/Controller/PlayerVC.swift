@@ -14,9 +14,13 @@ final class PlayerVC: UIViewController {
   
   private let appDelegate = UIApplication.shared.delegate as! AppDelegate
   
+  
+  
   private var player: AVPlayer?
   
   private let playerView = PlayerView()
+  
+  private var timer: Timer?
   
   private var timeObserver: Any?
   
@@ -32,23 +36,42 @@ final class PlayerVC: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     playerView.delegate = self
+    
     setupAutoLayout()
   }
   
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
     setupVideoPlayer()
+    resetTimer()
   }
   
+  private func resetTimer() {
+    timer?.invalidate()
+    timer = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(hideNavigator), userInfo: nil, repeats: false)
+  }
+  
+  @objc private func hideNavigator() {
+    playerView.hideNavigator()
+  }
+  
+  @objc private func tapScreen() {
+    print("run")
+    playerView.showNavigator()
+    resetTimer()
+  }
+  
+  
+  
   private func setupVideoPlayer() {
-    guard let url = URL(string: urlString ?? "https://firebasestorage.googleapis.com/v0/b/test-64199.appspot.com/o/hack_Final.mp4?alt=media&token=f7fc95a4-c470-443b-a17f-f6a87a03205a") else { return }
+    guard let url = URL(string: urlString ?? "http://movietrailers.apple.com/movies/lucasfilm/star-wars-the-last-jedi/the-last-jedi-worlds-of-the-last-jedi_i320.m4v") else { return }
     
     player = AVPlayer(url: url)
     
     let playerLayer = AVPlayerLayer(player: player)
     playerLayer.frame = videoPlayerView.bounds
     videoPlayerView.layer.addSublayer(playerLayer)
-    //    player?.play()
+    player?.play()
     
     let interval = CMTime(seconds: 0.01, preferredTimescale: CMTimeScale(NSEC_PER_SEC))
     timeObserver = player?.addPeriodicTimeObserver(forInterval: interval, queue: DispatchQueue.main, using: { (elapsedTime) in
@@ -67,7 +90,24 @@ final class PlayerVC: UIViewController {
       }
       let currentTime = currentItem.currentTime()
       playerView.progressSliderValue = Float(CMTimeGetSeconds(currentTime) / CMTimeGetSeconds(duration))
+      
+      // Update time remaining Label
+      let totalTimeInSeconds = CMTimeGetSeconds(duration)
+      let remainingTimeInSeconds = totalTimeInSeconds - currentTimeInSeconds
+      
+      let mins = remainingTimeInSeconds / 60
+      let secs = remainingTimeInSeconds.truncatingRemainder(dividingBy: 60)
+      let timeFormatter = NumberFormatter()
+      
+      timeFormatter.minimumIntegerDigits = 2
+      timeFormatter.minimumFractionDigits = 0
+      timeFormatter.roundingMode = .down
+      guard let minsString = timeFormatter.string(from: NSNumber(value: mins)), let secsString = timeFormatter.string(from: NSNumber(value: secs)) else { return }
+      playerView.timeLabelText = "\(minsString):\(secsString)"
     }
+    
+    
+    
   }
   
   private func setupAutoLayout() {
@@ -97,6 +137,24 @@ final class PlayerVC: UIViewController {
 }
 
 extension PlayerVC: PlayerViewDelegate {
+  func didTapScreen() {
+    tapScreen()
+  }
+  
+  func jumpForward() {
+    guard let currentTime = player?.currentTime() else { return }
+    let currentTimeInSecondsPlus10 = CMTimeGetSeconds(currentTime).advanced(by: 10)
+    let seekTime = CMTime(value: CMTimeValue(currentTimeInSecondsPlus10), timescale: 1)
+    player?.seek(to: seekTime)
+  }
+  
+  func jumpBackward() {
+    guard let currentTime = player?.currentTime() else { return }
+    let currentTimeInSecondsMinus10 = CMTimeGetSeconds(currentTime).advanced(by: -10)
+    let seekTime = CMTime(value: CMTimeValue(currentTimeInSecondsMinus10), timescale: 1)
+    player?.seek(to: seekTime)
+  }
+  
   func timeSeeking(value: Float64) {
     guard let duration = player?.currentItem?.duration else { return }
     let value = value * CMTimeGetSeconds(duration)
@@ -106,7 +164,6 @@ extension PlayerVC: PlayerViewDelegate {
   }
   
   func didTapPlay() {
-    print("didTapBtn In VC", player?.isPlaying)
     player!.isPlaying ? player?.pause() : player?.play()
   }
 }
