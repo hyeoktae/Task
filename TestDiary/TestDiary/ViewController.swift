@@ -59,7 +59,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return expandable[sort[section]] ?? false ? datas[sort[section]]?
-            .count ?? 0 : 00
+            .count ?? 0 : 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -133,7 +133,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
 extension ViewController: HeaderViewDelegate {
     func callHeader(idx: Int) {
         expandable[sort[idx]] = !expandable[sort[idx]]!
-        tblView.reloadSections([idx], with: .automatic)
+        tblView.reloadSections([idx], with: .fade)
     }
 }
 

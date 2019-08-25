@@ -1,0 +1,419 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0E6252042B310528D84F7F36 /* Pods_TestVideoAnimation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B43073F519807A9EF93CD3F6 /* Pods_TestVideoAnimation.framework */; };
+		52AF056F22CF5A5E00020A7B /* VideoNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52AF056E22CF5A5E00020A7B /* VideoNavigator.swift */; };
+		52B2B02922CE6E8E00D7FC6C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B2B02822CE6E8E00D7FC6C /* AppDelegate.swift */; };
+		52B2B02B22CE6E8E00D7FC6C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B2B02A22CE6E8E00D7FC6C /* ViewController.swift */; };
+		52B2B02E22CE6E8E00D7FC6C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52B2B02C22CE6E8E00D7FC6C /* Main.storyboard */; };
+		52B2B03022CE6E9000D7FC6C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52B2B02F22CE6E9000D7FC6C /* Assets.xcassets */; };
+		52B2B03322CE6E9000D7FC6C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52B2B03122CE6E9000D7FC6C /* LaunchScreen.storyboard */; };
+		52B2B03B22CE711C00D7FC6C /* ChildVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B2B03A22CE711C00D7FC6C /* ChildVC.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		52AF056E22CF5A5E00020A7B /* VideoNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoNavigator.swift; sourceTree = "<group>"; };
+		52B2B02522CE6E8E00D7FC6C /* TestVideoAnimation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestVideoAnimation.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		52B2B02822CE6E8E00D7FC6C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		52B2B02A22CE6E8E00D7FC6C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		52B2B02D22CE6E8E00D7FC6C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		52B2B02F22CE6E9000D7FC6C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		52B2B03222CE6E9000D7FC6C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		52B2B03422CE6E9000D7FC6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52B2B03A22CE711C00D7FC6C /* ChildVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildVC.swift; sourceTree = "<group>"; };
+		8BE4CBC7D279801E96B4DE4F /* Pods-TestVideoAnimation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestVideoAnimation.release.xcconfig"; path = "Target Support Files/Pods-TestVideoAnimation/Pods-TestVideoAnimation.release.xcconfig"; sourceTree = "<group>"; };
+		A1A3B9BA5D821B3EF7471356 /* Pods-TestVideoAnimation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestVideoAnimation.debug.xcconfig"; path = "Target Support Files/Pods-TestVideoAnimation/Pods-TestVideoAnimation.debug.xcconfig"; sourceTree = "<group>"; };
+		B43073F519807A9EF93CD3F6 /* Pods_TestVideoAnimation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestVideoAnimation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		52B2B02222CE6E8E00D7FC6C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E6252042B310528D84F7F36 /* Pods_TestVideoAnimation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		52B2B01C22CE6E8E00D7FC6C = {
+			isa = PBXGroup;
+			children = (
+				52B2B02722CE6E8E00D7FC6C /* TestVideoAnimation */,
+				52B2B02622CE6E8E00D7FC6C /* Products */,
+				ADA05AEFB0C66CA078424BD1 /* Pods */,
+				AE813D2F674B2EC879E8A612 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		52B2B02622CE6E8E00D7FC6C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				52B2B02522CE6E8E00D7FC6C /* TestVideoAnimation.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		52B2B02722CE6E8E00D7FC6C /* TestVideoAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				52B2B02822CE6E8E00D7FC6C /* AppDelegate.swift */,
+				52B2B02A22CE6E8E00D7FC6C /* ViewController.swift */,
+				52B2B03A22CE711C00D7FC6C /* ChildVC.swift */,
+				52AF056E22CF5A5E00020A7B /* VideoNavigator.swift */,
+				52B2B02C22CE6E8E00D7FC6C /* Main.storyboard */,
+				52B2B02F22CE6E9000D7FC6C /* Assets.xcassets */,
+				52B2B03122CE6E9000D7FC6C /* LaunchScreen.storyboard */,
+				52B2B03422CE6E9000D7FC6C /* Info.plist */,
+			);
+			path = TestVideoAnimation;
+			sourceTree = "<group>";
+		};
+		ADA05AEFB0C66CA078424BD1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A1A3B9BA5D821B3EF7471356 /* Pods-TestVideoAnimation.debug.xcconfig */,
+				8BE4CBC7D279801E96B4DE4F /* Pods-TestVideoAnimation.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		AE813D2F674B2EC879E8A612 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B43073F519807A9EF93CD3F6 /* Pods_TestVideoAnimation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		52B2B02422CE6E8E00D7FC6C /* TestVideoAnimation */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52B2B03722CE6E9000D7FC6C /* Build configuration list for PBXNativeTarget "TestVideoAnimation" */;
+			buildPhases = (
+				42493A1FDEC527C91D45D613 /* [CP] Check Pods Manifest.lock */,
+				52B2B02122CE6E8E00D7FC6C /* Sources */,
+				52B2B02222CE6E8E00D7FC6C /* Frameworks */,
+				52B2B02322CE6E8E00D7FC6C /* Resources */,
+				1837DC466D305F0CFC5A7675 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TestVideoAnimation;
+			productName = TestVideoAnimation;
+			productReference = 52B2B02522CE6E8E00D7FC6C /* TestVideoAnimation.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		52B2B01D22CE6E8E00D7FC6C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = "hyeoktae kwon";
+				TargetAttributes = {
+					52B2B02422CE6E8E00D7FC6C = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+				};
+			};
+			buildConfigurationList = 52B2B02022CE6E8E00D7FC6C /* Build configuration list for PBXProject "TestVideoAnimation" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 52B2B01C22CE6E8E00D7FC6C;
+			productRefGroup = 52B2B02622CE6E8E00D7FC6C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				52B2B02422CE6E8E00D7FC6C /* TestVideoAnimation */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		52B2B02322CE6E8E00D7FC6C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52B2B03322CE6E9000D7FC6C /* LaunchScreen.storyboard in Resources */,
+				52B2B03022CE6E9000D7FC6C /* Assets.xcassets in Resources */,
+				52B2B02E22CE6E8E00D7FC6C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1837DC466D305F0CFC5A7675 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TestVideoAnimation/Pods-TestVideoAnimation-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TestVideoAnimation/Pods-TestVideoAnimation-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TestVideoAnimation/Pods-TestVideoAnimation-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		42493A1FDEC527C91D45D613 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TestVideoAnimation-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		52B2B02122CE6E8E00D7FC6C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52B2B03B22CE711C00D7FC6C /* ChildVC.swift in Sources */,
+				52AF056F22CF5A5E00020A7B /* VideoNavigator.swift in Sources */,
+				52B2B02B22CE6E8E00D7FC6C /* ViewController.swift in Sources */,
+				52B2B02922CE6E8E00D7FC6C /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		52B2B02C22CE6E8E00D7FC6C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				52B2B02D22CE6E8E00D7FC6C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		52B2B03122CE6E9000D7FC6C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				52B2B03222CE6E9000D7FC6C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		52B2B03522CE6E9000D7FC6C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		52B2B03622CE6E9000D7FC6C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		52B2B03822CE6E9000D7FC6C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A1A3B9BA5D821B3EF7471356 /* Pods-TestVideoAnimation.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5W72YMDK56;
+				INFOPLIST_FILE = TestVideoAnimation/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = hyeoktae.com.TestVideoAnimation;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		52B2B03922CE6E9000D7FC6C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8BE4CBC7D279801E96B4DE4F /* Pods-TestVideoAnimation.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5W72YMDK56;
+				INFOPLIST_FILE = TestVideoAnimation/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = hyeoktae.com.TestVideoAnimation;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		52B2B02022CE6E8E00D7FC6C /* Build configuration list for PBXProject "TestVideoAnimation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52B2B03522CE6E9000D7FC6C /* Debug */,
+				52B2B03622CE6E9000D7FC6C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		52B2B03722CE6E9000D7FC6C /* Build configuration list for PBXNativeTarget "TestVideoAnimation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52B2B03822CE6E9000D7FC6C /* Debug */,
+				52B2B03922CE6E9000D7FC6C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 52B2B01D22CE6E8E00D7FC6C /* Project object */;
+}

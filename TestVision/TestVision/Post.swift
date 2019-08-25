@@ -9,7 +9,7 @@
 
 import Foundation
 import UIKit
-import Alamofire
+//import Alamofire
 
 
 func request(_ image: UIImage) {
