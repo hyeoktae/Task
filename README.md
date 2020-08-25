@@ -32,7 +32,7 @@
 * 20190812 RxSwift 특강     
 * 20190823 졸업식        
 
-* 20190921 Protocol - Struct 를 잘 쓰장.      
+* 20190921 Protocol - Struct 를 잘 쓰장.         
 
    
                  
