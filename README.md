@@ -1,5 +1,5 @@
  # Task     
-과제용                               
+과제용                                 
       
 * 20190321 - 상속, 오버라이드, 오버로딩 관련 과제 
 * 20190322 - UI 연습 및 계산기 미완성
@@ -12,7 +12,7 @@
 * 20190325 - Alert, Frame 과제 업로드 한번 더 봐야할 필요성  
 * 20190326 - TextField, ViewController 관련 과제
 * 20190328 - 여태까지의 과제 재풀이  
-* 20190329 - 시험          
+* 20190329 - 시험            ㅋ
 * 20190402 - segue 기본
 * 20190404 - Delegate, UserDefaults, Singleton
 * 20190405 - 과제들 올림 Delegate, Singleton, UserDefaults, UISlider 사용
