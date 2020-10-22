@@ -12,7 +12,7 @@
 * 20190325 - Alert, Frame 과제 업로드 한번 더 봐야할 필요성  
 * 20190326 - TextField, ViewController 관련 과제
 * 20190328 - 여태까지의 과제 재풀이  
-* 20190329 - 시험            ㅋ
+* 20190329 - 시험            
 * 20190402 - segue 기본
 * 20190404 - Delegate, UserDefaults, Singleton
 * 20190405 - 과제들 올림 Delegate, Singleton, UserDefaults, UISlider 사용
@@ -24,7 +24,7 @@
 
 * 20190529 Firebase 로그인 회원가입 까지 성공
 * 20190530 Firebase 에 저장된 유저정보 불러오기
-
+     
 * 20190605 Xcode 11 downloading...       
    
 * 20190611 SK DEVELOPER 에서 날씨 api 받아서 날씨 앱 만들
